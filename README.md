@@ -11,6 +11,8 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 * This release is an attempt to alleviate and better explain some lingering deficiencies with the portability of ./gnulibs/ and the prebuilt AdaGate executable for linux.  Linux has so many variants that it is difficult to generate an executable or build script that works on all of them.  Most of the recent troubles with AdaGate for linux seem to be centered on the new SFML library, with its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  My current build system is OpenSUSE v13.2, so that and similar platforms should have no problems executing.
 
+* Note that the prebuilt AdaGate executable for GNU/Linux uses GLIBC_2.14.  This means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system, assuming you can get SFML libraries into place that do not cause a runtime loader error.
+
 * If the precompiled executable for AdaGate does not run on your linux machine, and you think it's because of SFML, then try the following.  ( We linux people are all hackers, right ; )
 
 	* First and easiest, try a system update for your particular linux distribution of "sfml-devel".  
