@@ -4,28 +4,27 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 Click on the large tar.gz file under releases for all source & binaries.
 
 
-# AdaGate -- v 5.8 ###################################################################
+# AdaGate -- v 5.8
 
 ## Whats new:
 
 
 **ver 5.8 -- 29mar16**
 
-* This release is an attempt to alleviate and better explain some lingering deficiencies with the portability of ./gnulibs/ and the prebuilt AdaGate executable for linux.  Linux has so many variants that it is difficult to generate an executable or build script that works on all of them.  Most of the recent troubles with AdaGate for linux seem to be centered on the new SFML library, with its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  My current build system is OpenSUSE v13.2, so that and similar platforms should have no problems executing.
+* This release is an attempt to alleviate and better explain the deficiencies with the portability of ./gnulibs/ and the prebuilt AdaGate executable for linux.  Linux has so many variants that it is difficult to generate an executable or build script that works on all of them.  The portability was further degraded with the recent update to the new SFML library, with its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14.  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system.
 
-* Note that the prebuilt AdaGate executable for GNU/Linux uses GLIBC_2.14.  This means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system, assuming you can get SFML libraries into place that do not cause a runtime loader error.
+* If the precompiled linux executable for AdaGate does not run on your distro., and runtime error messages indicate it's because of SFML or SDL2, then try the following.
 
-* If the precompiled executable for AdaGate does not run on your linux machine, and you think it's because of SFML, then try the following.  ( We linux people are all hackers, right ; )
+	* First and easiest, try a system update for your particular linux distribution of "libsfml-devel" or "sfml-dev", and "sdl2-dev".
 
-	* First and easiest, try a system update for your particular linux distribution of "sfml-devel".  
 	* Second, if for some reason that is not possible, you can try downloading the precompiled libraries from SFML.  You can either copy them into the usual place, per the installation tutorial, or you can copy them into ./gnulibs/.  They just might work for you;  but they did not work on my system.
-	* Last, you can attempt to build the SFML libraries from source on your own machine.  That solution requires Cmake and is more complex because you might need all the dependencies first.  On the other hand, you might be able to use the ones [.so] that come with AdaGate, under ./gnulibs/.
 
-	* Then retry the precompiled executable for AdaGate.  If it runs, fine.  If not...
+	* Last, try to build the SFML libraries from source on your own machine.  This solution requires Cmake, and is more complex because you typically need all the dependencies first.
 
-	* Finally, try recompiling with the script provided.  You need to download and install the Ada Libre compiler from AdaCore in order to do this.  That is very easy and simple to do.
+	* You can also do the same for SDL2, but building this from source is pretty easy with Cmake.
 
-	* AdaGate also uses SDL2, but that library seems a bit more self contained, and less problematic.  Moreover, its static version, libSDL2.a, is likely usable, too.
+	* Finally, try recompiling with the script provided.  You need to download and install the Ada Libre compiler from "libre.adacore.com/download/" in order to do this (very easy and simple to do).
+
 
 * Note that the OS-X build system is now reasonably stable and portable.
 
@@ -235,11 +234,24 @@ GNU/Linux:
 lcmp.sh:  
 utilizes the uncommon relocatable libraries (mainly SDL2, SFML) that are delivered in this bundle under ./gnulibs/.  This is used to build the dynamic [gnu/linux] executable, which should run in the presence of ./gnulibs, whether or not your system has those libraries installed.  This was used to create the executable named adagate_gnu.  
 
-If recompilation fails to create a usable executable, and you think it's because of SFML, try doing a system update for your particular linux distribution of "sfml-devel" to be certain of getting all needed prerequisites put into the usual place.  
+If the delivered linux binary does not run, and recompilation fails to create a usable executable, try these...
 
-Only if that fails should you attempt to build the SFML libraries from source on your own machine.
+-------------------------------------------------------
+### Steps to compile and run on "other" linux distros.
 
-AdaGate also uses SDL2, but that library seems a bit more self contained, and less problematic.
+* Install Cmake...complicated from source, easy using a system update.
+
+* Install SDL2-dev.
+	* First, try a system update of libSDL2-devel.
+	* Downloading and building from source is the hardest way, but still easy.  Requires Cmake.
+
+* Install SFML-dev.
+	* First, try a system update of sfml-dev or libsfml-devel.  
+	* Building from source using Cmake is difficult because there are several prerequisites, but if you add them one at a time based on the cmake error messages, it is achievable.
+
+* For Ada code, you will need to install GNAT GPL from libre.adacore.com/download/.  This is very easy.
+
+At this point, the delivered compile script is likely to work without mods.
 
 
 
@@ -304,8 +316,16 @@ Another skybox  [from  (http://www.redsorceress.com/skybox.html)]  is credited t
 
 Another skybox used [from OpenGameArt.org] is the work of Heiko Irrgang <hi@93-interactive.com> and is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ccsa3_license.txt.
 
+## Best Download Sites for AdaGate and my other games:
 
-## video links [all showing defunct versions of AdaGate]:
+https://github.com/fastrgv?tab=repositories
+
+http://www.indiedb.com/members/fastrgv/games
+
+https://fastrgv.itch.io/
+
+
+## video links [all showing older versions of AdaGate]:
 
 level beta puzzle:
 <http://youtu.be/WQU5kdO_93k>
@@ -324,4 +344,3 @@ A 3rd party 11 minute video of AdaGate is here:
 <https://www.youtube.com/watch?v=qNPc6yXfIV4&feature=youtu.be>
 
 ----------------------------------------------------------------
-
