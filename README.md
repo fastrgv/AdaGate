@@ -11,7 +11,7 @@ Click on the large tar.gz file under releases for all source & binaries.
 
 **ver 5.8 -- 29mar16**
 
-* This release is an attempt to alleviate and better explain the deficiencies with the portability of ./gnulibs/ and the prebuilt AdaGate executable for linux.  Linux has so many variants that it is difficult to generate an executable or build script that works on all of them.  The portability was further degraded with the recent update to the new SFML library, with its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14.  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system.
+* This release attempts to alleviate and better explain the deficiencies with the portability of the prebuilt AdaGate executable **for linux**.  Linux has so many variants that it is difficult to generate an executable that works on all of them.  The portability was further degraded with the recent update to the new SFML library, with its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14.  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system.
 
 * If the precompiled linux executable for AdaGate does not run on your distro., and runtime error messages indicate it's because of SFML or SDL2, then try the following.
 
@@ -26,7 +26,7 @@ Click on the large tar.gz file under releases for all source & binaries.
 	* Finally, try recompiling with the script provided.  You need to download and install the Ada Libre compiler from "libre.adacore.com/download/" in order to do this (very easy and simple to do).
 
 
-* Note that the OS-X build system is now reasonably stable and portable.
+* Note that the OS-X build system seems reasonably stable and portable.
 
 =====================================================================
 
@@ -223,35 +223,34 @@ Two [pre-compiled] binary executables are delivered, one for gnu/linux and one f
 Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome.
 
 -------------------------------------------------------
-MacOSX:
+**MacOSX:**
 
 ocmp.sh:  
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  I used this to build the executable that I deliver, named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script.
 
 ------------------------------------------------------
-GNU/Linux:  
+**GNU/Linux:**
 
 lcmp.sh:  
 utilizes the uncommon relocatable libraries (mainly SDL2, SFML) that are delivered in this bundle under ./gnulibs/.  This is used to build the dynamic [gnu/linux] executable, which should run in the presence of ./gnulibs, whether or not your system has those libraries installed.  This was used to create the executable named adagate_gnu.  
 
-If the delivered linux binary does not run, and recompilation fails to create a usable executable, try these...
+The authoring build system is OpenSUSE v13.2 which uses GLIBC 2.14.  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system.
 
--------------------------------------------------------
-### Steps to compile and run on "other" linux distros.
+If the delivered linux binary does not run, and recompilation fails to create a usable executable, try the following steps to compile and run on linux distros that are not compatible.
 
-* Install Cmake...complicated from source, easy using a system update.
+* Install Cmake...complicated to build from source, but easy using a system update.
 
 * Install SDL2-dev.
 	* First, try a system update of libSDL2-devel.
-	* Downloading and building from source is the hardest way, but still easy.  Requires Cmake.
+	* Downloading and building SDL2 from source is the hardest way, but still easy.  Requires Cmake.
 
 * Install SFML-dev.
 	* First, try a system update of sfml-dev or libsfml-devel.  
-	* Building from source using Cmake is difficult because there are several prerequisites, but if you add them one at a time based on the cmake error messages, it is achievable.
+	* Building SFML from source using Cmake is difficult because there are several prerequisites, but if you add them one at a time based on the cmake error messages, it is achievable.
 
 * For Ada code, you will need to install GNAT GPL from libre.adacore.com/download/.  This is very easy.
 
-At this point, the delivered compile script is likely to work without mods.
+At this point, the delivered compile script lcmp.sh is likely to work without mods.
 
 
 
@@ -344,3 +343,4 @@ A 3rd party 11 minute video of AdaGate is here:
 <https://www.youtube.com/watch?v=qNPc6yXfIV4&feature=youtu.be>
 
 ----------------------------------------------------------------
+
