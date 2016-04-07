@@ -11,22 +11,21 @@ Click on the large tar.gz file under releases for all source & binaries.
 
 **ver 5.8 -- 29mar16**
 
-* This release attempts to alleviate and better explain the deficiencies with the portability of the prebuilt AdaGate executable **for linux**.  Linux has so many variants that it is difficult to generate an executable that works on all of them.  The portability was further degraded with the recent update to the new SFML library, with its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14.  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system.
+* The portability of the prebuilt AdaGate executable **for linux** was somewhat degraded with the recent update to the new SFML audio library v2.3.2, and its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating from jun2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).  If not you might need to install SFML...
 
-* If the precompiled linux executable for AdaGate does not run on your distro., and runtime error messages indicate it's because of SFML or SDL2, then try the following.
+* If runtime error messages make you suspect SFML or SDL2, then try the following.
 
-	* First and easiest, try a system update for your particular linux distribution of "libsfml-devel" or "sfml-dev", and "sdl2-dev".
+	* First and easiest, try a system update for your particular linux distribution of "libsfml-devel" or "sfml-dev", and "sdl2-dev".  Then retry, or recompile it, if you must.
 
-	* Second, if for some reason that is not possible, you can try downloading the precompiled libraries from SFML.  You can either copy them into the usual place, per the installation tutorial, or you can copy them into ./gnulibs/.  They just might work for you;  but they did not work on my system.
+	* If for some reason a system update is not possible, you should probably read the installation tutorial on the SFML website, then download their precompiled libraries.  
 
-	* Last, try to build the SFML libraries from source on your own machine.  This solution requires Cmake, and is more complex because you typically need all the dependencies first.
+	* As a last resort, build the SFML libraries from source on your own machine.  This solution requires the installation of Cmake, and is more complex because you will need to install all the dependencies before the SFML configuration step succeeds.
 
-	* You can also do the same for SDL2, but building this from source is pretty easy with Cmake.
+	* You can also do the same for SDL2, but building this from source with Cmake is very much easier.
 
-	* Finally, try recompiling with the script provided.  You need to download and install the Ada Libre compiler from "libre.adacore.com/download/" in order to do this (very easy and simple to do).
+	* After SFML or SDL2 installation, recompile with the script provided.  You need to download and install the Ada Libre compiler from "libre.adacore.com/download/" but this is very easy to do.
 
-
-* Note that the OS-X build system seems reasonably stable and portable.
+* **Note that the OS-X build system seems reasonably stable and portable.**
 
 =====================================================================
 
