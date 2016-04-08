@@ -4,30 +4,22 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 Click on the large tar.gz file under releases for all source & binaries.
 
 
-# AdaGate -- v 5.8
+# AdaGate -- v 5.9
 
 ## Whats new:
 
 
-**ver 5.8 -- 29mar16**
+**ver 5.9.0 -- 8apr16**
 
-* Still working to revise linux build instructions to be more accurate and helpful.
-
-* The portability of the **linux** executable and build system was degraded with the recent update to the new SFML audio library v2.3.2.  If the prebuilt binary does not run on your system, you might need to install SFML.  See "build instructions for adagate", below.
-
-* **Note that the OS-X build system and binary seem quite portable.**
-
-=====================================================================
-
-**ver 5.71 -- 27mar16**
-
-* Found and tried to fix an error with GNU/Linux compilation system that did not provide some needed libraries to the local build system.  Note that the OS-X build was, and still is Ok.
+* Reverted to SFML v2.1 for portability and build simplicity.
+* Improved directory structure;
+* Reduced size of largest WAV files by trimming to 30 seconds;
+* Higher percent static libs used in gnu/linux compile script;
+* All nonstandard libraries are static in OS-X compile script.
 
 
-**ver 5.7 -- 26mar16**
-
-* Updated SFML audio to version 2.3.2, but this completely changed the compilation system on OS-X because it is near impossible to statically link SFML any more.  A standalone OS-X installation of AdaGate was still possible, however, using local Frameworks.  One new advantage is that OGG format sound files can be used.  These are smaller and non-proprietary.
-
+**ver 5.7 and 5.8**
+* attempted using newer SFML library...but reverting.
 
 **ver 5.6 -- 22mar16 (last delivery with SFML v2.1)**
 
@@ -216,32 +208,19 @@ Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving
 -------------------------------------------------------
 **MacOSX** => ocmp.sh:
 
-build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script.
+build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script, assuming you have GNAT GPL installed.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmp.sh
+**GNU/Linux** => scmp3.sh
 
-utilizes the non-standard shared libraries (mainly SDL2, SFML) that are delivered in this bundle under ./gnulibs/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./gnulibs/, whether or not your system has those libraries installed.  Note that the runtime loader will prefer system libraries if they are present. 
+utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./gnulibs/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./gnulibs/, whether or not your system has those shared libraries installed.  Note that the runtime loader will prefer system libraries if they are present. 
 
-The portability of the prebuilt linux executable was somewhat degraded with the recent update to the new SFML audio library v2.3.2, and its manifold dependencies: FLAC, ogg, vorbis, freetype, jpeg, & openal.  The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating from june 2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
+The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating from june 2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
 
-If the delivered linux binary does not run, try the following steps:
+If the delivered linux binary does not run...
 
-* Read the installation tutorial on the SFML website.  Then download their precompiled libraries for v2.3.2.  At this point you can either install SFML into your system, or simply copy the library files libsfml\* into [adagate-install-directory]/gnulibs/ using the "-a" flag for the copy command.
-
-If you still cannot recomple and run AdaGate, then proceed to the next step.
-
-* Install Cmake using your system's built-in update methodology.
-
-* Manually install GNAT GPL from libre.adacore.com/download/.  This is very easy.
-
-* Now, update your system to ensure you have all these development libraries:  flac-dev, ogg-dev, vorbis-dev, freetype-dev, jpeg-dev, openal-dev.
-
-* Then manually install SFML:  download and build SFML v2.3.2 from source using Cmake.  This can be tedious without performing the previous step first.  Once the configure step succeeds, the make step should also succeed.  Again, you can either install SFML into your system, or simply copy the newly created (shared) library files libsfml\* into [adagate-install-directory]/gnulibs/ using the "-a" flag for the copy command.
-
-* Manually install SDL2 v2.0.4:  download and build SDL2 from source usind Cmake.  This is fairly easy.
-
-Finally, you might need to recompile using the script "lcmp.sh".
+* Manually install GNAT GPL from libre.adacore.com/download/.
+* Rerun the compile script scmp3.sh.
 
 
 
