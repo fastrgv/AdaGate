@@ -140,13 +140,14 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 * joystick : attitude
 * thumb btn: forward
 * trigger btn: backward
-* Ltop/Rtop btns: select/shoot
+* Ltop,Rtop btns: select/shoot
 * base btn: jump
 ------------------------------------------------------------
 ### gamecontroller
 * Lpaddle : attitude
 * Rpaddle : movement
-* Ltrigger/Rtrigger: select/shoot
+* Ltrigger: select,shoot
+* Rtrigger: select,shoot
 * base btn: jump
 ------------------------------------------------------------
 
