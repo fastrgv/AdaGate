@@ -146,7 +146,7 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 ### gamecontroller
 * Lpaddle : attitude
 * Rpaddle : movement
-* Ltrigger, Rtrigger : select,shoot
+* Ltrigger/Rtrigger: select/shoot
 * base btn: jump
 ------------------------------------------------------------
 
