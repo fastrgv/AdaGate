@@ -175,7 +175,6 @@ If you ever get stuck, try to jump up & forward/back.
 ## Rebuild Requirements:
 * systems:  OS-X or GNU/Linux
 * a recent gnat compiler
-* linux only:  distro compatible with authoring build system, or SDL2 v2.0.4 and SFML v2.3.2 libraries
 
 Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
 
