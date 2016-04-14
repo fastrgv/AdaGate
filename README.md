@@ -142,6 +142,7 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 * trigger btn: backward
 * Ltop,Rtop btns: select/shoot
 * base btn: jump
+
 ------------------------------------------------------------
 ### gamecontroller
 * Lpaddle : attitude
@@ -149,6 +150,7 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 * Ltrigger: select,shoot
 * Rtrigger: select,shoot
 * base btn: jump
+
 ------------------------------------------------------------
 
 If you ever get stuck, try to jump up & forward/back.
