@@ -4,9 +4,16 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux).
 
 
-# AdaGate -- v 5.9.1
+# AdaGate -- v 6.0
 
 ## Whats new:
+
+**ver 6.0 -- 26apr16**
+
+* Updated audio to use SFML version 2.3.2.  A new advantage is that OGG format sound files can be used.  These are smaller and non-proprietary.
+* The OS-X build system for AdaGate now uses included Frameworks for common but not universal OGG/Vorbis libraries, and static SFML libs.
+* Similarly updated the gnu-linux build system to facilitate using the new SFML static libraries and included shared libs for OGG/Vorbis.
+
 
 **ver 5.9.1 -- 12apr16**
 
@@ -211,12 +218,12 @@ Two [pre-compiled] binary executables are delivered, one for gnu/linux and one f
 Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome.
 
 -------------------------------------------------------
-**MacOSX** => ocmp.sh:
+**MacOSX** => ocmps.sh:
 
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script, assuming you have GNAT GPL installed.
 
 ------------------------------------------------------
-**GNU/Linux** => scmp3.sh
+**GNU/Linux** => scmp.sh
 
 utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./gnulibs/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./gnulibs/, whether or not your system has those shared libraries installed.  Note that the runtime loader will prefer system libraries if they are present. 
 
