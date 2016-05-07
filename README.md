@@ -4,9 +4,15 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux).
 
 
-# AdaGate -- v 6.0
+# AdaGate -- v 6.0.1
 
 ## Whats new:
+
+**ver 6.0.1 -- 7may16**
+
+* Updated OpenAL frameworks and static libraries that remove deprecation warning on OS-X.  These allow compilation scripts that deliver even more portable binaries for both OS-X and Gnu/Linux.
+* Small improvements/corrections in palm swaying motion and sounds.
+* Cleaned up scripts and libraries.
 
 **ver 6.0 -- 26apr16**
 
