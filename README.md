@@ -231,7 +231,7 @@ Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script, assuming you have GNAT GPL installed.
 
 ------------------------------------------------------
-**GNU/Linux** => scmp.sh
+**GNU/Linux** => lcmps.sh
 
 utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./gnulibs/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./gnulibs/, whether or not your system has those shared libraries installed.  Note that the runtime loader will prefer system libraries if they are present. 
 
