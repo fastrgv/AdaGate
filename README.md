@@ -240,7 +240,7 @@ The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating fro
 If the delivered linux binary does not run...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script scmp3.sh.
+* Rerun the compile script lcmp.sh or lcmps.sh or lcmpss.sh.
 
 
 
