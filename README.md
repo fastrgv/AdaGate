@@ -166,6 +166,10 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 * base btn: jump
 
 ------------------------------------------------------------
+### settings
+If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the key-bindings or the floats that define the sensitivities.
+
+------------------------------------------------------------
 
 If you ever get stuck, try to jump up & forward/back.
 
