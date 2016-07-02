@@ -6,9 +6,23 @@ Click on the large tar.gz file under releases to download all source & binaries 
 or Click on [raw] "adagate-src-only-snapshot.tar.gz" to download source only.
 
 
-# AdaGate -- v 6.0.1
+# AdaGate -- v 6.0.2
 
 ## Whats new:
+
+**ver 6.0.2 -- 03jul16**
+
+* added lava shriek.
+* improved snd4ada.cpp
+* Added gnat project files for OSX and GNU-linux, for any developers who prefer them, as well as an unfinished and untested prototype for MSWin.  Any volunteer developers with an MSWindows platform that might be able to finish it are welcomed to try.  (I abandoned MSWin in 1999)
+* A description of the 6 legacy compilation scripts follows:
+	* lcmp.sh : Linux, all shared libs
+	* lcmps.sh : Linux some static libs
+	* lcmpss.sh : Linux maximal static libs
+	* ocmp.sh : OSX minimal statics
+	* ocmps.sh : OSX some statics
+	* ocmpss.sh : OSX maximal statics
+
 
 **ver 6.0.1 -- 7may16**
 
@@ -230,12 +244,12 @@ Two [pre-compiled] binary executables are delivered, one for gnu/linux and one f
 Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome.
 
 -------------------------------------------------------
-**MacOSX** => ocmps.sh:
+**MacOSX** => ocmpss.sh:
 
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script, assuming you have GNAT GPL installed.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmps.sh
+**GNU/Linux** => lcmpss.sh
 
 utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./gnulibs/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./gnulibs/, whether or not your system has those shared libraries installed.  Note that the runtime loader will prefer system libraries if they are present. 
 
