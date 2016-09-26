@@ -7,8 +7,6 @@ Click on the large tar.gz file under releases to download all source & binaries 
 <https://github/com/fastrgv/AdaGate/releases/download/v6.0.3/ag27sep16.tar.gz>
 
 
-or Click on [raw] "adagate-src-only-snapshot.tar.gz" to download source only.
-
 
 # AdaGate -- v 6.0.3
 
