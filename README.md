@@ -4,15 +4,23 @@
 AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Mac OS-X and GNU Linux.
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
-<https://github/com/fastrgv/AdaGate/releases/download/v6.0.2/ag3jul16.tar.gz>
+<https://github/com/fastrgv/AdaGate/releases/download/v6.0.3/ag27sep16.tar.gz>
 
 
 or Click on [raw] "adagate-src-only-snapshot.tar.gz" to download source only.
 
 
-# AdaGate -- v 6.0.2
+# AdaGate -- v 6.0.3
 
 ## Whats new:
+
+**ver 6.0.3 -- 27sep16**
+
+* improved oarfish appearance.
+* improved the tree drawing technique to use fewer resources and simplify logic.
+* corrected portal gun aimpoints when not high enough above ledges.
+* revised dungeon portals to allow a see-thru view to destination rather than showing an opaque stargate texture.  This enhancement was quite complex because it required the derivation of some magical transormation equations, as well as modifying the fragment shader to create a transparent spot on an existing wall texture.
+
 
 **ver 6.0.2 -- 03jul16**
 
