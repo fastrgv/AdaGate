@@ -4,13 +4,22 @@
 AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Mac OS-X and GNU Linux.
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
-<https://github/com/fastrgv/AdaGate/releases/download/v6.0.3/ag27sep16.tar.gz>
+<https://github/com/fastrgv/AdaGate/releases/download/v6.0.4/ag20oct16.tar.gz>
 
 
-
-# AdaGate -- v 6.0.3
+# AdaGate -- v 6.0.4
 
 ## Whats new:
+
+
+**ver 6.0.4 -- 20oct16**
+
+* Fixed errors that caused erroneous textures to appear when portals were open.
+* Added capability to shoot at a target seen through a portal.  This augments possible strategies for escaping a dungeon to allow escape with a single teleportation.
+* Remedied an apparent error when both portals are on the same wall.  In this case, their two virtual worlds overlap and interfere with each other.  Now, only the closer one is drawn (unless their heights are equal).
+* The TARDIS makes a twisting debut.
+
+
 
 **ver 6.0.3 -- 27sep16**
 
