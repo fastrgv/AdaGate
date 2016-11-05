@@ -4,15 +4,21 @@
 AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Mac OS-X and GNU Linux.
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
-<https://github/com/fastrgv/AdaGate/releases/download/v6.0.4/ag20oct16.tar.gz>
+<https://github/com/fastrgv/AdaGate/releases/download/v6.0.5/ag6nov16.tar.gz>
 
 Here is a recent video showing a portal gun aimpoint within an existing portal:
 <https://youtu.be/DU8xZ5oJ9uY>
 
 
-# AdaGate -- v 6.0.4
+# AdaGate -- v 6.0.5
 
 ## Whats new:
+
+**ver 6.0.5 -- 6nov16**
+
+* Improved handling of the case of 2 portals on the same wall by creating shaders that can discard an unwanted [overlapping] halfspace.  Such a technique might be of interest to glsl developers, but not game players.
+* Improved movement within the island scenes by changing the deep water boundary action to be a tangential deflection rather than a dead stop.
+* Corrected errors in defining palm tree keepouts on island.  Now, you will bump them and not pass through them.
 
 
 **ver 6.0.4 -- 20oct16**
