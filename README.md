@@ -236,6 +236,7 @@ If you ever get stuck, try to jump up & forward/back.
 ## Rebuild Requirements:
 * systems:  OS-X or GNU/Linux
 * a recent gnat compiler
+* Xcode g++ compiler, if using OS-X
 
 Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
 
@@ -269,7 +270,8 @@ Developer or not, send comments, suggestions or questions to:
 
 Two [pre-compiled] binary executables are delivered, one for gnu/linux and one for OS-X.  The Mac binary should run on most any standard Mac with a recent version of OS-X.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "gnulibs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, freetype, jpeg, openal.
 
-Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome.
+Build scripts for GNAT2015 or newer are provided.
+
 
 -------------------------------------------------------
 **MacOSX** => ocmpss.sh:
@@ -287,6 +289,16 @@ If the delivered linux binary does not run...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
 * Rerun the compile script lcmp.sh or lcmps.sh or lcmpss.sh.
+
+
+### Link Problems during linux build:
+
+On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+
+sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
+
+whence the linker should now be able to find what it wants.
+
 
 
 
