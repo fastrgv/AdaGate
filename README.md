@@ -4,15 +4,26 @@
 AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Mac OS-X and GNU Linux.
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
-<https://github.com/fastrgv/AdaGate/releases/download/v6.0.5/ag6nov16.tar.gz>
+
+https://github.com/fastrgv/AdaGate/releases/download/v6.0.6/ag30nov16.tar.gz
+
 
 Here is a recent video showing a portal gun aimpoint within an existing portal:
 <https://youtu.be/DU8xZ5oJ9uY>
 
 
-# AdaGate -- v 6.0.5
+# AdaGate -- v 6.0.6
 
 ## Whats new:
+
+**ver 6.0.6 -- 30nov16**
+
+* Improved linux build scripts.  Omitted one failed OS-X script.
+* Now uses an improved interface binding Ada to SFML audio.
+* Now using SFML 2.4.1.
+* Replaced the most graphically-demanding fragment shader in order to allow AdaGate to run on cheaper Intel embedded graphics chips, such as might be found on economical laptops and mini-desktop computers.
+* Updated OS-X bundling.
+
 
 **ver 6.0.5 -- 6nov16**
 
