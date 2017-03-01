@@ -5,25 +5,19 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v6.0.9/ag7feb17.tar.gz
+https://github.com/fastrgv/AdaGate/releases/download/v6.1.0/ag3mar17.tar.gz
 
 
-
-Here is a recent video showing a portal gun aimpoint within an existing portal:
-<https://youtu.be/DU8xZ5oJ9uY>
-
-
-# AdaGate -- v 6.0.9
+# AdaGate -- v 6.1.0
 
 ## Recent Changes
 
-**ver 6.0.9 -- 7feb17**
 
-* Improved reflective water motion, magma pool motion & color;  added window frames.
-* Added magma-glow effects.  This required new utilities, new objects with defined normals, and new shaders.
-* Fixed bad multi colored fish texture.
-* Improved the coding and readability of several object packages.
-* Added lava turtle to help prepare for my next project (guesses?).
+**ver 6.1.0 -- 3mar17**
+
+* Removed OpenGL-deprecated functions and enums that may have caused aborts.
+* Improved GL error handling.
+
 
 ## More change-history at end of file.
 
@@ -148,12 +142,12 @@ Two [pre-compiled] binary executables are delivered, one for gnu/linux and one f
 Build scripts for GNAT2015 or newer are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required (GNAT has its own g++).
 
 -------------------------------------------------------
-**MacOSX** => ocmpss.sh:
+**MacOSX** => ocmpss.sh or ocmps.sh
 
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmpss.sh
+**GNU/Linux** => lcmpss.sh or lcmpd.sh
 
 utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
@@ -161,11 +155,11 @@ utilizes the non-standard static libraries SDL2 & SFML, as well as other more co
 If the delivered linux binary does not run...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script lcmpss.sh or lcmps.sh or lcmp.sh.
+* Rerun the compile script lcmpss.sh or lcmpd.sh.
 
-### Link Problems during linux build:
+### Fixable Link Problems during linux build:
 
-On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+On a linux build machine, you might have fixable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
@@ -285,6 +279,14 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 ----------------------------------------------------------------
 
 ## Older Change History:
+
+**ver 6.0.9 -- 7feb17**
+
+* Improved reflective water motion, magma pool motion & color;  added window frames.
+* Added magma-glow effects.  This required new utilities, new objects with defined normals, and new shaders.
+* Fixed bad multi colored fish texture.
+* Improved the coding and readability of several object packages.
+* Added lava turtle to help prepare for my next project (guesses?).
 
 
 **ver 6.0.8 -- 5jan17**
@@ -425,6 +427,3 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 * joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OS-X) for AdaGate:
 	* joystick contols attitude; thumb button moves forward;  trigger button moves backward;  topleft or topright buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 	* gamecontroller:  left paddle controls attitude;  right paddle controls movement;  left or right trigger buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
-
-
-
