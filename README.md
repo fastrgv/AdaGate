@@ -6,12 +6,18 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v6.1.0/ag3mar17.tar.gz
+https://github.com/fastrgv/AdaGate/releases/download/v6.1.1/ag12mar17.tar.gz
 
 
-# AdaGate -- v 6.1.0
+
+
+# AdaGate -- v 6.1.1
 
 ## Recent Changes
+
+**ver 6.1.1 -- 12mar17**
+
+* Added an awesome rolling fireball in the brick dungeon.  Shaders project vertices from a cubical shell onto a spherical shell to avoid singularities.  Then a coherent 3D noise function is used to define perturbations whose magnitudes index into a 1D colormap with black, red, orange, yellow, and white.
 
 
 **ver 6.1.0 -- 3mar17**
