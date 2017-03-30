@@ -6,24 +6,19 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v6.1.1/ag12mar17.tar.gz
+https://github.com/fastrgv/AdaGate/releases/download/v6.1.2/ag31mar17.tar.gz
 
 
 
-
-# AdaGate -- v 6.1.1
+# AdaGate -- v 6.1.2
 
 ## Recent Changes
 
-**ver 6.1.1 -- 12mar17**
 
-* Added an awesome rolling fireball in the brick dungeon.  Shaders project vertices from a cubical shell onto a spherical shell to avoid singularities.  Then a coherent 3D noise function is used to define perturbations whose magnitudes index into a 1D colormap with black, red, orange, yellow, and white.
+**ver 6.1.2 -- 31mar17**
 
-
-**ver 6.1.0 -- 3mar17**
-
-* Removed OpenGL-deprecated functions and enums that may have caused aborts.
-* Improved GL error handling.
+* Simplified the portal discard technique used to draw only what is within each portal's field of view.
+* Added avatar that can use most any MineCraft skin.  Current one is set to DukeNukem or PrincessJasmine.  Others included under ./data/avatars/.  Simple copy desired image to "./data/skin.png".  To toggle 3rd person, use (m)-key.
 
 
 ## More change-history at end of file.
@@ -66,7 +61,10 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 
 (space)-key => jump up/over short walls
 
-(esc)-key => exit;  
+(esc)-key => exit;
+
+(m)-key => toggle between 1st person and 3rd person (avatar);
+
 
 ### joystick
 * joystick : attitude
@@ -83,7 +81,7 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 * base btn: jump
 
 ------------------------------------------------------------
-### settings
+### controller settings
 If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the key-bindings or the floats that define the sensitivities.
 
 ------------------------------------------------------------
@@ -103,7 +101,7 @@ If you ever get stuck, try to jump up + forward/back.
 
 
 ## Open Source libraries included to allow rebuilding:
-* SFML, SDL2, FLAC, ogg, vorbis, freetype, jpeg, openal
+* SFML, SDL2, FLAC, ogg, vorbis, jpeg, openal
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
 	* gl
@@ -111,7 +109,7 @@ If you ever get stuck, try to jump up + forward/back.
 
 ## Rebuild Requirements:
 * systems:  OS-X or GNU/Linux
-* a recent gnat compiler
+* a recent GNAT-GPL Ada compiler from AdaLibre
 * Xcode g++ compiler, if using OS-X
 
 Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
@@ -146,7 +144,9 @@ Developer or not, send comments, suggestions or questions to:
 
 Two [pre-compiled] binary executables are delivered, one for gnu/linux and one for OS-X.  The Mac binary should run on most any standard Mac with a recent version of OS-X.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, freetype, jpeg, openal.
 
-Build scripts for GNAT2015 or newer are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required (GNAT has its own g++).
+The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
+
+Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
 **MacOSX** => ocmpss.sh or ocmps.sh
@@ -159,7 +159,7 @@ build script for generating a portable executable that will run on most OS-X pla
 utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 
-If the delivered linux binary does not run...
+If the delivered linux binary does not run, try...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
 * Rerun the compile script lcmpss.sh or lcmpd.sh.
@@ -171,6 +171,10 @@ On a linux build machine, you might have fixable link errors, depending on its c
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that represents your accelerated-graphic-driver.
+
+### Final Note on Portability
+
+I am always interested in easy ways to make the distributed linux executables more portable, so I would appreciate hearing any suggestions.
 
 
 --------------------------
@@ -214,15 +218,15 @@ My first choice for epilog music was Tim Larkin's Kadish-Gallery music from Uru,
 ### ImageFiles 
 Most images for textures were freely [no copyright indications] available on google images.  Some wall textures used are from the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  One other thatched roof texture was used from http://www.mayang.com/textures.  See mayang_license.txt.  Others from pixabay.com have a CC0 license.  More recently, some are from http://all-free-download.com/free-photos/.
 
-
 ### ShaderFiles 
 Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see mit_license.txt).  Existing comments or any identifying information was retained.  What follows are acknowledgments for those that were identifyable.
 
 "Red Planet" from Mahmud Yuldashev <mahmud9935@gmail.com>, and "waterWorldCCNSA3.fs" with a CreativeCommons license, and which seems to be credited to Alexander Alekseev with mods by Mahmud Yuldashev.
 
-In order to make any of these usable, I had to modernize them to glsl version 330 specifications, and adapt them to utilize some programatic uniforms for input.
+In order to make any of these usable, I had to modernize them to glsl version 330 specifications, and adapt them to utilize some additional uniforms for input.
 
-
+### Avatars
+Several are available under the directory ~/data/avatars/.  Simply copy your preferred one into ~/data/ and rename to skin.png.  Also, many other MineCraft avatars can be used.
 
 ### SkyBoxes 
 For some of these, I lowered the horizon slightly for technical reasons;  and for others I converted to png files.
@@ -260,6 +264,8 @@ agnew, atoll sea life (dec15):
 A 3rd party 11 minute video of AdaGate is here:
 <https://www.youtube.com/watch?v=qNPc6yXfIV4&feature=youtu.be>
 
+Ominous Fireball (12mar17):
+<https://youtu.be/iJnz_u3tsnY>
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
@@ -268,7 +274,7 @@ A 3rd party 11 minute video of AdaGate is here:
 ## what is special about this project?
 Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on both GNU/Linux and Mac OS-X systems.  This project serves as a testbed for learning the complexities of modern OpenGL and GLSL.
 
-Focusing on portability and freedom, no coding specializations or compromises have been made to accomodate proprietary operating systems.  It relies on free open source software:  a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability and freedom, no coding specializations or compromises have been made to accomodate proprietary operating systems.  It relies on free open source software:  a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio by Laurent Gomila (because of its elegant audio interface).
 
 If one defines "modern" OpenGL to mean version 3.3 or higher, then this may be the most functionally advanced demonstration of "modern" OpenGL using Ada to be found.  Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a fully functional example that focuses on learning OpenGL.  The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used as a standalone library for most any OpenGL project that uses Ada.
 
@@ -286,6 +292,17 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 ----------------------------------------------------------------
 
 ## Older Change History:
+
+**ver 6.1.1 -- 12mar17**
+
+* Added an awesome rolling fireball in the brick dungeon.  Shaders project vertices from a cubical shell onto a spherical shell to avoid singularities.  Then a coherent 3D noise function is used to define perturbations whose magnitudes index into a 1D colormap with black, red, orange, yellow, and white.
+
+
+**ver 6.1.0 -- 3mar17**
+
+* Removed OpenGL-deprecated functions and enums that may have caused aborts.
+* Improved GL error handling.
+
 
 **ver 6.0.9 -- 7feb17**
 
