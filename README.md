@@ -6,19 +6,15 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v6.1.2/ag31mar17.tar.gz
-
-
-
-# AdaGate -- v 6.1.2
+# AdaGate -- v 6.1.3
 
 ## Recent Changes
 
 
-**ver 6.1.2 -- 31mar17**
+**ver 6.1.3 -- 15apr17**
 
-* Simplified the portal discard technique used to draw only what is within each portal's field of view.
-* Added avatar that can use most any MineCraft skin.  Current one is set to DukeNukem or PrincessJasmine.  Others included under ./data/avatars/.  Simple copy desired image to "./data/skin.png".  To toggle 3rd person, use (m)-key.
+* Improved avatar movement in water;  added treadwater motion;
+* Corrected errors in portal drawing geometry when in third person mode;
 
 
 ## More change-history at end of file.
@@ -293,7 +289,14 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 
 ## Older Change History:
 
-**ver 6.1.1 -- 12mar17**
+
+**ver 6.1.2 -- 31mar17** (0)
+
+* Simplified the portal discard technique used to draw only what is within each portal's field of view.
+* Added avatar that can use most any minecraft skin.  Current one is set to DukeNukem or PrincessJasmine.  Others included under ./data/avatars/.  Simple copy desired image to "./data/skin.png".  To toggle 3rd person, use (m)-key.
+
+
+**ver 6.1.1 -- 12mar17** (12)
 
 * Added an awesome rolling fireball in the brick dungeon.  Shaders project vertices from a cubical shell onto a spherical shell to avoid singularities.  Then a coherent 3D noise function is used to define perturbations whose magnitudes index into a 1D colormap with black, red, orange, yellow, and white.
 
@@ -451,3 +454,5 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 * joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OS-X) for AdaGate:
 	* joystick contols attitude; thumb button moves forward;  trigger button moves backward;  topleft or topright buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 	* gamecontroller:  left paddle controls attitude;  right paddle controls movement;  left or right trigger buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
+
+
