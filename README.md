@@ -6,12 +6,19 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v6.1.3/ag15apr17.tar.gz
 
 
-# AdaGate -- v 6.1.3
+
+# AdaGate -- v 6.1.4
 
 ## Recent Changes
+
+
+**ver 6.1.4 -- 29jun17**
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Implemented a conformal texture map for rocks, coconuts;
+* Improved, realistic ocean opacity using a simplified Fresnel effect.
+* Note that AdaCore 2017 works on OS-X with no changes.
 
 
 **ver 6.1.3 -- 15apr17**
