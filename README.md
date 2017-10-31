@@ -38,6 +38,8 @@ While searching a remote south-seas island for remnants of a lost American heroi
 
 With 5 degrees of difficulty [DoD], there are 20 user-replaceable puzzles to solve. Escape all 4 dungeons to reach the neptune choir skybox and increment the DoD for your next challenge.
 
+See a short video here:
+https://youtu.be/D3yBovxkhGI
 
 
 ## AdaGate Game Features
