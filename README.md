@@ -14,6 +14,8 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.1.4/ag29jun17.tar.gz
 
 ## Recent Changes
 
+See new video "Duke goes swimming" at:
+https://youtu.be/D3yBovxkhGI
 
 **ver 6.1.4 -- 29jun17**
 * Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
