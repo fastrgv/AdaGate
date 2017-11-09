@@ -6,22 +6,30 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v6.1.4/ag29jun17.tar.gz
 
 
 
-# AdaGate -- v 6.1.4
+# AdaGate -- v 6.2.0
 
 ## Recent Changes
 
-See new video "Duke goes swimming" at:
-https://youtu.be/D3yBovxkhGI
+**ver 6.2.0 -- 9nov17**
+
+* Added prebuilt executables for msWindows !!
+* Added working build scripts for msWindows !!
+* Corrected wrong linux SDL libraries in previous release!
+
+* Updated OSX to use SFML v2.4.2;
+* Added startup messages giving OGL version/profile;
+* Improved compile scripts;  removed unused libraries;
+
 
 **ver 6.1.4 -- 29jun17**
+
 * Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OSX with no changes.
 * Implemented a conformal texture map for rocks, coconuts;
-* Improved, realistic ocean opacity using a simplified Fresnel effect.
-* Note that AdaCore 2017 works on OS-X with no changes.
+* Improved ocean opacity using a simplified Fresnel effect.
 
 
 **ver 6.1.3 -- 15apr17**
@@ -34,22 +42,20 @@ https://youtu.be/D3yBovxkhGI
 
 
 ## AdaGate Game Description
-AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is a great example of modern OpenGL programming using the Ada language. 
+AdaGate is a 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is an example of modern OpenGL programming using the Ada language.  Now runs on Windows, OSX, and GNU/Linux.
 
-While searching a remote south-seas island for remnants of a lost American heroine, an operational stargate lures you into 4 strange dungeon rooms, with no obvious exit. Escape will require the logical rearrangement of weird power cells [ZPMs] that roll in only two directions. Shoot your portal guns at the dungeon walls to configure 2 escape portals, but in order to activate them, all of the ZPMs must be bumped onto their sockets. But beware: you can only PUSH the ZPMs, so you will fail if you roll one into a corner or against a wall. But dont worry, cheating is pretty easy ; )
+While searching a remote south-seas atoll for remnants of a lost American heroine, a nearly operational stargate beckons.  Transported into a strange dungeon, with no way out, return to the island will require a logical rearrangement of rollable power cells [ZPMs] onto their sockets. Blast your two portal guns at the walls to prepare an escape tunnel, but before you can use it, the system must be powered up. But alas: the ZPMs are heavy and you can only PUSH them...
 
-With 5 degrees of difficulty [DoD], there are 20 user-replaceable puzzles to solve. Escape all 4 dungeons to reach the neptune choir skybox and increment the DoD for your next challenge.
+Escape all 4 dungeons to reach the other-worldly neptune-choir, where the level of difficulty is increased for your next challenge.
 
-See a short video here:
-https://youtu.be/D3yBovxkhGI
 
 
 ## AdaGate Game Features
-* Works on PCs or laptops running OS-X or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
-* Both GNU/Linux and OS-X binaries provided, as well as full source. 
+* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can rebuild it yourself!  But first try the delivered binaries.
+* Windows, GNU/Linux and OSX binaries provided, as well as full source. 
 * Laptop friendly controls;  supports Mac Retina displays.
-* A first-person (you are the pusher) 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
-* New stargate dial-home-device [DHD] allows non-linear play; watch island setting evolve.
+* A 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
+* New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve.
 * Roll the cylindrical ZPMs to empower the portals and escape thru a wormhole
 * Four rooms and five degrees of difficulty for a total of 20 challenging puzzles. And now solutions are available in the file ./data/solns.sok.
 * Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330 and shaders.
@@ -74,10 +80,12 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 
 (esc)-key => exit;
 
-(m)-key => toggle between 1st person and 3rd person (avatar);
+* (m)-key or (F1)-key	=> toggle mouse-view (1st-person) or avatar(3rd-person)
+
+In case of [unforseen] problems with the game, please switch to 1st-person mode.
 
 
-### joystick
+### joystick (untested on Windows)
 * joystick : attitude
 * thumb btn: forward
 * trigger btn: backward
@@ -85,7 +93,7 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 * base btn: jump
 
 ------------------------------------------------------------
-### gamecontroller
+### gamecontroller (untested on Windows)
 * Lpaddle : attitude
 * Rpaddle : movement
 * Ltrigger/Rtrigger: select/shoot
@@ -93,7 +101,7 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 
 ------------------------------------------------------------
 ### controller settings
-If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the key-bindings or the floats that define the sensitivities.
+If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the button-bindings or the floats that define the sensitivity.
 
 ------------------------------------------------------------
 
@@ -105,35 +113,25 @@ If you ever get stuck, try to jump up + forward/back.
 
 ## required for running:
 
-* graphics card & driver that supports OpenGL version 3.3 or later;
-* GNU/Linux or a Mac running OS-X;
-* optional game controller or joystick.
-* OS-X:  must have OpenAL.framework, which comes on v10.4 and newer
+* graphics card with ample memory & updated driver that supports OpenGL version 3.3 or later.  
+* Windows, GNU/Linux or OSX;
+* optional game controller or joystick (untested on Windows).
+* OSX:  must have OpenAL.framework, which comes on v10.4 and newer
 
-
-## Open Source libraries included to allow rebuilding:
-* SFML, SDL2, FLAC, ogg, vorbis, jpeg, openal
-* the included "bindings" directory contains Ada interfaces:
-	* AdaPngLib
-	* gl
-	* sdlada
-
-## Rebuild Requirements:
-* systems:  OS-X or GNU/Linux
-* a recent GNAT-GPL Ada compiler from AdaLibre
-* Xcode g++ compiler, if using OS-X
-
-Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
+### Note on Intel embedded graphics
+* This hardware use system RAM;  8Gb is barely enough and the drivers I've experienced exhibit annoying flaws, although the game is still playable.
 
 
 ## Running adagate:
-Unzip the archive and you will see a new directory appear with a name like "bundle_date", that you should rename to something like "adagate_install_directory".  
+Unzip the archive, open a commandline terminal, and cd to the install directory.
 
-Linux users should then cd to adagate_install_directory, then type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
+Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
+
+Similarly, Windows users type "adagate.exe".  Note that the DLLs must be collocated with the Windows binary.
 
 Mac users may initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
 
-The adagate_install_directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
+The install directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
 
 An optional command line parameter of 1..5 will choose the Degree-of-Difficulty [DOD], but it is normally unnecessary since the DoD increments itself after each game.  If you succeed at DoD= 3 or 4 then you are ready to try WorldCupSokerban or RufaSok!
 
@@ -148,21 +146,42 @@ Developer or not, send comments, suggestions or questions to:
 
 <fastrgv@gmail.com>
 
+-------------------------------------------------------------------
+
+## Open Source libraries included to allow rebuilding:
+* SFML, SDL2, FLAC, ogg, vorbis, openal, glext, libz
+* the included "bindings" directory contains Ada interfaces:
+	* AdaPngLib
+	* gl
+	* sdlada
+
+## Rebuild Requirements:
+* systems:  Windows, OSX or GNU/Linux
+* a recent GNAT-GPL Ada compiler from AdaLibre
+* Xcode g++ compiler, if using OSX
+
+Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
+
 
 
 
 ## Build instructions for AdaGate:
 
-Two [pre-compiled] binary executables are delivered, one for gnu/linux and one for OS-X.  The Mac binary should run on most any standard Mac with a recent version of OS-X.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, freetype, jpeg, openal.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I don't know how portable the Windows executable is, but it was built on Windows 10 in 32-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, freetype, jpeg, openal.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
 
 Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
+**msWin32** => wcmp.bat
+
+build script that requires libraries included in ./libs/win/.
+
+-------------------------------------------------------
 **MacOSX** => ocmpss.sh or ocmps.sh
 
-build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
 **GNU/Linux** => lcmpss.sh or lcmpd.sh
@@ -175,9 +194,9 @@ If the delivered linux binary does not run, try...
 * Manually install GNAT GPL from libre.adacore.com/download/.
 * Rerun the compile script lcmpss.sh or lcmpd.sh.
 
-### Fixable Link Problems during linux build:
+### Fixable Linux Link Problems:
 
-On a linux build machine, you might have fixable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+On a linux build machine, you might get fixable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
@@ -185,7 +204,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 ### Final Note on Portability
 
-I am always interested in easy ways to make the distributed linux executables more portable, so I would appreciate hearing any suggestions.
+I am interested in making the distributed linux executables more portable, so I would appreciate hearing any suggestions.
 
 
 --------------------------
@@ -278,14 +297,19 @@ A 3rd party 11 minute video of AdaGate is here:
 Ominous Fireball (12mar17):
 <https://youtu.be/iJnz_u3tsnY>
 
+Duke goes for a swim (31oct17):
+<https://youtu.be/D3yBovxkhGI>
+
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 
 
 ## what is special about this project?
-Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on both GNU/Linux and Mac OS-X systems.  This project serves as a testbed for learning the complexities of modern OpenGL and GLSL.
+This project serves as a testbed for learning the complexities of modern OpenGL and GLSL.
 
-Focusing on portability and freedom, no coding specializations or compromises have been made to accomodate proprietary operating systems.  It relies on free open source software:  a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio by Laurent Gomila (because of its elegant audio interface).
+Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+
+Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
 If one defines "modern" OpenGL to mean version 3.3 or higher, then this may be the most functionally advanced demonstration of "modern" OpenGL using Ada to be found.  Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a fully functional example that focuses on learning OpenGL.  The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used as a standalone library for most any OpenGL project that uses Ada.
 
@@ -293,7 +317,7 @@ Thus, for the C++ programmer the code should be easy to comprehend; and for the 
 
 
 ## explanatory note on SFML versus SDL2 
-Using SFML rather than SDL2 for windows and event loop management was tried, but SFML does NOT currently allow the core and forward compatible settings that are required to use OpenGL v3.3 on OS-X.  This article:
+Using SFML rather than SDL2 for windows and event loop management was tried, but, except for audio, SFML does NOT currently allow the core and forward compatible settings that are required to use OpenGL v3.3 on OSX.  This article:
 [link](http://www.glfw.org/faq.html#how-do-i-create-an-opengl-30-context)
 explains that OSX only supports forward-compatible, core profiles.  Moreover, SFML [fttb] still uses some OGL-deprecated functions (which preclude forward-compatibility).  On the other hand SDL2 audio was not used because SFML audio seemed far more elegant.  
 
@@ -346,11 +370,11 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 
 **ver 6.0.6 -- 30nov16**
 
-* Improved linux build scripts.  Omitted one failed OS-X script.
+* Improved linux build scripts.  Omitted one failed OSX script.
 * Now uses an improved interface binding Ada to SFML audio.
 * Now using SFML 2.4.1.
 * Replaced the most graphically-demanding fragment shader in order to allow AdaGate to run on cheaper Intel embedded graphics chips, such as might be found on economical laptops and mini-desktop computers.
-* Updated OS-X bundling.
+* Updated OSX bundling.
 
 
 **ver 6.0.5 -- 6nov16**
@@ -391,7 +415,7 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 
 **ver 6.0.1 -- 7may16**
 
-* Updated OpenAL frameworks and static libraries that remove deprecation warning on OS-X.  These allow compilation scripts that deliver even more portable binaries for both OS-X and Gnu/Linux.
+* Updated OpenAL frameworks and static libraries that remove deprecation warning on OSX.  These allow compilation scripts that deliver even more portable binaries for both OSX and Gnu/Linux.
 * Small improvements/corrections in palm swaying motion and sounds.
 * Cleaned up scripts and libraries.
 
@@ -399,7 +423,7 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 **ver 6.0 -- 26apr16**
 
 * Updated audio to use SFML version 2.3.2.  A new advantage is that OGG format sound files can be used.  These are smaller and non-proprietary.
-* The OS-X build system for AdaGate now uses included Frameworks for common but not universal OGG/Vorbis libraries, and static SFML libs.
+* The OSX build system for AdaGate now uses included Frameworks for common but not universal OGG/Vorbis libraries, and static SFML libs.
 * Similarly updated the gnu-linux build system to facilitate using the new SFML static libraries and included shared libs for OGG/Vorbis.
 
 
@@ -414,7 +438,7 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 * Improved directory structure;
 * Reduced size of largest WAV files by trimming to 30 seconds;
 * Higher percent static libs used in gnu/linux compile script;
-* All nonstandard libraries are static in OS-X compile script.
+* All nonstandard libraries are static in OSX compile script.
 
 
 **ver 5.7 and 5.8**
@@ -464,9 +488,9 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 
 **ver 5.0 -- 31dec15**
 
-* removed splashing sound in prolog because it was problematic.  It prevented game controllers from working on OS-X.
-* disabled HDPI mode on the delivered OS-X binary.  Now AdaGate runs noticably smoother (with no jitter) and looks better.  Of course, you may enable it before you rebuild, if desired.
-* joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OS-X) for AdaGate:
+* removed splashing sound in prolog because it was problematic.  It prevented game controllers from working on OSX.
+* disabled HDPI mode on the delivered OSX binary.  Now AdaGate runs noticably smoother (with no jitter) and looks better.  Of course, you may enable it before you rebuild, if desired.
+* joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OSX) for AdaGate:
 	* joystick contols attitude; thumb button moves forward;  trigger button moves backward;  topleft or topright buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 	* gamecontroller:  left paddle controls attitude;  right paddle controls movement;  left or right trigger buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 
