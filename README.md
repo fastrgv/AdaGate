@@ -2,7 +2,7 @@
 
 
 # AdaGate
-AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Mac OS-X and GNU Linux.
+AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Windows, Mac OS-X and GNU Linux.
 
 Click on the most recent large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
