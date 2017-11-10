@@ -15,6 +15,10 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.0/ag9nov17.tar.gz
 
 **ver 6.2.0 -- 9nov17**
 
+* Added prebuilt executables for msWindows !!
+* Added working build scripts for msWindows !!
+* Corrected wrong linux SDL libraries in previous release!
+
 * Corrected wrong linux SDL libraries in previous release!
 * Updated OSX to use SFML v2.4.2;
 * Added startup messages giving OGL version/profile;
@@ -39,7 +43,7 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.0/ag9nov17.tar.gz
 
 
 ## AdaGate Game Description
-AdaGate is a 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is an example of modern OpenGL programming using the Ada language.  Now runs on OSX, and GNU/Linux.
+AdaGate is a 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is an example of modern OpenGL programming using the Ada language.  Now runs on Windows, OSX, and GNU/Linux.
 
 While searching a remote south-seas atoll for remnants of a lost American heroine, a nearly operational stargate beckons.  Transported into a strange dungeon, with no way out, return to the island will require a logical rearrangement of rollable power cells [ZPMs] onto their sockets. Blast your two portal guns at the walls to prepare an escape tunnel, but before you can use it, the system must be powered up. But alas: the ZPMs are heavy and you can only PUSH them...
 
