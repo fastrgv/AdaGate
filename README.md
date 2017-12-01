@@ -204,9 +204,37 @@ sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that represents your accelerated-graphic-driver.
 
-### Final Note on Portability
 
-I am interested in making the distributed linux executables more portable, so I would appreciate hearing any suggestions.
+----------------------------------------------------------------------
+### Avatars
+Several are available under the directory ~/data/avatars/.  Simply copy your preferred one into ~/data/ and rename to skin.png.  Also, many other MineCraft avatars can be used.
+
+
+--------------------------------------------------------------------
+## Developers Corner:  Portable Avatar Using Shaders
+
+* This approach encapsulates the details of avatar shape, color, and movement within GLSL shaders and a related code object that defines vertices and texture maps.  The object may be an Ada package or C++ class.
+
+* Programmatic inputs include uniforms for time, position, and attitude.  The shaders then offload the realtime computational burdens onto the graphics processor.
+
+* Data that defines shape and color, as well as the uniforms and functions that define behavior, reside completely within the object and shaders.  This data can ultimately be as detailed and refined as your imagination permits.  And any refinements made are not obfuscated in some esoteric or proprietary format with a limited audience, but remain fully portable and easily enhanced by most any developer using Free Open Source tools and compilers.
+
+* One approach would be to completely define the avatar within the shaders alone, possibly without using any texture files.  Just look at the creatures in (glslsandbox.com).  This would require advanced GLSL skills.
+
+* But a huge selection of available MineCraft skins lead to the present avatar object design.
+
+* In this example, the texture object is a cube with radius one that is defined in 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
+
+* The result is an utterly portable avatar defined by an image and 4 text files:
+	* texture object body, avatarobj.adb
+	* texture object spec, avatarobj.ads
+	* vertex shader, avatarobj.vs
+	* fragment shader, avatarobj.fs
+	* any MineCraft Skin png file
+
+* Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing.
+
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar.
 
 
 --------------------------
@@ -256,9 +284,6 @@ Several fragment shader files used were downloaded from http://glslsandbox.com/ 
 "Red Planet" from Mahmud Yuldashev <mahmud9935@gmail.com>, and "waterWorldCCNSA3.fs" with a CreativeCommons license, and which seems to be credited to Alexander Alekseev with mods by Mahmud Yuldashev.
 
 In order to make any of these usable, I had to modernize them to glsl version 330 specifications, and adapt them to utilize some additional uniforms for input.
-
-### Avatars
-Several are available under the directory ~/data/avatars/.  Simply copy your preferred one into ~/data/ and rename to skin.png.  Also, many other MineCraft avatars can be used.
 
 ### SkyBoxes 
 For some of these, I lowered the horizon slightly for technical reasons;  and for others I converted to png files.
