@@ -14,6 +14,8 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.0/ag18nov17.tar.gz
 
 ## Recent Changes
 
+Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
+
 **ver 6.2.0 -- 9nov17**
 
 * Added prebuilt executables for msWindows !!
