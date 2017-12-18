@@ -16,6 +16,13 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.0/ag18nov17.tar.gz
 
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
+**ver 6.2.3 -- 19dec17**
+
+* Updated to SDL v2.0.7 on Linux, Windows.
+* Updated to SDL v2.0.7x on OSX.
+* Added low hanging FOG to 2 of 5 beach prologs:
+	a)skyboxes; b)ocean; c)trees; d)sand; e)rocks.
+
 **ver 6.2.0 -- 9nov17**
 
 * Added prebuilt executables for msWindows !!
@@ -46,11 +53,11 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 
 ## AdaGate Game Description
-AdaGate is a 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is an example of modern OpenGL programming using the Ada language.  Now runs on Windows, OSX, and GNU/Linux.
+AdaGate is a 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.
 
-While searching a remote south-seas atoll for remnants of a lost American heroine, a nearly operational stargate beckons.  Transported into a strange dungeon, with no way out, return to the island will require a logical rearrangement of rollable power cells [ZPMs] onto their sockets. Blast your two portal guns at the walls to prepare an escape tunnel, but before you can use it, the system must be powered up. But alas: the ZPMs are heavy and you can only PUSH them...
+While searching a remote south-seas atoll for remnants of a lost American heroine, a nearly operational stargate beckons.  Transported into strange dungeons, escape will require pushing every ZPM power cell onto a socket to power up the portal system. Then, blast your two portal guns at the walls and escape through the resulting wormhole.
 
-Escape all 4 dungeons to reach the other-worldly neptune-choir, where the level of difficulty is increased for your next challenge.
+Escape all 4 dungeons to reach the other-worldly neptune-lake, where the level of difficulty is increased for your next adventure.
 
 
 
@@ -127,7 +134,13 @@ If you ever get stuck, try to jump up + forward/back.
 
 
 ## Running adagate:
-Unzip the archive, open a commandline terminal, and cd to the install directory.
+Windows users see also:  "windows-setup.txt"
+
+Unzip the archive.
+
+Windows users may see some error messages pertaining to directory links.  These can be ignored.
+
+Open a commandline terminal, and cd to the install directory.
 
 Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
 
