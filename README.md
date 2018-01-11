@@ -10,11 +10,18 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.3/ag19dec17.tar.gz
 
 
 
-# AdaGate -- v 6.2.0
+# AdaGate -- v 6.2.4
 
 ## Recent Changes
 
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
+
+**ver 6.2.4 -- 11jan18**
+
+* improved dungeon fog shader coding and realism.
+* improved green mamba, lava turtle & avatar;
+* improved lighting in magma room; magma ball now emits diffuse light;
+
 
 **ver 6.2.3 -- 19dec17**
 
@@ -347,15 +354,21 @@ Duke goes for a swim (31oct17):
 
 
 ## what is special about this project?
-This project serves as a testbed for learning the complexities of modern OpenGL and GLSL.
+This project serves as a testbed for learning modern OpenGL and GLSL.
 
-Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+Uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio, GNAT compiler.
 
-If one defines "modern" OpenGL to mean version 3.3 or higher, then this may be the most functionally advanced demonstration of "modern" OpenGL using Ada to be found.  Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a fully functional example that focuses on learning OpenGL.  The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used as a standalone library for most any OpenGL project that uses Ada.
+This is one of the most functionally advanced demonstrations of "modern" OpenGL using Ada to be published as a complete F.O.S.S. application.  By "functionally advanced", it is meant that the code is focused on comprehensibility and completeness rather than elegance.  Further development of structure and style is left as an exercise for the coding student.
 
-Thus, for the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  Suggestions are welcomed, as are coding or design improvements.  Just send to <fastrgv@gmail.com>.
+Written in C++ style, the code neglects many of Ada's great features. The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
+
+For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  
+
+This is a work in progress, so please excuse scaffolding and debugging code has not been removed.
+
+If you make improvements, please send then to <fastrgv@gmail.com>
 
 
 ## explanatory note on SFML versus SDL2 
