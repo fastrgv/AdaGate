@@ -10,11 +10,18 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.4/ag12jan18.tar.gz
 
 
 
-# AdaGate -- v 6.2.4
+# AdaGate -- v 6.2.5
 
 ## Recent Changes
 
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
+
+**ver 6.2.5 -- 16jan18**
+
+* improved avatar control;
+* much improved camera handling;
+* corrected geometry for third-person shooting within portal;
+
 
 **ver 6.2.4 -- 11jan18**
 
