@@ -10,11 +10,21 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.5/ag16jan18.tar.gz
 
 
 
-# AdaGate -- v 6.2.5
+# AdaGate
 
 ## Recent Changes
 
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
+
+
+**ver 6.2.6 -- 22jan18**
+
+* Improvement of the virtual camera system, which remains a relatively smart "tracking" type.  It now allows better views of the sokoban puzzle areas and the stargate Dial-Home-Device.  It has better backward movement and reduced jitter.
+* Added mousewheel adjustability of camera zoom.
+* Corrected third-person optics in ocean.
+* Improved island movement over sand hills and around trees & rocks.
+* Corrected vertical angle for third-person shooting within portal.
+
 
 **ver 6.2.5 -- 16jan18**
 
@@ -93,6 +103,7 @@ Escape all 4 dungeons to reach the other-worldly neptune-lake, where the level o
 [You might need to disconnect unused gamecontrollers to prevent spinning!]
 
 Look direction is controlled by touch pad or mouse;
+The mouse wheel controls camera zoom.  (On a MacBook, use a 2-finger swipe)
 
 Movement is controlled by the WASD keys or the arrow keys:
 
