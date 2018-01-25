@@ -17,7 +17,7 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.6/ag22jan18.tar.gz
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 
-**ver 6.2.6 -- 22jan18**
+**ver 6.2.7 -- 25jan18**
 
 * Improvement of the virtual camera system, which remains a relatively smart "tracking" type.  It now allows better views of the sokoban puzzle areas and the stargate Dial-Home-Device.  It has better backward movement and reduced jitter.
 * Added mousewheel adjustability of camera zoom.
