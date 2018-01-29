@@ -21,7 +21,7 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 **ver 6.2.8 -- 27jan18**
 
-* Improvement of the virtual camera system, which remains a relatively smart "tracking" type.  It now allows better views of the sokoban puzzle areas and the stargate Dial-Home-Device.  It has better backward movement and reduced jitter.
+* Upgraded Virtual Camera System, which remains a relatively smart "tracking" type.  It now allows better views of the sokoban puzzle areas and the stargate Dial-Home-Device.  It has better backward movement and reduced jitter.
 * Added mousewheel adjustability of camera zoom.
 * Corrected third-person optics in ocean.
 * Improved island movement over sand hills and around trees & rocks.
