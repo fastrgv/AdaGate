@@ -14,6 +14,8 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.7/ag28jan18.tar.gz
 
 ## Recent Changes
 
+Video:  https://youtu.be/qgY8vF-bb8A
+
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 
