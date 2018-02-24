@@ -18,6 +18,10 @@ Video:  https://youtu.be/qgY8vF-bb8A
 
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
+**ver 6.2.9 -- 24feb18**
+
+* Added spinning Jupiter, Mars in beach sky.
+* Improved avatarobj.ad? to support hats, etc.
 
 **ver 6.2.8 -- 27jan18**
 
