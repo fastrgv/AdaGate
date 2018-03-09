@@ -10,82 +10,38 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.2.9/ag24feb18.tar.gz
 
 
 
-# AdaGate
 
-## Recent Changes
 
 Video:  https://youtu.be/qgY8vF-bb8A
 
 Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
+
+# AdaGate
+
+## Recent Changes
+
+
+**ver 6.3.0 -- 10mar18**
+
+* Planets visible from beach are now properly initialized to correct erroneous positions;
+* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture PNG images are un-inverted.
+
+
 **ver 6.2.9 -- 24feb18**
 
 * Added spinning Jupiter, Mars in beach sky.
 * Improved avatarobj.ad? to support hats, etc.
-
-**ver 6.2.8 -- 27jan18**
-
-* Upgraded Virtual Camera System, which remains a relatively smart "tracking" type.  It now allows better views of the sokoban puzzle areas and the stargate Dial-Home-Device.  It has better backward movement and reduced jitter.
-* Added mousewheel adjustability of camera zoom.
-* Corrected third-person optics in ocean.
-* Improved island movement over sand hills and around trees & rocks.
-* Corrected vertical angle for third-person shooting within portal.
-
-
-**ver 6.2.5 -- 16jan18**
-
-* improved avatar control;
-* much improved camera handling;
-* corrected geometry for third-person shooting within portal;
-
-
-**ver 6.2.4 -- 11jan18**
-
-* improved dungeon fog shader coding and realism.
-* improved green mamba, lava turtle & avatar;
-* improved lighting in magma room; magma ball now emits diffuse light;
-
-
-**ver 6.2.3 -- 19dec17**
-
-* Updated to SDL v2.0.7 on Linux, Windows.
-* Updated to SDL v2.0.7x on OSX.
-* Added low hanging FOG to 2 of 5 beach prologs:
-	a)skyboxes; b)ocean; c)trees; d)sand; e)rocks.
-
-**ver 6.2.0 -- 9nov17**
-
-* Added prebuilt executables for msWindows !!
-* Added working build scripts for msWindows !!
-* Corrected wrong linux SDL libraries in previous release!
-
-* Corrected wrong linux SDL libraries in previous release!
-* Updated OSX to use SFML v2.4.2;
-* Added startup messages giving OGL version/profile;
-* Improved compile scripts;  removed unused libraries;
-
-
-**ver 6.1.4 -- 29jun17**
-
-* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
-* Note that AdaCore 2017 works on OSX with no changes.
-* Implemented a conformal texture map for rocks, coconuts;
-* Improved ocean opacity using a simplified Fresnel effect.
-
-
-**ver 6.1.3 -- 15apr17**
-
-* Improved avatar movement in water;  added treadwater motion;
-* Corrected errors in portal drawing geometry when in third person mode;
+* Added a link from ~/Resources/ to /data/.
 
 
 ## More change-history at end of file.
 
 
 ## AdaGate Game Description
-AdaGate is a 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.
+AdaGate is a 3D sokoban puzzle game within a Stargate / Portal fantasy setting. It is a fully elaborated example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.
 
-While searching a remote south-seas atoll for remnants of a lost American heroine, a nearly operational stargate beckons.  Transported into strange dungeons, escape will require pushing every ZPM power cell onto a socket to power up the portal system. Then, blast your two portal guns at the walls and escape through the resulting wormhole.
+While searching a remote south-seas atoll for remnants of a lost American heroine, a nearly operational stargate beckons.  Transported into strange dungeons, escape will require pushing every ZPM power cell onto a socket to power up the portal system. Then, blast your two portal guns at the walls to escape through the resulting wormhole.
 
 Escape all 4 dungeons to reach the other-worldly neptune-lake, where the level of difficulty is increased for your next adventure.
 
@@ -97,10 +53,11 @@ Escape all 4 dungeons to reach the other-worldly neptune-lake, where the level o
 * Laptop friendly controls;  supports Mac Retina displays.
 * A 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
 * New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve.
-* Roll the cylindrical ZPMs to empower the portals and escape thru a wormhole
+* Roll the ZPMs to empower the portals and escape thru a wormhole
 * Four rooms and five degrees of difficulty for a total of 20 challenging puzzles. And now solutions are available in the file ./data/solns.sok.
-* Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330 and shaders.
-* Note that the Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada project.
+* Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and textures.
+* Note that Sangwine's PNG-IO library, and the Ada bindings to SFML, OpenGL & SDL2 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
+
 
 
 
@@ -109,11 +66,11 @@ Escape all 4 dungeons to reach the other-worldly neptune-lake, where the level o
 [You might need to disconnect unused gamecontrollers to prevent spinning!]
 
 Look direction is controlled by touch pad or mouse;
-The mouse wheel controls camera zoom.  (On a MacBook, use a 2-finger swipe)
+The mouse wheel controls camera zoom.  (On a MacBook, a 2-finger swipe simulates the mouse wheel.)
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-		(Up)
+			(Up)
 	(Lt)	(Dn)	(Rt)
 
 Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.  Note that (FTTB) two portals on the same wall are disallowed.
@@ -124,10 +81,10 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 
 * (m)-key or (F1)-key	=> toggle mouse-view (1st-person) or avatar(3rd-person)
 
-In case of [unforseen] problems with the game, please switch to 1st-person mode.
+In case of control problems with the game, or if you want to easily inspect something, temporarily switch to 1st-person mode.
 
 
-### joystick (untested on Windows)
+### joystick
 * joystick : attitude
 * thumb btn: forward
 * trigger btn: backward
@@ -135,7 +92,7 @@ In case of [unforseen] problems with the game, please switch to 1st-person mode.
 * base btn: jump
 
 ------------------------------------------------------------
-### gamecontroller (untested on Windows)
+### gamecontroller
 * Lpaddle : attitude
 * Rpaddle : movement
 * Ltrigger/Rtrigger: select/shoot
@@ -147,7 +104,7 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 
 ------------------------------------------------------------
 
-If you ever get stuck, try to jump up + forward/back.
+If you ever get stuck, try to jump up + forward or back.
 
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -157,19 +114,21 @@ If you ever get stuck, try to jump up + forward/back.
 
 * graphics card with ample memory & updated driver that supports OpenGL version 3.3 or later.  
 * Windows, GNU/Linux or OSX;
-* optional game controller or joystick (untested on Windows).
+* optional game controller or joystick.
 * OSX:  must have OpenAL.framework, which comes on v10.4 and newer
 
+
 ### Note on Intel embedded graphics
-* This hardware use system RAM;  8Gb is barely enough and the drivers I've experienced exhibit annoying flaws, although the game is still playable.
+* Such hardware use system RAM;  8Gb is enough to run but the drivers I've experienced exhibit annoying flaws, although the game is still playable.
 
 
-## Running adagate:
+## Setup & Running Adagate:
+
 Windows users see also:  "windows-setup.txt"
 
 Unzip the archive.
 
-Windows users may see some error messages pertaining to directory links.  These can be ignored.
+Windows users may see some error messages pertaining to directory links.  These links are needed only on OSX and can be ignored.
 
 Open a commandline terminal, and cd to the install directory.
 
@@ -185,18 +144,18 @@ An optional command line parameter of 1..5 will choose the Degree-of-Difficulty 
 
 Tips:  1) the ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island.  2) when in trouble in a dungeon, jumping may help.
 
-By the way, you are ideally supposed to solve the sokoban puzzles without jumping back onto the walls.  If you do, it might be said that you cheated!  Conversely, if you jump into the puzzle at the wrong place, it might be impossible to solve.
+By the way, you are ideally supposed to solve the sokoban puzzles without jumping back onto the walls.  On the other hand, if you jump into the puzzle at the wrong place, it might be impossible to solve.
 
 --------------------------------------------------------------------------
 Open source Ada developers are welcome to help improve or extend this game.
 
-Developer or not, send comments, suggestions or questions to:
+Please send improvements, comments, suggestions or questions to:
 
 <fastrgv@gmail.com>
 
 -------------------------------------------------------------------
 
-## Open Source libraries included to allow rebuilding:
+## Open Source libraries included that allow rebuilding:
 * SFML, SDL2, FLAC, ogg, vorbis, openal, glext, libz
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
@@ -215,24 +174,24 @@ Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.a
 
 ## Build instructions for AdaGate:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I don't know how portable the Windows executable is, but it was built on Windows 10 in 32-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, freetype, jpeg, openal.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, crypto, openal.
 
-The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
+The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
 Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
-**msWin32** => wcmp.bat
+**msWin32** => wcmp.bat (assumes gnatmake.exe is "visible".
 
 build script that requires libraries included in ./libs/win/.
 
 -------------------------------------------------------
-**MacOSX** => ocmpss.sh or ocmps.sh
+**MacOSX** => ocmpss.sh
 
 build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmpss.sh or lcmpd.sh
+**GNU/Linux** => lcmpd.sh
 
 utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
@@ -240,7 +199,7 @@ utilizes the non-standard static libraries SDL2 & SFML, as well as other more co
 If the delivered linux binary does not run, try...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script lcmpss.sh or lcmpd.sh.
+* Rerun the compile script lcmpd.sh.
 
 ### Fixable Linux Link Problems:
 
@@ -251,17 +210,14 @@ sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that represents your accelerated-graphic-driver.
 
 
+
+
 ----------------------------------------------------------------------
-### Avatars
-Several are available under the directory ~/data/avatars/.  Simply copy your preferred one into ~/data/ and rename to skin.png.  Also, many other MineCraft avatars can be used.
-
-
---------------------------------------------------------------------
-## Developers Corner:  Portable Avatar Using Shaders
+## For Developers Only:  Portable Avatar Using Shaders
 
 * This approach encapsulates the details of avatar shape, color, and movement within GLSL shaders and a related code object that defines vertices and texture maps.  The object may be an Ada package or C++ class.
 
-* Programmatic inputs include uniforms for time, position, and attitude.  The shaders then offload the realtime computational burdens onto the graphics processor.
+* Programmatic inputs include uniforms for time, position, attitude, & type of motion.  The shaders then offload the realtime computational burdens onto the graphics processor.
 
 * Data that defines shape and color, as well as the uniforms and functions that define behavior, reside completely within the object and shaders.  This data can ultimately be as detailed and refined as your imagination permits.  And any refinements made are not obfuscated in some esoteric or proprietary format with a limited audience, but remain fully portable and easily enhanced by most any developer using Free Open Source tools and compilers.
 
@@ -269,7 +225,7 @@ Several are available under the directory ~/data/avatars/.  Simply copy your pre
 
 * But a huge selection of available MineCraft skins lead to the present avatar object design.
 
-* In this example, the texture object is a cube with radius one that is defined in 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
+* In this example, the texture object is a cube with radius one that is defined as 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
 
 * The result is an utterly portable avatar defined by an image and 4 text files:
 	* texture object body, avatarobj.adb
@@ -281,6 +237,39 @@ Several are available under the directory ~/data/avatars/.  Simply copy your pre
 * Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing.
 
 * Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar.
+
+
+
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+
+## what is special about this project?
+
+For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
+
+Uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, and a GNAT compiler.
+
+This is one of the most functionally advanced demonstrations of "modern" OpenGL using Ada to be published as a complete F.O.S.S. application.  By "functionally advanced", it is meant that the code is focused on comprehensibility and completeness rather than elegance.  Further development of structure and style is left as an exercise for the coding student.
+
+The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
+
+For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many obvious improvements to be made.  
+
+This is a work in progress, so please excuse scaffolding and debugging code has not been removed.
+
+If you make improvements, please send then to <fastrgv@gmail.com>
+
+
+## explanatory note on SFML versus SDL2 
+Using SFML rather than SDL2 for windows and event loop management was tried, but, except for audio, SFML does NOT currently allow the core and forward compatible settings that are required to use OpenGL v3.3 on OSX.  This article:
+[link](http://www.glfw.org/faq.html#how-do-i-create-an-opengl-30-context)
+explains that OSX only supports forward-compatible, core profiles.  Moreover, SFML [fttb] still uses some OGL-deprecated functions (which preclude forward-compatibility).  On the other hand SDL2 audio was not used because SFML audio seemed far more elegant.  
+
+
 
 
 --------------------------
@@ -331,6 +320,9 @@ Several fragment shader files used were downloaded from http://glslsandbox.com/ 
 
 In order to make any of these usable, I had to modernize them to glsl version 330 specifications, and adapt them to utilize some additional uniforms for input.
 
+### Avatars
+Several are available under the directory ~/data/avatars/.  Simply copy your preferred one into ~/data/ and rename to skin.png.  Also, many other MineCraft avatars can be used.
+
 ### SkyBoxes 
 For some of these, I lowered the horizon slightly for technical reasons;  and for others I converted to png files.
 
@@ -376,36 +368,91 @@ Duke goes for a swim (31oct17):
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 
-
-## what is special about this project?
-This project serves as a testbed for learning modern OpenGL and GLSL.
-
-Uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
-
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio, GNAT compiler.
-
-This is one of the most functionally advanced demonstrations of "modern" OpenGL using Ada to be published as a complete F.O.S.S. application.  By "functionally advanced", it is meant that the code is focused on comprehensibility and completeness rather than elegance.  Further development of structure and style is left as an exercise for the coding student.
-
-Written in C++ style, the code neglects many of Ada's great features. The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
-
-For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  
-
-This is a work in progress, so please excuse scaffolding and debugging code has not been removed.
-
-If you make improvements, please send then to <fastrgv@gmail.com>
-
-
-## explanatory note on SFML versus SDL2 
-Using SFML rather than SDL2 for windows and event loop management was tried, but, except for audio, SFML does NOT currently allow the core and forward compatible settings that are required to use OpenGL v3.3 on OSX.  This article:
-[link](http://www.glfw.org/faq.html#how-do-i-create-an-opengl-30-context)
-explains that OSX only supports forward-compatible, core profiles.  Moreover, SFML [fttb] still uses some OGL-deprecated functions (which preclude forward-compatibility).  On the other hand SDL2 audio was not used because SFML audio seemed far more elegant.  
-
-
-
-----------------------------------------------------------------
-----------------------------------------------------------------
-
 ## Older Change History:
+
+**ver 6.2.8 -- 28jan18**
+
+* Corrections to restore proper function in 1st person.
+* Sokoban view improvements.
+* Enhanced playability.
+
+
+**ver 6.2.7 -- 25jan18**
+
+* Further improvements in camera system and playability.
+
+
+**ver 6.2.6 -- 22jan18**
+
+* Improvement of the virtual camera system, which remains a relatively smart "tracking" type.  It now allows better views of the sokoban puzzle areas and the stargate Dial-Home-Device.  It has better backward movement and reduced jitter.
+* Added mousewheel adjustability of camera zoom.
+* Corrected third-person optics in ocean.
+* Improved island movement over sand hills and around trees & rocks.
+* Corrected vertical angle for third-person shooting within portal.
+
+
+
+**ver 6.2.5 -- 16jan18**
+
+* improved avatar control;
+* much improved camera handling;
+* corrected geometry for third-person shooting within portal;
+
+
+**ver 6.2.4 -- 11jan18**
+
+* improved dungeon fog shader coding and realism.
+* improved green mamba, lava turtle & avatar;
+* improved lighting in magma room; magma ball now emits diffuse light;
+
+
+**ver 6.2.3 -- 19dec17**
+
+* Updated to SDL v2.0.7 on Linux, Windows.
+* Updated to SDL v2.0.7x on OSX.
+* Added low hanging FOG to 2 of 5 beach prologs:
+	a)skyboxes; b)ocean; c)trees; d)sand; e)rocks.
+
+
+**ver 6.2.2 -- 18nov17**
+
+* Reverted back to SDL v2.0.3 due to problems with newer version.
+
+**ver 6.2.1 -- 17nov17**
+
+* Created new minimal Ada binding for SDL v2.0.7;
+* Updated scripts, libs to use SDL v2.0.7;
+* Modified & simplified ocean shaders to repair a fissure in the sea, that only appeared on certain hardware.
+* Fixed shooting thru portals when avatar is showing.
+* Made several adjustments to reduce jitter on modest graphical hardware and on Macs running HiDpi:
+	* Reduced ocean's grid resolution;
+	* Reduced level2 reflective pool grid;
+	* Changed level4 dark pool fragshader.
+
+
+**ver 6.2.0 -- 11nov17**
+
+* Added prebuilt executables for msWindows !!
+* Added working build scripts for msWindows !!
+* Corrected wrong linux SDL libraries in previous release!
+
+* Updated OSX to use SFML v2.4.2;
+* Added startup messages giving OGL version/profile;
+* Improved compile scripts;  removed unused libraries;
+
+
+**ver 6.1.4 -- 29jun17**
+
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OSX with no changes.
+* Implemented a conformal texture map for rocks, coconuts;
+* Improved ocean opacity using a simplified Fresnel effect.
+
+
+**ver 6.1.3 -- 15apr17**
+
+* Improved avatar movement in water;  added treadwater motion;
+* Corrected errors in portal drawing geometry when in third person mode;
 
 
 **ver 6.1.2 -- 31mar17** (0)
@@ -483,7 +530,7 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 
 * added lava shriek.
 * improved snd4ada.cpp
-* Added gnat project files for OSX and GNU-linux, for any developers who prefer them, as well as an unfinished and untested prototype for MSWin.  Any volunteer developers with an MSWindows platform that might be able to finish it are welcomed to try.  (I abandoned MSWin in 1999)
+* Added gnat project files for OSX and GNU-linux, for any developers who prefer them, as well as an unfinished prototype for MSWin.  Any volunteer developers with an MSWindows platform that might be able to finish it are welcomed to try.  (I abandoned MSWin in 1999)
 * A description of the 5 legacy compilation scripts follows:
 	* lcmp.sh : Linux, all shared libs
 	* lcmps.sh : Linux some static libs
@@ -572,5 +619,6 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 * joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OSX) for AdaGate:
 	* joystick contols attitude; thumb button moves forward;  trigger button moves backward;  topleft or topright buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 	* gamecontroller:  left paddle controls attitude;  right paddle controls movement;  left or right trigger buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
+
 
 
