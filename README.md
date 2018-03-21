@@ -23,6 +23,12 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 ## Recent Changes
 
 
+**ver 6.3.1 -- 22mar18**
+
+* Improved source code structure;  separated functions;  clarified utility names;
+* Fully generalized portal geometry code to handle all 6 walls.  Now, ceiling portals in brick room, and floor portals are allowed, albeit pointless, and possibly dangerous.  Portal-hell may require using the escape-key.
+
+
 **ver 6.3.0 -- 10mar18**
 
 * Planets visible from beach are now properly initialized to correct erroneous positions;
