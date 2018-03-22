@@ -80,7 +80,7 @@ Movement is controlled by the WASD keys or the arrow keys:
 			(Up)
 	(Lt)	(Dn)	(Rt)
 
-Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.  Note that (FTTB) two portals on the same wall are disallowed.
+Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.
 
 (space)-key => jump up/over short walls
 
