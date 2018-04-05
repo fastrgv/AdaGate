@@ -24,6 +24,14 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 ## Recent Changes
 
 
+**ver 6.3.2 -- 06apr18**
+
+* Added an awesome stargate kaWhoosh;
+* Better distinction between portals and stargates.
+* Added GPR scripts for those who prefer using gprbuild.
+* Improved logical simplicity of portal rotation code;
+
+
 **ver 6.3.1 -- 22mar18**
 
 * Improved source code structure;  separated functions;  clarified utility names;
