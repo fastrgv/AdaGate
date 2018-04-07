@@ -11,8 +11,7 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.3.2/ag6apr18.tar.gz
 
 
 
-
-kaWhoosh Video:  https://youtu.be/vSG_CXx48gg
+kawoosh video:  https://youtu.be/zzgbQu-fkos
 
 Video:  https://youtu.be/qgY8vF-bb8A
 
