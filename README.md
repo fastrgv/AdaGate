@@ -22,6 +22,15 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 ## Recent Changes
 
+**ver 6.3.3 -- 14apr18**
+
+* Corrected fog related shader errors;  made other fog improvements;
+* Improved kawoosh sound & visuals, yet reduced graphical burden;
+* Better clarified use of perlin noise to benefit developers;
+* No longer disable portals when dungeon-exit-stargate is active;
+* Improved accuracy of third-person shots within a portal;
+* Improved lavapool;
+
 
 **ver 6.3.2 -- 06apr18**
 
