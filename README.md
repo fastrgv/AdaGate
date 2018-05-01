@@ -22,6 +22,14 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 ## Recent Changes
 
+**ver 6.3.4 -- 01may18**
+
+* Great new trees:  New w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees, bamboo & grasses are the result.  Easy to use for indie developers.
+* Also added tree branch flutter using fragment shader.
+* More island grasses & nice fat palm.
+* Improved code layout, robustness and comprehensibility;
+
+
 **ver 6.3.3 -- 14apr18**
 
 * Corrected fog related shader errors;  made other fog improvements;
