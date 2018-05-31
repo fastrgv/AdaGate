@@ -23,49 +23,12 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 ## Recent Changes
 
-**ver 6.3.4 -- 01may18**
 
-* Great new trees:  New w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees, bamboo & grasses are the result.  Easy to use for indie developers.
-* Also added tree branch flutter using fragment shader.
-* More island grasses & nice fat palm.
-* Improved code layout, robustness and comprehensibility;
+**ver 6.3.5 -- 1jun18**
 
-
-**ver 6.3.3 -- 14apr18**
-
-* Corrected fog related shader errors;  made other fog improvements;
-* Improved kawoosh sound & visuals, yet reduced graphical burden;
-* Better clarified use of perlin noise to benefit developers;
-* No longer disable portals when dungeon-exit-stargate is active;
-* Improved accuracy of third-person shots within a portal;
-* Improved lavapool;
-
-
-**ver 6.3.2 -- 06apr18**
-
-* Added an awesome stargate kaWhoosh;
-* Better distinction between portals and stargates.
-* Added GPR scripts for those who prefer using gprbuild.
-* Improved logical simplicity of portal rotation code;
-
-
-**ver 6.3.1 -- 22mar18**
-
-* Improved source code structure;  separated functions;  clarified utility names;
-* Fully generalized portal geometry code to handle all 6 walls.  Now, ceiling portals in brick room, and floor portals are allowed, albeit pointless, and possibly dangerous.  Portal-hell may require using the escape-key.
-
-
-**ver 6.3.0 -- 10mar18**
-
-* Planets visible from beach are now properly initialized to correct erroneous positions;
-* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture PNG images are un-inverted.
-
-
-**ver 6.2.9 -- 24feb18**
-
-* Added spinning Jupiter, Mars in beach sky.
-* Improved avatarobj.ad? to support hats, etc.
-* Added a link from ~/Resources/ to /data/.
+* Added friendly chattering monkey [minecraft] on island;
+* Improved ocean look, annusurfobj code;
+* Improved tree branch flutter;
 
 
 ## More change-history at end of file.
@@ -157,6 +120,8 @@ If you ever get stuck, try to jump up + forward or back.
 
 ## Setup & Running Adagate:
 
+Please note that the application's root directory [./agate/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adagate.app/.
+
 Windows users see also:  "windows-setup.txt"
 
 Unzip the archive.
@@ -228,7 +193,6 @@ build script for generating a portable executable that will run on most OSX plat
 
 utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
-
 If the delivered linux binary does not run, try...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
@@ -242,6 +206,10 @@ sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that represents your accelerated-graphic-driver.
 
+
+---------------------------------------------------------
+**GPR note:**
+There is an alternative build system included for those who prefer, and know how to use GPR:  under ./buildScriptsGpr/ .  There are 3 high level shell scripts to drive each:  gnugpr.sh, osxgpr.sh, wingpr.bat.  (They must all be moved up 1 directory to work.)
 
 
 
@@ -292,7 +260,7 @@ The Ada bindings are thin, so the relationship to C++ methodology is transparent
 
 For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many obvious improvements to be made.  
 
-This is a work in progress, so please excuse scaffolding and debugging code has not been removed.
+This is a work in progress, so please excuse any scaffolding and debugging code has not been removed.
 
 If you make improvements, please send then to <fastrgv@gmail.com>
 
@@ -349,7 +317,7 @@ Most images for textures were freely [no copyright indications] available on goo
 ### ShaderFiles 
 Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see mit_license.txt).  Existing comments or any identifying information was retained.  What follows are acknowledgments for those that were identifyable.
 
-"Red Planet" from Mahmud Yuldashev <mahmud9935@gmail.com>, and "waterWorldCCNSA3.fs" with a CreativeCommons license, and which seems to be credited to Alexander Alekseev with mods by Mahmud Yuldashev.
+Volcano & "Red Planet" from Mahmud Yuldashev <mahmud9935@gmail.com>, and "waterWorldCCNSA3.fs" with a CreativeCommons license, and which seems to be credited to Alexander Alekseev with mods by Mahmud Yuldashev.
 
 In order to make any of these usable, I had to modernize them to glsl version 330 specifications, and adapt them to utilize some additional uniforms for input.
 
@@ -402,6 +370,53 @@ Duke goes for a swim (31oct17):
 ----------------------------------------------------------------
 
 ## Older Change History:
+
+
+**ver 6.3.4 -- 01may18**
+
+* Great new trees:  New w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees, bamboo & grasses are the result.  Easy to use for indie developers.
+* Also added tree branch flutter using fragment shader.
+* More island grasses & nice fat palm.
+* Improved code layout, robustness and comprehensibility;
+
+
+**ver 6.3.3 -- 14apr18**
+
+* Corrected fog related shader errors;  made other fog improvements;
+* Improved kawoosh sound & visuals, yet reduced graphical burden;
+* Better clarified use of perlin noise to benefit developers;
+* No longer disable portals when dungeon-exit-stargate is active;
+* Improved accuracy of third-person shots within a portal;
+* Improved lavapool;
+
+
+**ver 6.3.2 -- 06apr18**
+
+* Added an awesome stargate kaWhoosh;
+* Better distinction between portals and stargates.
+* Added GPR scripts for those who prefer using gprbuild.
+* Improved logical simplicity of portal rotation code;
+* Improved & simplified OSX build;
+
+
+**ver 6.3.1 -- 22mar18**
+
+* Improved source code structure;  separated functions;  clarified utility names;
+* Fully generalized portal geometry code to handle all 6 walls.  Now, ceiling portals in brick room, and floor portals are allowed, albeit pointless, and possibly dangerous.  Portal-hell may require using the escape-key.
+
+
+**ver 6.3.0 -- 10mar18**
+
+* Planets visible from beach are now properly initialized to correct erroneous positions;
+* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture PNG images are un-inverted.
+
+
+**ver 6.2.9 -- 24feb18**
+
+* Added spinning Jupiter, Mars in beach sky.
+* Improved avatarobj.ad? to support hats, etc.
+* Added a link from ~/Resources/ to /data/.
+
 
 **ver 6.2.8 -- 28jan18**
 
@@ -652,6 +667,3 @@ Duke goes for a swim (31oct17):
 * joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OSX) for AdaGate:
 	* joystick contols attitude; thumb button moves forward;  trigger button moves backward;  topleft or topright buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 	* gamecontroller:  left paddle controls attitude;  right paddle controls movement;  left or right trigger buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
-
-
-
