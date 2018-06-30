@@ -24,7 +24,16 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 ## Recent Changes
 
 
-**ver 6.3.5 -- 1jun18**
+**ver 6.3.6 -- 30jun18**
+
+* Added keepout avoidance to monkey;
+* Made corrections to code logic;
+* Upgraded to use AdaCore2018 compiler on linux, OSX;
+* Now default to mostly shared libs for smaller executable on linux;
+* Added 64 bit Windows build;
+
+
+**ver 6.3.5 -- 2jun18**
 
 * Added friendly chattering monkey [minecraft] on island;
 * Improved ocean look, annusurfobj code;
@@ -132,9 +141,10 @@ Open a commandline terminal, and cd to the install directory.
 
 Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
 
-Similarly, Windows users type "adagate.exe".  Note that the DLLs must be collocated with the Windows binary.
+Similarly, Mac users may initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
 
-Mac users may initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
+Windows users type either a) "binw32\adagate32.exe" or b) "binw64\adagate64.exe" from the install directory.
+
 
 The install directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
 
@@ -176,15 +186,17 @@ Three [pre-compiled] binary executables are delivered, one for Windows, one for 
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
-Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
+Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
-**msWin32** => wcmp.bat (assumes gnatmake.exe is "visible".
+**msWin32** => prep32path.bat, wcmp32a.bat, wcmp32b.bat
+**msWin64** => prep64path.bat, wcmp64a.bat, wcmp64b.bat
 
-build script that requires libraries included in ./libs/win/.
+Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
+
 
 -------------------------------------------------------
-**MacOSX** => ocmpss.sh
+**MacOSX** => ocmps.sh or ocmpd.sh or ocmpss17(AdaCore2017 or earlier)
 
 build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
@@ -252,7 +264,7 @@ For developers, this project can serve as a testbed for learning modern OpenGL a
 
 Uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, and a GNAT compiler.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
 
 This is one of the most functionally advanced demonstrations of "modern" OpenGL using Ada to be published as a complete F.O.S.S. application.  By "functionally advanced", it is meant that the code is focused on comprehensibility and completeness rather than elegance.  Further development of structure and style is left as an exercise for the coding student.
 
@@ -332,6 +344,9 @@ One source is (www.custommapmakers.org/skyboxes.php), which gathers together man
 Another skybox  [from  (http://www.redsorceress.com/skybox.html)]  is credited to "The Mighty Pete" at http://www.petesoasis.com (which seems defunct).
 
 At least 3 beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ccsa3_license.txt.
+
+
+
 
 ## Best Download Sites for AdaGate and my other games:
 
@@ -667,3 +682,5 @@ Duke goes for a swim (31oct17):
 * joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OSX) for AdaGate:
 	* joystick contols attitude; thumb button moves forward;  trigger button moves backward;  topleft or topright buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 	* gamecontroller:  left paddle controls attitude;  right paddle controls movement;  left or right trigger buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
+
+
