@@ -23,6 +23,11 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 ## Recent Changes
 
+**ver 6.3.7 -- 08jul18**
+
+* Kawhoosh transitioning to gray-metallic color;
+* Added local libz, libm shared libs for linux version to enhance portability;
+* Now properly handle DOS-formatted resume & settings text files in case they are changed by a text editor.
 
 **ver 6.3.6 -- 30jun18**
 
