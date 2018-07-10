@@ -23,27 +23,11 @@ Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 ## Recent Changes
 
-**ver 6.3.7 -- 08jul18**
 
-* Kawhoosh transitioning to gray-metallic color;
-* Added local libz, libm shared libs for linux version to enhance portability;
-* Now properly handle DOS-formatted resume & settings text files in case they are changed by a text editor.
+**ver 6.3.8 -- 11jul18**
 
-**ver 6.3.6 -- 30jun18**
-
-* Added keepout avoidance to monkey;
-* Made corrections to code logic;
-* Upgraded to use AdaCore2018 compiler on linux, OSX;
-* Now default to mostly shared libs for smaller executable on linux;
-* Added 64 bit Windows build;
-
-
-**ver 6.3.5 -- 2jun18**
-
-* Added friendly chattering monkey [minecraft] on island;
-* Improved ocean look, annusurfobj code;
-* Improved tree branch flutter;
-
+* Minor gameplay revisions include return to island via stargate.
+* Blue-gray kawhoosh now has finer detail.
 
 ## More change-history at end of file.
 
@@ -153,11 +137,11 @@ Windows users type either a) "binw32\adagate32.exe" or b) "binw64\adagate64.exe"
 
 The install directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
 
-An optional command line parameter of 1..5 will choose the Degree-of-Difficulty [DOD], but it is normally unnecessary since the DoD increments itself after each game.  If you succeed at DoD= 3 or 4 then you are ready to try WorldCupSokerban or RufaSok!
+An optional command line parameter of 1..5 will choose the Degree-of-Difficulty [DOD], but it is normally unnecessary since the DoD increments itself after each game.  If you succeed at DoD= 3 or 4 then you are ready to try WorldCupSokerban or RufasSok!
 
 Tips:  1) the ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island.  2) when in trouble in a dungeon, jumping may help.
 
-By the way, you are ideally supposed to solve the sokoban puzzles without jumping back onto the walls.  On the other hand, if you jump into the puzzle at the wrong place, it might be impossible to solve.
+By the way, you are ideally supposed to solve the sokoban puzzles without jumping up onto the walls.  On the other hand, if you jump into the puzzle at the wrong place, it might be impossible to solve.
 
 --------------------------------------------------------------------------
 Open source Ada developers are welcome to help improve or extend this game.
@@ -390,6 +374,28 @@ Duke goes for a swim (31oct17):
 ----------------------------------------------------------------
 
 ## Older Change History:
+
+**ver 6.3.7 -- 08jul18**
+
+* Kawhoosh transitioning to gray-metallic color;
+* Added local libz, libm shared libs for linux version to enhance portability;
+* Now properly handle DOS-formatted resume & settings text files in case they are changed by a text editor.
+
+**ver 6.3.6 -- 30jun18**
+
+* Added keepout avoidance to monkey;
+* Made corrections to code logic;
+* Upgraded to use AdaCore2018 compiler on linux, OSX;
+* Now default to mostly shared libs for smaller executable on linux;
+* Added 64 bit Windows build;
+* Updated AdaPngLib, AdaZLib;
+
+
+**ver 6.3.5 -- 2jun18**
+
+* Added friendly chattering monkey [minecraft] on island;
+* Improved ocean look, annusurfobj code;
+* Improved tree branch flutter;
 
 
 **ver 6.3.4 -- 01may18**
@@ -687,5 +693,6 @@ Duke goes for a swim (31oct17):
 * joysticks and gamecontrollers can now be used (without needing any special drivers in linux or OSX) for AdaGate:
 	* joystick contols attitude; thumb button moves forward;  trigger button moves backward;  topleft or topright buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
 	* gamecontroller:  left paddle controls attitude;  right paddle controls movement;  left or right trigger buttons select on DHD and shoot portal guns;  nearest base button initiates a jump.
+
 
 
