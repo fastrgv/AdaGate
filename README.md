@@ -12,11 +12,13 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.3.8/ag11jul18.tar.gz
 
 
 
-kawoosh video:  https://youtu.be/zzgbQu-fkos
+older kawoosh video:  https://youtu.be/zzgbQu-fkos
 
-Video:  https://youtu.be/qgY8vF-bb8A
+SokobanDuke Video:  https://youtu.be/qgY8vF-bb8A
 
-Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
+FireBall Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
+
+Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 
 # AdaGate
