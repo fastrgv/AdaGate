@@ -25,6 +25,11 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.3.9 -- 18jul18**
+
+* Fixed skybox problem not allowing progress beyond 1st level.
+* Fixed level 2 graphical error.
+* Added awesome rusty metallic island ZPM;
 
 **ver 6.3.8 -- 11jul18**
 
