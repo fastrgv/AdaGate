@@ -30,6 +30,8 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 * Fixed skybox problem not allowing progress beyond 1st level.
 * Fixed level 2 graphical error.
 * Added awesome rusty metallic island ZPM;
+* Improved look of foggy lagoon;
+* Added fog to metallic ZPM rendering;
 
 **ver 6.3.8 -- 11jul18**
 
