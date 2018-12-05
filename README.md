@@ -25,6 +25,15 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+
+**ver 6.4.2 -- 6dec18**
+
+* Improved sounds;  
+* Improved ocean, magma shaders;
+* Corrected minor errors;
+* Reduced size of resource files;
+
+
 **ver 6.4.1 -- 23aug18**
 
 * Updated win32 version to use sfml250 libs + DLLs;
@@ -34,18 +43,12 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 * Updated to sdl208 libraries, all 4 platforms;
 
 
-**ver 6.3.9 -- 18jul18**
+**ver 6.4.0 -- 28jul18**
 
-* Fixed skybox problem not allowing progress beyond 1st level.
-* Fixed level 2 graphical error.
-* Added awesome rusty metallic island ZPM;
 * Improved look of foggy lagoon;
 * Added fog to metallic ZPM rendering;
+* Linux version now too uses SFML v2.5.0;
 
-**ver 6.3.8 -- 11jul18**
-
-* Minor gameplay revisions include return to island via stargate.
-* Blue-gray kawhoosh now has finer detail.
 
 ## More change-history at end of file.
 
@@ -127,7 +130,6 @@ If you ever get stuck, try to jump up + forward or back.
 * graphics card with ample memory & updated driver that supports OpenGL version 3.3 or later.  
 * Windows, GNU/Linux or OSX;
 * optional game controller or joystick.
-* OSX:  must have OpenAL.framework, which comes on v10.4 and newer
 
 
 ### Note on Intel embedded graphics
@@ -197,6 +199,7 @@ Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent scri
 
 -------------------------------------------------------
 **msWin32** => prep32path.bat, wcmp32a.bat, wcmp32b.bat
+
 **msWin64** => prep64path.bat, wcmp64a.bat, wcmp64b.bat
 
 Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
@@ -299,7 +302,7 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 AdaGate itself is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2017  <fastrgv@gmail.com>
+ Copyright (C) 2018  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -392,6 +395,20 @@ Duke goes for a swim (31oct17):
 ----------------------------------------------------------------
 
 ## Older Change History:
+
+
+**ver 6.3.9 -- 18jul18**
+
+* Fixed skybox problem not allowing progress beyond 1st level.
+* Fixed level 2 graphical error.
+* Added awesome rusty metallic island ZPM;
+
+
+**ver 6.3.8 -- 11jul18**
+
+* Minor gameplay revisions include return to island via stargate.
+* Blue-gray kawhoosh now has finer detail.
+
 
 **ver 6.3.7 -- 08jul18**
 
@@ -496,5 +513,7 @@ Duke goes for a swim (31oct17):
 * improved dungeon fog shader coding and realism.
 * improved green mamba, lava turtle & avatar;
 * improved lighting in magma room; magma ball now emits diffuse light;
+
+
 
 
