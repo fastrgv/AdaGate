@@ -25,6 +25,11 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.4.3 -- 7dec18**
+
+* Improved linux compilation portability;
+* Now draw portal gun to cue players;
+
 
 **ver 6.4.2 -- 6dec18**
 
