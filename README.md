@@ -25,8 +25,9 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
-**ver 6.4.3 -- 7dec18**
-
+**ver 6.4.5 -- 10dec18**
+* Added avatar-camera zoom keys z,n,f [default,Nearer,Further];
+* Added help screen, activated with h-key;
 * Improved linux compilation portability;
 * Now draw portal gun to cue players;
 
