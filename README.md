@@ -2,7 +2,8 @@
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/adagate.jpg)
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/atollNight.jpg)
 
-Please read this:
+Where is the source code?  Read this:
+
 https://github.com/fastrgv/AdaGate/blob/master/sourceCode.txt
 
 
