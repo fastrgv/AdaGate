@@ -1,0 +1,19 @@
+Setup on Windows:
+
+If you have a previous installation of the game on your computer, 
+then delete it by typing something like:
+
+	RMDIR/S <game-installation-directory>
+
+from a command line terminal.
+
+This will save space on your computer's disk drive, and will 
+help to avoid confusion.
+
+Next, unzip the newest archive to any directory of your choosing.  
+If you do not already have an unzip utility, I recommend 
+downloading 7z [from www.7-zip.org].  It's free, and works nicely:
+1) 7z <file-name>.tar.gz [this unzips a tar file]
+2) 7z <file-name>.tar    [this creates a new install directory]
+3) cd <new-dir-name>
+
