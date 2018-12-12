@@ -2,6 +2,8 @@
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/adagate.jpg)
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/atollNight.jpg)
 
+https://github.com/fastrgv/AdaGate/blob/master/sourceCode.txt
+
 
 # AdaGate
 AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Windows, Mac OS-X and GNU Linux.
