@@ -15,6 +15,11 @@ Click on the most recent large tar.gz file under releases to download all source
 https://github.com/fastrgv/AdaGate/releases/download/v6.4.4/ag10dec18.tar.gz
 
 
+Or for Windows users, try this:
+
+https://github.com/fastrgv/AdaGate/releases/download/v6.4.4/agtar.zip
+
+
 
 older kawoosh video:  https://youtu.be/zzgbQu-fkos
 
