@@ -34,6 +34,12 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.4.5 -- 19dec18**
+
+* Reenabled & improved trackpad zoom on OSX;
+* Zoom key z (return to default) is now incremental, like n & f;
+* Portal gun now disabled when not needed.
+
 **ver 6.4.4 -- 10dec18**
 * Added avatar-camera zoom keys z,n,f [default,Nearer,Further];
 * Added help screen, activated with h-key;
@@ -96,7 +102,7 @@ Escape all 4 dungeons to reach the other-worldly neptune-lake, where the level o
 [You might need to disconnect unused gamecontrollers to prevent spinning!]
 
 Look direction is controlled by touch pad or mouse;
-The mouse wheel controls camera zoom.  (On a MacBook, a 2-finger swipe simulates the mouse wheel.)
+The mouse wheel controls camera zoom.  (On a MacBook, a 2-finger swipe simulates the mouse wheel.)  Zoom can also be controlled with keys n, f, z [Nearer,Further,default];
 
 Movement is controlled by the WASD keys or the arrow keys:
 
