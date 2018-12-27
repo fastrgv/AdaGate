@@ -1,0 +1,17 @@
+Where is the Ada source code?
+
+This repository exists for the convenience of gamers, not co-developers.  
+The tarball, *.gz or *.7z, contains all the source code, 
+as well as the runtime files for 3 platforms, headers, shaders, textures, 
+music, game files, compilation scripts, nonstandard external libraries, 
+and executables, including a Mac-bundle.  Source code can be found in
+the main directory and the ./adabindings & ./adautils sub-directories.
+
+=====================================================================
+Windows users, please read windows-setup.txt,
+Mac users, please read osx-setup.txt
+
+===================================================
+On linux you may use the file-manager to unpack.
+
+
