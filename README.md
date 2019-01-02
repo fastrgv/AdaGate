@@ -64,6 +64,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 ## AdaGate Game Features
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can rebuild it yourself!  But first try the delivered binaries.
 * Windows, GNU/Linux and OSX binaries provided, as well as full source. 
+* Note that both 32 and 64 bit builds for Windows are delivered.
 * Laptop friendly controls;  supports Mac Retina displays.
 * A 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
 * New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve.
