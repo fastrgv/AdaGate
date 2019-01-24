@@ -33,6 +33,11 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.4.7 -- 24jan19**
+
+* Improved ocean waves & foam;
+* Replaced tricky & obscure frag.shader-defined lava pool with a more comprehensible implementation using coherent noise, similar to the fireball;
+* Improved Stargate effects using an alternate spherical gridding & 3D Perlin coherent noise;
 
 **ver 6.4.6 -- 27dec18**
 
