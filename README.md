@@ -202,15 +202,15 @@ The distributed linux executable requires glibc v2.14 or newer.  That means if y
 Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
-**msWin32** => prep32path.bat, wcmp32a.bat, wcmp32b.bat
+**msWin32** => wcmp32a.bat, wcmp32b.bat
 
-**msWin64** => prep64path.bat, wcmp64a.bat, wcmp64b.bat
+**msWin64** => wcmp64a.bat, wcmp64b.bat
 
 Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
 
 
 -------------------------------------------------------
-**MacOSX** => ocmps.sh or ocmpd.sh or ocmpss17(AdaCore2017 or earlier)
+**MacOSX** => ocmps.sh
 
 build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
