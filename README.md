@@ -73,7 +73,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 * Laptop friendly controls;  supports Mac Retina displays.
 * A 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
 * New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve.
-* Roll the ZPMs to empower the portals and escape thru a wormhole
+* Roll the ZPM power cells to empower the portals and escape thru a wormhole
 * Four rooms and five degrees of difficulty for a total of 20 challenging puzzles. And now solutions are available in the file ./data/solns.sok.
 * Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and textures.
 * Note that Sangwine's PNG-IO library, and the Ada bindings to SFML, OpenGL & SDL2 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
@@ -90,7 +90,7 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-			(Up)
+		(Up)
 	(Lt)	(Dn)	(Rt)
 
 Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.
