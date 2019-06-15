@@ -33,6 +33,14 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.4.8 -- 15jun19**
+
+* Revised monkey motion is smarter and more realistic;  limited chatter.
+* Approach closer to stargates prior to wormhole effect.
+* Improved code organization by moving ada source code into subdirectories: src, adabindings, adautils.
+* Improved local wormhole passage.
+* Generalized avatar package to draw hats, turbans.  Now default to Indiana Jones.
+
 **ver 6.4.7 -- 24jan19**
 
 * Improved ocean waves & foam;
