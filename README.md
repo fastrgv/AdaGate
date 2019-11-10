@@ -19,7 +19,7 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.4.8/ag15jun19.7z
 
 
 
-older kawoosh video:  https://youtu.be/zzgbQu-fkos
+newest kawoosh video:  https://youtu.be/Wm-x_6W1fXI
 
 SokobanDuke Video:  https://youtu.be/qgY8vF-bb8A
 
