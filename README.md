@@ -33,6 +33,12 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.4.9 -- 19nov19**
+
+* Updated to use SDL2 v2.0.9;
+* Updated Ada binding to SDL2;
+* Fixed a broken level 5.
+
 **ver 6.4.8 -- 15jun19**
 
 * Revised monkey motion is smarter and more realistic;  limited chatter.
