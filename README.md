@@ -33,6 +33,11 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.5.0 -- 22nov19**
+
+* Updated/improved sounds & fragshaders in dungeons & wormhole.
+* Reduced graphical overburden that made level 3 unplayable on older hardware.
+
 **ver 6.4.9 -- 19nov19**
 
 * Updated to use SDL2 v2.0.9;
@@ -156,6 +161,8 @@ If you ever get stuck, try to jump up + forward or back.
 
 
 ## Setup & Running Adagate:
+
+First, note that your screen brightness might need to be reduced to fully appreciate the lighting effects in level 3.
 
 The application's main directory [./agate/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adagate.app/.
 
