@@ -33,6 +33,12 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.5.1 -- 24nov19**
+
+* Now using lightweight shaders that allow HighDpi on Mac/OSX.
+* New shaders also allow smooth running on an Intel NUC, with minimal graphics capability.
+* Using new, awesome lava shader & improved wormhole shader.
+
 **ver 6.5.0 -- 22nov19**
 
 * Updated/improved sounds & fragshaders in dungeons & wormhole.
