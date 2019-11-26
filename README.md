@@ -33,6 +33,10 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.5.2 -- 26nov19**
+
+* Repaired a library problem with GNU/Linux build that limited portability.
+
 **ver 6.5.1 -- 24nov19**
 
 * Now using lightweight shaders that allow HighDpi on Mac/OSX.
