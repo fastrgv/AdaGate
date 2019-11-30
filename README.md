@@ -33,6 +33,12 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.5.3 -- 31nov19**
+
+* Refined the measure that determines nearness to stargate event horizon, and triggers the wormhole traversal.
+* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
+
+
 **ver 6.5.2 -- 26nov19**
 
 * Repaired a library problem with GNU/Linux build that limited portability.
