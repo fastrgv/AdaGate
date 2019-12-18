@@ -33,6 +33,13 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 6.5.4 -- 17dec19**
+
+* Instead of delivering two distinct executables for each platform, a single commandline parameter of "1" now signals HighDpi is desired (if available).  Thus, an absent parameter will always minimize any graphical overload/jitter that may exist at HighDpi.
+* Completed storyline with fleeting stargates at dungeon entries.
+* Updated SDL2 to v2.0.10
+
+
 **ver 6.5.3 -- 31nov19**
 
 * Refined the measure that determines nearness to stargate event horizon, and triggers the wormhole traversal.
