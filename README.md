@@ -17,7 +17,7 @@ https://github.com/fastrgv/AdaGate/releases/download/v6.5.4/ag17dec19.7z
 
 
 Here is another newer GLFW3 version:
-
+https://github.com/fastrgv/AdaGate/releases/download/v.7.0.0/agglfw25dec19.7z
 
 
 
