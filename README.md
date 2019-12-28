@@ -20,6 +20,7 @@ Here is another newer GLFW3 version:
 https://github.com/fastrgv/AdaGate/releases/download/v.7.0.0/agg25dec19.7z
 
 
+=====================================================================================================
 
 
 newest kawoosh video:  https://youtu.be/Wm-x_6W1fXI
