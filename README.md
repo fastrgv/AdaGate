@@ -33,13 +33,35 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 
 
-# AdaGate
+# AdaGate GLFW version
 
 ## Recent Changes
 
+
+**ver 7.0.2 -- 07jan20**
+
+* Jumps were disabled, but have been fixed;
+* Fixed interior drawing order problem causing objects to disappear;
+* Improved windows build method;
+* FTTB, OSX binaries run only @ HighDpi due to issues with GLFW3;
+* Now delivering this GLFW version as the mainstream version;
+
+
+**ver 7.0.1 -- 25dec19**
+
+* Finalized code for basic joystick function.
+* Finalized code for joystick/gamepad jump function (when not on beach).
+
+
+**ver 7.0.0 -- 24dec19**
+
+* Converted Ada code to use GLFW, rather than SDL2;
+* Updated libraries, DLLs, Ada binding;
+* Limited gamepad functionality;
+
+
 **ver 6.5.4 -- 17dec19**
 
-* Instead of delivering two distinct executables for each platform, a single commandline parameter of "1" now signals HighDpi is desired (if available).  Thus, an absent parameter will always minimize any graphical overload/jitter that may exist at HighDpi.
 * Completed storyline with fleeting stargates at dungeon entries.
 * Updated SDL2 to v2.0.10
 
@@ -48,56 +70,6 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 * Refined the measure that determines nearness to stargate event horizon, and triggers the wormhole traversal.
 * Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
-
-
-**ver 6.5.2 -- 26nov19**
-
-* Repaired a library problem with GNU/Linux build that limited portability.
-
-**ver 6.5.1 -- 24nov19**
-
-* Now using lightweight shaders that allow HighDpi on Mac/OSX.
-* New shaders also allow smooth running on an Intel NUC, with minimal graphics capability.
-* Using new, awesome lava shader & improved wormhole shader.
-
-**ver 6.5.0 -- 22nov19**
-
-* Updated/improved sounds & fragshaders in dungeons & wormhole.
-* Reduced graphical overburden that made level 3 unplayable on older hardware.
-
-**ver 6.4.9 -- 19nov19**
-
-* Updated to use SDL2 v2.0.9;
-* Updated Ada binding to SDL2;
-* Fixed a broken level 5.
-
-**ver 6.4.8 -- 15jun19**
-
-* Revised monkey motion is smarter and more realistic;  limited chatter.
-* Approach closer to stargates prior to wormhole effect.
-* Improved code organization by moving ada source code into subdirectories: src, adabindings, adautils.
-* Improved local wormhole passage.
-* Generalized avatar package to draw hats, turbans.  Now default to Indiana Jones.
-
-**ver 6.4.7 -- 24jan19**
-
-* Improved ocean waves & foam;
-* Replaced tricky & obscure frag.shader-defined lava pool with a more comprehensible implementation using coherent noise, similar to the fireball;
-* Improved Stargate effects using an alternate spherical gridding & 3D Perlin coherent noise;
-
-**ver 6.4.6 -- 27dec18**
-
-* Changed partition to glass in 4th chamber;
-* Fixed dungeon logic error causing keyboard to be ignored whenever a gamepad or joystick was connected.
-* Improved default gamepad settings.
-* Now deliver 7z archives for better compression and simplicity of extraction.
-
-
-**ver 6.4.5 -- 19dec18**
-
-* Reenabled & improved trackpad zoom on OSX;
-* Zoom key z (return to default) is now incremental, like n & f;
-* Portal gun now disabled when not needed.
 
 
 ## More change-history at end of file.
@@ -136,7 +108,7 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-		(Up)
+			(Up)
 	(Lt)	(Dn)	(Rt)
 
 Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.
@@ -152,17 +124,17 @@ In case of control problems with the game, or if you want to easily inspect some
 
 ### joystick
 * joystick : attitude
-* thumb btn: forward
+* center thumb btn: forward
 * trigger btn: backward
 * Ltop/Rtop btns: select/shoot
-* base btn: jump
+* 1st base btn: jump
 
 ------------------------------------------------------------
 ### gamecontroller
 * Lpaddle/Lhat : attitude
 * Rpaddle : movement
-* Ltrigger/Rtrigger: select/shoot
-* Dpad-down btn: jump
+* L/R Shoulder btns: select/shoot
+* 1st Dpad-down btn: jump
 
 ------------------------------------------------------------
 ### controller settings
@@ -189,8 +161,6 @@ If you ever get stuck, try to jump up + forward or back.
 
 ## Setup & Running Adagate:
 
-First, note that your screen brightness might need to be reduced to fully appreciate the lighting effects in level 3.
-
 The application's main directory [./agate/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adagate.app/.
 
 Windows users see also:  "windows-setup.txt"
@@ -198,7 +168,7 @@ Mac users see "osx-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
-Open a commandline terminal, and cd to the install directory.
+Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
 
 Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
 
@@ -214,6 +184,17 @@ An optional command line parameter of 1..5 will choose the Degree-of-Difficulty 
 Tips:  0) type "h" for the help screen.  1) the ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island.  2) when in trouble in a dungeon, jumping may help.
 
 By the way, you are ideally supposed to solve the sokoban puzzles without jumping up onto the walls.  On the other hand, if you jump into the puzzle at the wrong place, it might be impossible to solve.
+
+--------------------------------------------------------------------------
+Notes:
+
+First, note that your screen brightness might need to be reduced to fully appreciate the lighting effects in level 3.
+
+Second, note that AdaGate is geared toward a fairly capable graphics card.  If you have graphical glitches during a wormhole passage, and you have an Ada compiler you can fix that.  So if your graphics card is old and less-capable, you should edit "src/gameutils-setup_textures.adb" to use lightweight shaders.  Search for "tunshadid" (near the end of the file).  Uncomment the 3 that indicate "light" or "lightweight".  Of course you must then recompile.
+
+Third, note that this game runs fine on an Intel NUC with embedded Intel graphics, so the graphics demands are modest.
+
+Fourth, note that adjustable OpenGL settings should favor performance.
 
 --------------------------------------------------------------------------
 Open source Ada developers are welcome to help improve or extend this game.
@@ -354,7 +335,7 @@ explains that OSX only supports forward-compatible, core profiles.  Moreover, SF
 AdaGate itself is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2018  <fastrgv@gmail.com>
+ Copyright (C) 2020  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -383,17 +364,18 @@ Using "sox", most sounds have recently been converted to the [non-proprietary an
 
 "Among the Falls" [music for level 1], and others, are from (http://www.freesfx.co.uk).  See the file freeSFX_license.txt.
 
-My first choice for epilog music was Tim Larkin's Kadish-Gallery music from Uru, but as AdaGate is F.O.S.S. I could not redistribute that.  But I can still suggest using it, if you know how and can find it on you-tube.
+OpiumLoop is from "PartnersInRhyme": see signed authorization in ~/data/.
+
 
 ### ImageFiles 
 Most images for textures were freely [no copyright indications] available on google images.  Some wall textures used are from the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  One other thatched roof texture was used from http://www.mayang.com/textures.  See mayang_license.txt.  Others from pixabay.com have a CC0 license.  More recently, some are from http://all-free-download.com/free-photos/.
 
 ### ShaderFiles 
-Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see mit_license.txt).  Existing comments or any identifying information was retained.  What follows are acknowledgments for those that were identifyable.
+Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see mit_license.txt).  Existing comments or any identifying information was retained.  What follows are acknowledgments for some that were identifyable.
 
 Volcano & "Red Planet" from Mahmud Yuldashev <mahmud9935@gmail.com>, and "waterWorldCCNSA3.fs" with a CreativeCommons license, and which seems to be credited to Alexander Alekseev with mods by Mahmud Yuldashev.
 
-In order to make any of these usable, I had to modernize them to glsl version 330 specifications, and adapt them to utilize some additional uniforms for input.
+In order to make any of these usable, I had to modernize them to glsl version 330 specifications, and adapt some to utilize additional uniforms for input.
 
 ### Avatars
 Several are available under the directory ~/data/avatars/.  Simply copy your preferred one into ~/data/ and rename to skin.png.  Also, many other MineCraft avatars can be used.
@@ -448,158 +430,49 @@ Duke goes for a swim (31oct17):
 
 ## Older Change History:
 
-**ver 6.4.4 -- 10dec18**
 
-* Added avatar-camera zoom keys z,n,f [default,Nearer,Further];
-* Added help screen, activated with h-key;
+**ver 6.5.2 -- 26nov19**
 
-
-**ver 6.4.3 -- 7dec18**
-
-* Improved linux compilation portability;
-* Now draw portal gun to cue players;
+* Repaired a library problem with GNU/Linux build that limited portability.
+* Cleaned up several translucent png files.
 
 
-**ver 6.4.2 -- 6dec18**
+**ver 6.5.1 -- 24nov19**
 
-* Improved sounds;  
-* Improved ocean, magma shaders;
-* Corrected minor errors;
-* Reduced size of resource files;
-
-
-**ver 6.4.1 -- 23aug18**
-
-* Updated win32 version to use sfml250 libs + DLLs;
-* Improved coding & movement for avatar objects;
-* Improved treadwater motion;
-* Now using new autogenerated thin ada binding for SDL208;
-* Updated to sdl208 libraries, all 4 platforms;
+* Now using lightweight shaders that allow HighDpi on Mac/OSX.
+* New shaders also allow smooth running on an Intel NUC, with minimal graphics capability.
+* Using new, awesome lava shader & improved wormhole shader.
 
 
-**ver 6.4.0 -- 28jul18**
+**ver 6.5.0 -- 22nov19**
 
-* Improved look of foggy lagoon;
-* Added fog to metallic ZPM rendering;
-* Linux version now too uses SFML v2.5.0;
-
-
-**ver 6.3.9 -- 18jul18**
-
-* Fixed skybox problem not allowing progress beyond 1st level.
-* Fixed level 2 graphical error.
-* Added awesome rusty metallic island ZPM;
-
-
-**ver 6.3.8 -- 11jul18**
-
-* Minor gameplay revisions include return to island via stargate.
-* Blue-gray kawhoosh now has finer detail.
-
-
-**ver 6.3.7 -- 08jul18**
-
-* Kawhoosh transitioning to gray-metallic color;
-* Added local libz, libm shared libs for linux version to enhance portability;
-* Now properly handle DOS-formatted resume & settings text files in case they are changed by a text editor.
-
-**ver 6.3.6 -- 30jun18**
-
-* Added keepout avoidance to monkey;
-* Made corrections to code logic;
-* Upgraded to use AdaCore2018 compiler on linux, OSX;
-* Now default to mostly shared libs for smaller executable on linux;
-* Added 64 bit Windows build;
-* Updated AdaPngLib, AdaZLib;
-
-
-**ver 6.3.5 -- 2jun18**
-
-* Added friendly chattering monkey [minecraft] on island;
-* Improved ocean look, annusurfobj code;
-* Improved tree branch flutter;
-
-
-**ver 6.3.4 -- 01may18**
-
-* Great new trees:  New w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees, bamboo & grasses are the result.  Easy to use for indie developers.
-* Also added tree branch flutter using fragment shader.
-* More island grasses & nice fat palm.
-* Improved code layout, robustness and comprehensibility;
-
-
-**ver 6.3.3 -- 14apr18**
-
-* Corrected fog related shader errors;  made other fog improvements;
-* Improved kawoosh sound & visuals, yet reduced graphical burden;
-* Better clarified use of perlin noise to benefit developers;
-* No longer disable portals when dungeon-exit-stargate is active;
-* Improved accuracy of third-person shots within a portal;
-* Improved lavapool;
-
-
-**ver 6.3.2 -- 06apr18**
-
-* Added an awesome stargate kaWhoosh;
-* Better distinction between portals and stargates.
-* Added GPR scripts for those who prefer using gprbuild.
-* Improved logical simplicity of portal rotation code;
-* Improved & simplified OSX build;
-
-
-**ver 6.3.1 -- 22mar18**
-
-* Improved source code structure;  separated functions;  clarified utility names;
-* Fully generalized portal geometry code to handle all 6 walls.  Now, ceiling portals in brick room, and floor portals are allowed, albeit pointless, and possibly dangerous.  Portal-hell may require using the escape-key.
-
-
-**ver 6.3.0 -- 10mar18**
-
-* Planets visible from beach are now properly initialized to correct erroneous positions;
-* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture PNG images are un-inverted.
-
-
-**ver 6.2.9 -- 24feb18**
-
-* Added spinning Jupiter, Mars in beach sky.
-* Improved avatarobj.ad? to support hats, etc.
-* Added a link from ~/Resources/ to /data/.
-
-
-**ver 6.2.8 -- 28jan18**
-
-* Corrections to restore proper function in 1st person.
-* Sokoban view improvements.
-* Enhanced playability.
-
-
-**ver 6.2.7 -- 25jan18**
-
-* Further improvements in camera system and playability.
-
-
-**ver 6.2.6 -- 22jan18**
-
-* Improvement of the virtual camera system, which remains a relatively smart "tracking" type.  It now allows better views of the sokoban puzzle areas and the stargate Dial-Home-Device.  It has better backward movement and reduced jitter.
-* Added mousewheel adjustability of camera zoom.
-* Corrected third-person optics in ocean.
-* Improved island movement over sand hills and around trees & rocks.
-* Corrected vertical angle for third-person shooting within portal.
+* Updated/improved sounds & fragshaders in dungeons & wormhole.
+* Reduced graphical overburden that made level 3 unplayable on older hardware.
 
 
 
-**ver 6.2.5 -- 16jan18**
+**ver 6.4.9 -- 19nov19**
 
-* improved avatar control;
-* much improved camera handling;
-* corrected geometry for third-person shooting within portal;
+* Updated to use SDL2 v2.0.9;
+* Updated Ada binding to SDL2;
+* Fixed a broken level 5.
 
 
-**ver 6.2.4 -- 11jan18**
 
-* improved dungeon fog shader coding and realism.
-* improved green mamba, lava turtle & avatar;
-* improved lighting in magma room; magma ball now emits diffuse light;
+**ver 6.4.8 -- 15jun19**
+
+* Revised monkey motion is smarter and more realistic;  limited chatter.
+* Approach closer to stargates prior to wormhole effect.
+* Improved code organization by moving ada source code into subdirectories: src, adabindings, adautils.
+* Improved local wormhole passage.
+* Generalized avatar package to draw hats, turbans.  Now default to Indiana Jones.
+
+
+**ver 6.4.7 -- 24jan19**
+
+* Improved ocean waves & foam;
+* Replaced tricky & obscure frag.shader-defined lava pool with a more comprehensible implementation using coherent noise, similar to the fireball;
+* Improved Stargate effects using an alternate spherical gridding & 3D Perlin coherent noise;
 
 
 
