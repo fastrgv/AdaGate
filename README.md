@@ -10,14 +10,11 @@ https://github.com/fastrgv/AdaGate/blob/master/sourceCode.txt
 # AdaGate
 AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fantasy setting that runs on Windows, Mac OS-X and GNU Linux.
 
-Click on the most recent large 7z file under releases to download all source & binaries (both Mac & Linux), or try these links:
+Click on the most recent large 7z file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-This first one is the older [robust] SDL2 version:
-https://github.com/fastrgv/AdaGate/releases/download/v6.5.4/ag17dec19.7z
+https://github.com/fastrgv/AdaGate/releases/download/v7.0.2/ag7jan20.7z
 
 
-Here is another newer GLFW3 version:
-https://github.com/fastrgv/AdaGate/releases/download/v.7.0.0/agg25dec19.7z
 
 
 =====================================================================================================
