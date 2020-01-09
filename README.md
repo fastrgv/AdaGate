@@ -34,6 +34,18 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 7.0.3 -- 09jan20**
+
+* Improved handling of HiDpi on OSX;
+* Improved controlability of mouse slew @ HiDpi.
+* Added ~/data/settings.txt file to allow users to adjust:
+	* Forward/Backward Speed
+	* Slew Speed using:
+		* keyboard
+		* mouse
+		* gamepad
+		* joystick
+
 
 **ver 7.0.2 -- 07jan20**
 
