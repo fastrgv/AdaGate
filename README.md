@@ -34,6 +34,15 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 7.0.4 -- 12jan20**
+
+* Fixed ball of rolling magma.
+* Settings files now allow Dos-Format.
+* Updated to GLFW v3.3.1 (released 1jan2020).
+* Updated Ada binding to GLFW331, also.
+* Improved a few textures.
+* Possibly enhanced portability of linux version game.
+
 **ver 7.0.3 -- 09jan20**
 
 * Improved handling of HiDpi on OSX;
