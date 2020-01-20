@@ -34,6 +34,11 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 7.1.0 -- 20jan20**
+
+* Quantum improvement in linux portability by avoiding SFML libs.
+
+
 **ver 7.0.4 -- 12jan20**
 
 * Fixed ball of rolling magma.
