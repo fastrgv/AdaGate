@@ -34,65 +34,17 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+
+**ver 7.1.2 -- 23jan20**
+
+* Enhanced linux tasking code to protect critical sections, but occasional tasking errors might still occur.
+* Fixed linux stargate bubbling sound problem.  All linux sounds now restored.  OSX & Windows sound still uses proven & reliable SFML libs.
+
+
 **ver 7.1.0 -- 20jan20**
 
 * Quantum improvement in linux portability by avoiding SFML libs.
-
-
-**ver 7.0.4 -- 12jan20**
-
-* Fixed ball of rolling magma.
-* Settings files now allow Dos-Format.
-* Updated to GLFW v3.3.1 (released 1jan2020).
-* Updated Ada binding to GLFW331, also.
-* Improved a few textures.
-* Possibly enhanced portability of linux version game.
-
-**ver 7.0.3 -- 09jan20**
-
-* Improved handling of HiDpi on OSX;
-* Improved controlability of mouse slew @ HiDpi.
-* Added ~/data/settings.txt file to allow users to adjust:
-	* Forward/Backward Speed
-	* Slew Speed using:
-		* keyboard
-		* mouse
-		* gamepad
-		* joystick
-
-
-**ver 7.0.2 -- 07jan20**
-
-* Jumps were disabled, but have been fixed;
-* Fixed interior drawing order problem causing objects to disappear;
-* Improved windows build method;
-* FTTB, OSX binaries run only @ HighDpi due to issues with GLFW3;
-* Now delivering this GLFW version as the mainstream version;
-
-
-**ver 7.0.1 -- 25dec19**
-
-* Finalized code for basic joystick function.
-* Finalized code for joystick/gamepad jump function (when not on beach).
-
-
-**ver 7.0.0 -- 24dec19**
-
-* Converted Ada code to use GLFW, rather than SDL2;
-* Updated libraries, DLLs, Ada binding;
-* Limited gamepad functionality;
-
-
-**ver 6.5.4 -- 17dec19**
-
-* Completed storyline with fleeting stargates at dungeon entries.
-* Updated SDL2 to v2.0.10
-
-
-**ver 6.5.3 -- 31nov19**
-
-* Refined the measure that determines nearness to stargate event horizon, and triggers the wormhole traversal.
-* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
+* Linux sound uses Ada tasking to implement music loops.
 
 
 ## More change-history at end of file.
@@ -108,16 +60,16 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 
 ## AdaGate Game Features
-* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can rebuild it yourself!  But first try the delivered binaries.
-* Windows, GNU/Linux and OSX binaries provided, as well as full source. 
+* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
+* Full source is provided.
 * Note that both 32 and 64 bit builds for Windows are delivered.
 * Laptop friendly controls;  supports Mac Retina displays.
 * A 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
-* New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve.
+* New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve from sun to fog to evening to night.
 * Roll the ZPM power cells to empower the portals and escape thru a wormhole
-* Four rooms and five degrees of difficulty for a total of 20 challenging puzzles. And now solutions are available in the file ./data/solns.sok.
+* Four rooms and five degrees of difficulty for a total of 20 challenging puzzles. And solutions are available in the file ./data/solns.sok.
 * Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and textures.
-* Note that Sangwine's PNG-IO library, and the Ada bindings to SFML, OpenGL & SDL2 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
+* Note that Sangwine's PNG-IO library, and the Ada bindings to SFML, OpenGL & GLFW3 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
 
 
 
@@ -140,9 +92,9 @@ Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two 
 
 (esc)-key => exit;
 
-* (m)-key or (F1)-key	=> toggle mouse-view (1st-person) or avatar(3rd-person)
+* (m)-key or (F1)-key	=> toggle between mouse-view (1st-person) or avatar(3rd-person)
 
-In case of control problems with the game, or if you want to easily inspect something, temporarily switch to 1st-person mode.
+In case of control problems with the game, or if you want to easily inspect something, use 1st-person mode.
 
 
 ### joystick
@@ -161,7 +113,7 @@ In case of control problems with the game, or if you want to easily inspect some
 
 ------------------------------------------------------------
 ### controller settings
-If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the button-bindings or the floats that define the sensitivity.
+If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar.
 
 ------------------------------------------------------------
 
@@ -187,13 +139,13 @@ If you ever get stuck, try to jump up + forward or back.
 The application's main directory [./agate/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adagate.app/.
 
 Windows users see also:  "windows-setup.txt"
-Mac users see "osx-setup.txt".
+Mac users should read "osx-setup.txt", especially if you want to turn off HighDpi mode.
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
 
-Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
+Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.  Note that my new sound technique [Linux-only] sometimes aborts with a tasking error.  So, restarts might be required, until I perfect my algorithm.  This executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily. I believe this single linux executable will run on most distributions of linux. 
 
 Similarly, Mac users may initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
 
@@ -213,9 +165,9 @@ Notes:
 
 First, note that your screen brightness might need to be reduced to fully appreciate the lighting effects in level 3.
 
-Second, note that AdaGate is geared toward a fairly capable graphics card.  If you have graphical glitches during a wormhole passage, and you have an Ada compiler you can fix that.  So if your graphics card is old and less-capable, you should edit "src/gameutils-setup_textures.adb" to use lightweight shaders.  Search for "tunshadid" (near the end of the file).  Uncomment the 3 that indicate "light" or "lightweight".  Of course you must then recompile.
+Second, note that AdaGate is geared toward a fairly capable graphics card.
 
-Third, note that this game runs fine on an Intel NUC with embedded Intel graphics, so the graphics demands are modest.
+Third, note that this game runs with modest jitter on an Intel NUC with embedded Intel graphics, so the graphics demands are modest.
 
 Fourth, note that adjustable OpenGL settings should favor performance.
 
@@ -229,11 +181,11 @@ Please send improvements, comments, suggestions or questions to:
 -------------------------------------------------------------------
 
 ## Open Source libraries included that allow rebuilding:
-* SFML, SDL2, FLAC, ogg, vorbis, openal, glext, libz
+* SFML, GLFW3, FLAC, ogg, vorbis, openal, glext, libz
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
 	* gl
-	* sdlada
+	* glfwada
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
@@ -247,7 +199,7 @@ Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.a
 
 ## Build instructions for AdaGate:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, crypto, openal.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  GLFW3, SFML, FLAC, ogg, vorbis, crypto, openal.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
@@ -264,12 +216,12 @@ Note that the above windows built scripts might need to be adjusted to reference
 -------------------------------------------------------
 **MacOSX** => ocmps.sh
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
 **GNU/Linux** => lcmpd.sh
 
-utilizes the non-standard static libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+utilizes the non-standard static libraries GLFW & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 If the delivered linux binary does not run, try...
 
@@ -330,7 +282,7 @@ For developers, this project can serve as a testbed for learning modern OpenGL a
 
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
 
 This is one of the most functionally advanced demonstrations of "modern" OpenGL using Ada to be published as a complete F.O.S.S. application.  The term "functionally advanced" means that the code is focused on comprehensibility and completeness rather than elegance.  Further development of structure and style is left as an exercise for the coding student.
 
@@ -343,10 +295,10 @@ This is a work in progress, so please excuse any scaffolding and debugging code 
 If you make improvements, please send then to <fastrgv@gmail.com>
 
 
-## explanatory note on SFML versus SDL2 
-Using SFML rather than SDL2 for windows and event loop management was tried, but, except for audio, SFML does NOT currently allow the core and forward compatible settings that are required to use OpenGL v3.3 on OSX.  This article:
+## explanatory note on SFML
+Using SFML for windows and event loop management was tried, but, except for audio, SFML does NOT currently allow the core and forward compatible settings that are required to use OpenGL v3.3 on OSX.  This article:
 [link](http://www.glfw.org/faq.html#how-do-i-create-an-opengl-30-context)
-explains that OSX only supports forward-compatible, core profiles.  Moreover, SFML [fttb] still uses some OGL-deprecated functions (which preclude forward-compatibility).  On the other hand SDL2 audio was not used because SFML audio seemed far more elegant.  
+explains that OSX only supports forward-compatible, core profiles.  Moreover, SFML [fttb] still uses some OGL-deprecated functions (which preclude forward-compatibility). 
 
 
 
@@ -453,6 +405,61 @@ Duke goes for a swim (31oct17):
 
 ## Older Change History:
 
+**ver 7.0.4 -- 12jan20**
+
+* Fixed ball of rolling magma (after changeover to glfw).
+* Settings files now allow Dos-Format.
+* Updated to GLFW v3.3.1 (released 1jan2020).
+* Updated Ada binding to GLFW331, also.
+* Improved a few textures.
+
+
+**ver 7.0.3 -- 09jan20**
+
+* Improved handling of HiDpi on OSX;
+* Improved controlability of mouse slew @ HiDpi.
+* Added ~/data/settings.txt file to allow users to adjust:
+	* Forward/Backward Speed
+	* Slew Speed using:
+		* keyboard
+		* mouse
+		* gamepad
+		* joystick
+
+
+**ver 7.0.2 -- 07jan20**
+
+* Jumps were disabled, but have been fixed;
+* Fixed interior drawing order problem causing objects to disappear;
+* Improved windows build method;
+* FTTB, OSX binaries run only @ HighDpi due to issues with GLFW3.  Please read osx-setup.txt if this is an issue.
+* Now delivering this GLFW version as the mainstream version;
+
+
+**ver 7.0.1 -- 25dec19**
+
+* Finalized code for basic glfw-joystick function.
+* Finalized code for joystick/gamepad jump function (when not on beach).
+
+
+**ver 7.0.0 -- 24dec19**
+
+* Converted Ada code to use GLFW, rather than SDL2;
+* Updated libraries, DLLs, Ada binding;
+* Limited gamepad functionality;
+
+
+**ver 6.5.4 -- 17dec19**
+
+* Completed storyline with fleeting stargates at dungeon entries.
+
+
+**ver 6.5.3 -- 31nov19**
+
+* Refined the measure that determines nearness to stargate event horizon, and triggers the wormhole traversal.
+* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
+
+
 
 **ver 6.5.2 -- 26nov19**
 
@@ -471,31 +478,6 @@ Duke goes for a swim (31oct17):
 
 * Updated/improved sounds & fragshaders in dungeons & wormhole.
 * Reduced graphical overburden that made level 3 unplayable on older hardware.
-
-
-
-**ver 6.4.9 -- 19nov19**
-
-* Updated to use SDL2 v2.0.9;
-* Updated Ada binding to SDL2;
-* Fixed a broken level 5.
-
-
-
-**ver 6.4.8 -- 15jun19**
-
-* Revised monkey motion is smarter and more realistic;  limited chatter.
-* Approach closer to stargates prior to wormhole effect.
-* Improved code organization by moving ada source code into subdirectories: src, adabindings, adautils.
-* Improved local wormhole passage.
-* Generalized avatar package to draw hats, turbans.  Now default to Indiana Jones.
-
-
-**ver 6.4.7 -- 24jan19**
-
-* Improved ocean waves & foam;
-* Replaced tricky & obscure frag.shader-defined lava pool with a more comprehensible implementation using coherent noise, similar to the fireball;
-* Improved Stargate effects using an alternate spherical gridding & 3D Perlin coherent noise;
 
 
 
