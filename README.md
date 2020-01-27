@@ -12,7 +12,7 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large 7z file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v7.1.0/ag27jan20.7z
+https://github.com/fastrgv/AdaGate/releases/download/v7.1.3/ag27jan20.7z
 
 
 
@@ -33,6 +33,10 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 # AdaGate GLFW version
 
 ## Recent Changes
+
+**ver 7.1.3 -- 23jan20**
+
+* Fixed occasional task-related aborts (linux version).
 
 
 **ver 7.1.2 -- 23jan20**
