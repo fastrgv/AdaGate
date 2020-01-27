@@ -282,6 +282,8 @@ There is an alternative build system included for those who prefer, and know how
 
 ## what is special about this project?
 
+The linux-build of AdaGate is among very few modern OpenGL games where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons!  There is only one proviso:  "aplay" must be present.
+
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
