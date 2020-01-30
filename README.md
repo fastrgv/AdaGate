@@ -1,3 +1,4 @@
+![screenshot](https://github.com/fastrgv/AdaGate/blob/master/shortFB.gif)
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/palm.gif)
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/adagate.jpg)
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/atollNight.jpg)
