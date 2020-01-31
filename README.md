@@ -91,11 +91,13 @@ Movement is controlled by the WASD keys or the arrow keys:
 		(Up)
 	(Lt)	(Dn)	(Rt)
 
-Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.
 
-(space)-key => jump up/over short walls
 
-(esc)-key => exit;
+* (L)-key (R)-key, or (if you have two) the two mouse buttons => shoot 2 portal guns
+
+* (space)-key => jump up/over short walls
+
+* (esc)-key => exit;
 
 * (m)-key or (F1)-key	=> toggle between mouse-view (1st-person) or avatar(3rd-person)
 
