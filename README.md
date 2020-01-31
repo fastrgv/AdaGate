@@ -88,7 +88,7 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-			(Up)
+		(Up)
 	(Lt)	(Dn)	(Rt)
 
 Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.
