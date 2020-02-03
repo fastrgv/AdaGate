@@ -56,7 +56,7 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 
 ## AdaGate Game Description
-AdaGate is a strategy game with escape rooms in a Stargate/NarbacularDrop fantasy setting. It is a fully elaborated example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.
+AdaGate is a strategy game with escape rooms in a Stargate/NarbacularDrop fantasy setting. It is a fully elaborated example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.  The new linux binary now runs on many linux distros!
 
 While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the portal system by rolling alien power cells onto their sockets.  Simple, right?  Then use your portal gun to bypass obstacles through another dimension.
 
