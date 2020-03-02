@@ -75,7 +75,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 * Four rooms and five degrees of difficulty for a total of 20 challenging puzzles. And solutions are available in the file ./data/solns.sok.
 * Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and textures.
 * Note that Sangwine's PNG-IO library, and the Ada bindings to SFML, OpenGL & GLFW3 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
-
+* The new sound system for linux enables a build with surprising portability across various linux distros.
 
 
 
