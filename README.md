@@ -35,6 +35,13 @@ Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
 ## Recent Changes
 
+**ver 7.1.4 -- 29mar20**
+
+* Fixed erroneous-location error when returning to island.
+* Improved swim sounds, DHD position;
+* Fixed portal connection beam;
+* Improved linux sound code;
+
 **ver 7.1.3 -- 23jan20**
 
 * Fixed occasional task-related aborts (linux version).
