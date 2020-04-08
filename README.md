@@ -29,6 +29,8 @@ FireBall Video:  https://github.com/fastrgv/AdaGate/blob/master/fireball.flv
 
 Duke&ZPM Video:  https://youtu.be/rIen-9oAQ2I
 
+LavaPool Video: https://youtu.be/FnUv9EW4bZs 
+
 
 
 # AdaGate GLFW version
