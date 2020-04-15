@@ -37,6 +37,15 @@ LavaPool Video: https://youtu.be/FnUv9EW4bZs
 
 ## Recent Changes
 
+**ver 7.1.6 -- 15apr20**
+
+* Better loudness normalization of sound effects.
+* Includes code, scripts for alternate alsa-sound system linux build.
+* Improved reflective water pool waves.
+* Much improved lava pool wave motion & color.
+* Updated to glfw v3.3.2.
+
+
 **ver 7.1.4 -- 29mar20**
 
 * Fixed erroneous-location error when returning to island.
@@ -148,6 +157,10 @@ If you ever get stuck, try to jump up + forward or back.
 
 ### Note on Intel embedded graphics
 * Such hardware use system RAM;  8Gb is enough to run but the drivers I've experienced exhibit annoying flaws, although the game is still playable.
+
+
+### Note on RPM-based linux distros
+* There seems to be a glitch in the GLFW libraries whereby fullscreen apps run at less than the full height of the monitor.  This is present in v3.3.1 and v3.3.2.  I believe the games are still playable.
 
 
 ## Setup & Running Adagate:
