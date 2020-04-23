@@ -37,6 +37,10 @@ LavaPool Video: https://youtu.be/FnUv9EW4bZs
 
 ## Recent Changes
 
+**ver 7.1.7 -- 24apr20**
+
+* Temporarily resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within user's desktop border.
+
 **ver 7.1.6 -- 15apr20**
 
 * Better loudness normalization of sound effects.
