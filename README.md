@@ -37,7 +37,15 @@ LavaPool Video: https://youtu.be/FnUv9EW4bZs
 
 ## Recent Changes
 
-**ver 7.1.8 -- 29apr20**
+
+**ver 7.1.9 -- 25may20**
+
+* Ceiling portals now allowed in level 2 [as well as 3].
+* Floor portals allowed in any level.
+* Updated music in level 3.
+
+
+**ver 7.1.8 -- 30apr20**
 
 * Fixed/restored full-screen on all operating systems;
 
@@ -45,6 +53,7 @@ LavaPool Video: https://youtu.be/FnUv9EW4bZs
 **ver 7.1.7 -- 24apr20**
 
 * Temporarily resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within user's desktop border.
+
 
 **ver 7.1.6 -- 15apr20**
 
@@ -55,35 +64,11 @@ LavaPool Video: https://youtu.be/FnUv9EW4bZs
 * Updated to glfw v3.3.2.
 
 
-**ver 7.1.4 -- 29mar20**
-
-* Fixed erroneous-location error when returning to island.
-* Improved swim sounds, DHD position;
-* Fixed portal connection beam;
-* Improved linux sound code;
-
-**ver 7.1.3 -- 23jan20**
-
-* Fixed occasional task-related aborts (linux version).
-
-
-**ver 7.1.2 -- 23jan20**
-
-* Enhanced linux tasking code to protect critical sections, but occasional tasking errors might still occur.  I could use some help from any developers experienced at Ada tasking!
-* Fixed linux stargate bubbling sound problem.  All linux sounds now restored.  OSX & Windows sound still uses proven & reliable SFML libs.
-
-
-**ver 7.1.0 -- 20jan20**
-
-* Quantum improvement in linux portability by avoiding SFML libs.
-* Linux sound uses Ada tasking to implement music loops.
-
-
 ## More change-history at end of file.
 
 
 ## AdaGate Game Description
-AdaGate is a strategy game with escape rooms in a Stargate/NarbacularDrop fantasy setting. It is a fully elaborated example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.  The new linux binary now runs on many linux distros!
+AdaGate is a strategy game with escape rooms in a Stargate/NarbacularDrop fantasy setting. It is a fully elaborated example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.  And the new linux binary now runs on many linux distros!
 
 While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the portal system by rolling alien power cells onto their sockets.  Simple, right?  Then use your portal gun to bypass obstacles through another dimension.
 
@@ -92,16 +77,27 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 
 ## AdaGate Game Features
+
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
+
 * Full source is provided.
+
 * Note that both 32 and 64 bit builds for Windows are delivered.
+
 * Laptop friendly controls;  supports Mac Retina displays.
+
 * A 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
+
 * New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve from sun to fog to evening to night.
+
 * Roll the ZPM power cells to empower the portals and escape thru a wormhole
+
 * Four rooms and five degrees of difficulty for a total of 20 challenging puzzles. And solutions are available in the file ./data/solns.sok.
+
 * Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and textures.
+
 * Note that Sangwine's PNG-IO library, and the Ada bindings to SFML, OpenGL & GLFW3 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
+
 * The new sound system for linux enables a build with surprising portability across various linux distros.
 
 
@@ -115,16 +111,14 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-		(Up)
+			(Up)
 	(Lt)	(Dn)	(Rt)
 
+Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.
 
+(space)-key => jump up/over short walls
 
-* (L)-key (R)-key, or (if you have two) the two mouse buttons => shoot 2 portal guns
-
-* (space)-key => jump up/over short walls
-
-* (esc)-key => exit;
+(esc)-key => exit;
 
 * (m)-key or (F1)-key	=> toggle between mouse-view (1st-person) or avatar(3rd-person)
 
@@ -167,7 +161,6 @@ If you ever get stuck, try to jump up + forward or back.
 ### Note on Intel embedded graphics
 * Such hardware use system RAM;  8Gb is enough to run but the drivers I've experienced exhibit annoying flaws, although the game is still playable.
 
-
 ### Note on RPM-based linux distros
 * There seems to be a glitch in the GLFW libraries whereby fullscreen apps run at less than the full height of the monitor.  This is present in v3.3.1 and v3.3.2.  I believe the games are still playable.
 
@@ -183,7 +176,9 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
 
-Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager. This executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily. I believe this single linux executable will now run on most distributions of linux. 
+Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
+
+This linux executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily. I believe this single linux executable will run on most distributions of linux. 
 
 Similarly, Mac users may initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
 
@@ -205,7 +200,7 @@ First, note that your screen brightness might need to be reduced to fully apprec
 
 Second, note that AdaGate is geared toward a fairly capable graphics card.
 
-Third, note that this game runs with modest jitter on an Intel NUC with embedded Intel graphics, so the graphics demands are modest.
+Third, note that this game runs fine on an Intel NUC with embedded Intel graphics, so the graphics demands are modest.
 
 Fourth, note that adjustable OpenGL settings should favor performance.
 
@@ -232,6 +227,8 @@ Please send improvements, comments, suggestions or questions to:
 
 Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
 
+The audio system for the linux build, on the other hand, does not use SFML but its interface is identical.  It is portable but crude, since it needs an accurate duration value for any sound loops used.
+
 
 
 
@@ -257,9 +254,9 @@ Note that the above windows built scripts might need to be adjusted to reference
 build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmpd.sh
+**GNU/Linux** => lcmpd.sh ("aplay" sound), OR lcmpx.sh ("ALSA" sound)
 
-utilizes the non-standard static libraries GLFW, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+utilizes the shared GLFW libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 If the delivered linux binary does not run, try...
 
@@ -309,6 +306,20 @@ There is an alternative build system included for those who prefer, and know how
 
 
 
+----------------------------------------------------------------------
+## For Developers Only:  Fancy Shaders
+
+This app demonstrates how to use fancy fragment shaders from glslsandbox.com to make wormhole effects, starry skies, and moving-scene wall hangings. See below (Media Files).  It also demonstrates metallic texture overlays, and the use of coherent noise to create the stargate event horizon, and rolling fireball in the brick dungeon.
+
+
+----------------------------------------------------------------------
+## For Linux Developers Only:  Two working sound systems
+
+1) Original replacement for SFML audio on Linux to enhance portability across various linux distros. Ada code that uses tasking, and a ridiculously simple system shell to "aplay" for all sounds. Updated in march 2020 with improved, robust retrieval of musicLoop PIDs. Uses ada.real_time.
+
+2) A working alternate, linux-portable sound system that uses Ada tasking to make Alsa library calls directly from Ada via an ALSA-Binding. (recently having noise problems?)
+
+The functional performance of these two systems seems similar.
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
@@ -316,7 +327,7 @@ There is an alternative build system included for those who prefer, and know how
 
 ## what is special about this project?
 
-The linux-build of AdaGate is among very few modern OpenGL games where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons!  There is only one proviso:  "aplay" must be present.
+The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons!  There is only one proviso:  "aplay" must be present. It has been tested on OpenSuse, ScientificLinux, Mint and CentOS.
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
@@ -375,11 +386,13 @@ The particular choices of sound, image, and fragment shader files [x.fs] deliver
   Read puzzle_replacement.txt
 
 ### SoundFiles
-Using "sox", most sounds have recently been converted to the [non-proprietary and compact] OGG format.  Most sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file ccnc3_license.txt.  see also:  (http://creativecommons.org/licenses/by-nc/3.0/legalcode/)
+Using "sox", most sounds have recently been converted to the WAV format.  Most sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file ccnc3_license.txt.  see also:  (http://creativecommons.org/licenses/by-nc/3.0/legalcode/)
 
-"Among the Falls" [music for level 1], and others, are from (http://www.freesfx.co.uk).  See the file freeSFX_license.txt.
+See also: https://wiki.creativecommons.org/wiki/License%20Versions
 
-OpiumLoop is from "PartnersInRhyme": see signed authorization in ~/data/.
+"Among the Falls" [music for level 1], and others, are from (http://www.freesfx.co.uk).  See the file otherLicenses/freeSFX_license.txt.
+
+OpiumLoop is from "PartnersInRhyme": see signed authorization in ~/otherLicenses/
 
 
 ### ImageFiles 
@@ -445,6 +458,34 @@ Duke goes for a swim (31oct17):
 
 ## Older Change History:
 
+**ver 7.1.5 -- 31mar20**
+
+* Fixed potential linux soundLoop overruns due to wrong PID.
+
+**ver 7.1.4 -- 29mar20**
+
+* Fixed erroneous-location error when returning to island.
+* Improved swim sounds, DHD position;
+* Fixed portal connection beam;
+* Improved linux sound code;
+
+**ver 7.1.3 -- 23jan20**
+
+* Fixed occasional sound-task related aborts (linux version).
+
+**ver 7.1.2 -- 23jan20**
+
+* Enhanced linux tasking code to protect critical sections, but occasional tasking errors might still occur.
+* Fixed linux stargate bubbling sound problem.  All linux sounds now restored.  OSX & Windows sound still uses proven & reliable SFML libs.
+
+
+**ver 7.1.0 -- 20jan20**
+
+* Quantum improvement in linux portability by avoiding SFML libs.
+* Linux sound uses Ada tasking to implement music loops.
+
+
+
 **ver 7.0.4 -- 12jan20**
 
 * Fixed ball of rolling magma (after changeover to glfw).
@@ -489,35 +530,6 @@ Duke goes for a swim (31oct17):
 * Limited gamepad functionality;
 
 
-**ver 6.5.4 -- 17dec19**
-
-* Completed storyline with fleeting stargates at dungeon entries.
-
-
-**ver 6.5.3 -- 31nov19**
-
-* Refined the measure that determines nearness to stargate event horizon, and triggers the wormhole traversal.
-* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
-
-
-
-**ver 6.5.2 -- 26nov19**
-
-* Repaired a library problem with GNU/Linux build that limited portability.
-* Cleaned up several translucent png files.
-
-
-**ver 6.5.1 -- 24nov19**
-
-* Now using lightweight shaders that allow HighDpi on Mac/OSX.
-* New shaders also allow smooth running on an Intel NUC, with minimal graphics capability.
-* Using new, awesome lava shader & improved wormhole shader.
-
-
-**ver 6.5.0 -- 22nov19**
-
-* Updated/improved sounds & fragshaders in dungeons & wormhole.
-* Reduced graphical overburden that made level 3 unplayable on older hardware.
 
 
 
