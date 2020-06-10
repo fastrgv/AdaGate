@@ -161,8 +161,6 @@ If you ever get stuck, try to jump up + forward or back.
 ### Note on Intel embedded graphics
 * Such hardware use system RAM;  8Gb is enough to run but the drivers I've experienced exhibit annoying flaws, although the game is still playable.
 
-### Note on RPM-based linux distros
-* There seems to be a glitch in the GLFW libraries whereby fullscreen apps run at less than the full height of the monitor.  This is present in v3.3.1 and v3.3.2.  I believe the games are still playable.
 
 
 ## Setup & Running Adagate:
