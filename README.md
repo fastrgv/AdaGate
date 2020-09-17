@@ -39,26 +39,25 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 ## Recent Changes
 
+**ver 7.2.0 -- 18sep20**
+* Updated all glfw libs to v3.3.2.
+* Added Windows launcher adagate.bat.
 
 **ver 7.1.9 -- 25may20**
-
 * Ceiling portals now allowed in level 2 [as well as 3].
 * Floor portals allowed in any level.
 * Updated music in level 3.
 
 
 **ver 7.1.8 -- 30apr20**
-
 * Fixed/restored full-screen on all operating systems;
 
 
 **ver 7.1.7 -- 24apr20**
-
 * Temporarily resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within user's desktop border.
 
 
 **ver 7.1.6 -- 15apr20**
-
 * Better loudness normalization of sound effects.
 * Includes code, scripts for alternate alsa-sound system linux build.
 * Improved reflective water pool waves.
