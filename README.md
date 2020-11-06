@@ -35,41 +35,22 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 
-# AdaGate GLFW version
+# AdaGate GLFW/OpenAL version
 
 ## Recent Changes
 
-**ver 7.2.0 -- 18sep20**
-* Updated all glfw libs to v3.3.2.
-* Added Windows launcher adagate.bat.
 
-**ver 7.1.9 -- 25may20**
-* Ceiling portals now allowed in level 2 [as well as 3].
-* Floor portals allowed in any level.
-* Updated music in level 3.
-
-
-**ver 7.1.8 -- 30apr20**
-* Fixed/restored full-screen on all operating systems;
-
-
-**ver 7.1.7 -- 24apr20**
-* Temporarily resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within user's desktop border.
-
-
-**ver 7.1.6 -- 15apr20**
-* Better loudness normalization of sound effects.
-* Includes code, scripts for alternate alsa-sound system linux build.
-* Improved reflective water pool waves.
-* Much improved lava pool wave motion & color.
-* Updated to glfw v3.3.2.
-
+**ver 7.3.0 -- 07nov20**
+* Installed completely new cross-platform sound system using OpenAL.
+* Revised sounds for event horizon & lava pool, lava pool speedup.
 
 ## More change-history at end of file.
 
 
 ## AdaGate Game Description
-AdaGate is a strategy game with escape rooms in a Stargate/NarbacularDrop fantasy setting. It is a fully elaborated example of modern OpenGL programming using the Ada language that runs on Windows, OSX, and GNU/Linux.  And the new linux binary now runs on many linux distros!
+AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop.
+
+Runs on Windows, OSX, and GNU/Linux.  The linux binary now runs on many linux distros!
 
 While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the portal system by rolling alien power cells onto their sockets.  Simple, right?  Then use your portal gun to bypass obstacles through another dimension.
 
@@ -83,7 +64,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 * Full source is provided.
 
-* Note that both 32 and 64 bit builds for Windows are delivered.
+* Note that a 64 bit build for Windows is delivered.
 
 * Laptop friendly controls;  supports Mac Retina displays.
 
@@ -97,9 +78,9 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 * Serves as a blueprint for modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and textures.
 
-* Note that Sangwine's PNG-IO library, and the Ada bindings to SFML, OpenGL & GLFW3 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
+* Note that Sangwine's PNG-IO library, and the Ada bindings to OpenAL, OpenGL & GLFW3 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
 
-* The new sound system for linux enables a build with surprising portability across various linux distros.
+* The new sound system enables a build with surprising portability across various linux distros, as well as across various platforms.
 
 
 
@@ -160,8 +141,7 @@ If you ever get stuck, try to jump up + forward or back.
 
 
 ### Note on Intel embedded graphics
-* Such hardware use system RAM;  8Gb is enough to run but the drivers I've experienced exhibit annoying flaws, although the game is still playable.
-
+* Such hardware uses system RAM;  8Gb is enough to run but the drivers I've experienced exhibit annoying flaws, although the game is still playable.
 
 
 ## Setup & Running Adagate:
@@ -169,24 +149,28 @@ If you ever get stuck, try to jump up + forward or back.
 The application's main directory [./agate/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adagate.app/.
 
 Windows users see also:  "windows-setup.txt"
-Mac users should read "osx-setup.txt", especially if you want to turn off HighDpi mode.
+Mac users should read "osx-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
-Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
+The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
-Linux users should type "adagate_gnu" to start the game.  You may also double click its icon in file manager.
+adagate.bat (Windows)
+adagate_osx (Mac)
+adagate_gnu (Linux)
 
-This linux executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily. I believe this single linux executable will run on most distributions of linux. 
+----------------------------------------------------------------------
 
-Similarly, Mac users may initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
+This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
 
-Windows users type "adagate.bat" from the install directory.
+But the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is an older one, it may not run, and you will need to recompile.
 
+----------------------------------------------------------------------
+Mac users may also initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
+
+----------------------------------------------------------------------
 
 The install directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
-
-An optional command line parameter of 1..5 will choose the Degree-of-Difficulty [DOD], but it is normally unnecessary since the DoD increments itself after each game.  If you succeed at DoD= 3 or 4 then you are ready to try WorldCupSokerban or RufasSok!
 
 Tips:  0) type "h" for the help screen.  1) the ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island.  2) when in trouble in a dungeon, jumping may help.
 
@@ -213,18 +197,19 @@ Please send improvements, comments, suggestions or questions to:
 -------------------------------------------------------------------
 
 ## Open Source libraries included that allow rebuilding:
-* SFML, GLFW3, FLAC, ogg, vorbis, openal, glext, libz
+* GLFW3, glext
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
 	* gl
 	* glfwada
+	* OpenAL
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
 * a recent GNAT-GPL Ada compiler from AdaLibre
 * Xcode g++ compiler, if using OSX
 
-Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
+Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada.ads by this method.
 
 The audio system for the linux build, on the other hand, does not use SFML but its interface is identical.  It is portable but crude, since it needs an accurate duration value for any sound loops used.
 
@@ -233,27 +218,26 @@ The audio system for the linux build, on the other hand, does not use SFML but i
 
 ## Build instructions for AdaGate:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  GLFW3, SFML, FLAC, ogg, vorbis, crypto, openal.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 64-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
 Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
-**msWin32** => wcmp32a.bat, wcmp32b.bat
 
-**msWin64** => wcmp64a.bat, wcmp64b.bat
+**msWin64** => wcmp.bat
 
 Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
 
 
 -------------------------------------------------------
-**MacOSX** => ocmps.sh
+**MacOSX** => ocmp.sh
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW or SFML installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmpd.sh ("aplay" sound), OR lcmpx.sh ("ALSA" sound)
+**GNU/Linux** => lcmp.sh
 
 utilizes the shared GLFW libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
@@ -264,17 +248,7 @@ If the delivered linux binary does not run, try...
 
 ### Fixable Linux Link Problems:
 
-On a linux build machine, you might get fixable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
-
-sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
-
-whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that represents your accelerated-graphic-driver.
-
-
----------------------------------------------------------
-**GPR note:**
-There is an alternative build system included for those who prefer, and know how to use GPR:  under ./buildScriptsGpr/ .  There are 3 high level shell scripts to drive each:  gnugpr.sh, osxgpr.sh, wingpr.bat.  (They must all be moved up 1 directory to work.)
-
+On a linux build machine, you might get fixable link errors, depending on its configuration.  If you are missing "libxxx.so", you might need to create a proper softlink so it can be found.
 
 
 ----------------------------------------------------------------------
@@ -290,18 +264,18 @@ There is an alternative build system included for those who prefer, and know how
 
 * But a huge selection of available MineCraft skins lead to the present avatar object design.
 
-* In this example, the texture object is a cube with radius one that is defined as 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
+* In this application, the texture object is a cube with radius one that is defined as 6 disjoint cubelets (the precise name is rectangular cuboid or parallelpiped).  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs. See "cuboid.txt". The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
 
 * The result is an utterly portable avatar defined by an image and 4 text files:
 	* texture object body, avatarobj.adb
-	* texture object spec, avatarobj.ads
+	* texture object specification, avatarobj.ads
 	* vertex shader, avatarobj.vs
 	* fragment shader, avatarobj.fs
 	* any MineCraft Skin png file
 
-* Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing.
+* Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing, including time, position, attitude, motion-type.
 
-* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar.  The details are beyond the scope of this brief introduction, but generally the current policy is a damped and delayed move toward some fixed ideal camera position above and behind the avatar.
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar. The details are beyond the scope of this brief introduction, but generally the current policy is a damped and delayed move toward some fixed ideal camera position above and behind the avatar.
 
 
 
@@ -312,13 +286,14 @@ This app demonstrates how to use fancy fragment shaders from glslsandbox.com to 
 
 
 ----------------------------------------------------------------------
-## For Linux Developers Only:  Two working sound systems
+## For Developers Only:  OpenAL portable sound package
 
-1) Original replacement for SFML audio on Linux to enhance portability across various linux distros. Ada code that uses tasking, and a ridiculously simple system shell to "aplay" for all sounds. Updated in march 2020 with improved, robust retrieval of musicLoop PIDs. Uses ada.real_time.
+This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds.
 
-2) A working alternate, linux-portable sound system that uses Ada tasking to make Alsa library calls directly from Ada via an ALSA-Binding. (recently having noise problems?)
+It plays WAV files, via OpenAL, on Windows, OSX, and linux platforms.
 
-The functional performance of these two systems seems similar.
+It is suitable for any Ada application that needs music, sound loops or transient sound effects; eg. games.
+
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
@@ -326,13 +301,13 @@ The functional performance of these two systems seems similar.
 
 ## what is special about this project?
 
-The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons!  There is only one proviso:  "aplay" must be present. It has been tested on OpenSuse, ScientificLinux, Mint and CentOS.
+The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS.
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and a GNAT compiler.
 
 This is one of the most functionally advanced demonstrations of "modern" OpenGL using Ada to be published as a complete F.O.S.S. application.  The term "functionally advanced" means that the code is focused on comprehensibility and completeness rather than elegance.  Further development of structure and style is left as an exercise for the coding student.
 
@@ -345,19 +320,14 @@ This is a work in progress, so please excuse any scaffolding and debugging code 
 If you make improvements, please send then to <fastrgv@gmail.com>
 
 
-## explanatory note on SFML
-Using SFML for windows and event loop management was tried, but, except for audio, SFML does NOT currently allow the core and forward compatible settings that are required to use OpenGL v3.3 on OSX.  This article:
-[link](http://www.glfw.org/faq.html#how-do-i-create-an-opengl-30-context)
-explains that OSX only supports forward-compatible, core profiles.  Moreover, SFML [fttb] still uses some OGL-deprecated functions (which preclude forward-compatibility). 
-
 
 
 
 --------------------------
-## Legal Mumbo Jumbo:
+## License:
 
 
-AdaGate itself is covered by the GNU GPL v3 as indicated in the sources:
+This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
  Copyright (C) 2020  <fastrgv@gmail.com>
@@ -457,78 +427,13 @@ Duke goes for a swim (31oct17):
 
 ## Older Change History:
 
-**ver 7.1.5 -- 31mar20**
+**ver 7.2.0 -- 18sep20**
+* Updated all glfw libs to v3.3.2.
+* Added Windows launcher adagate.bat.
 
-* Fixed potential linux soundLoop overruns due to wrong PID.
-
-**ver 7.1.4 -- 29mar20**
-
-* Fixed erroneous-location error when returning to island.
-* Improved swim sounds, DHD position;
-* Fixed portal connection beam;
-* Improved linux sound code;
-
-**ver 7.1.3 -- 23jan20**
-
-* Fixed occasional sound-task related aborts (linux version).
-
-**ver 7.1.2 -- 23jan20**
-
-* Enhanced linux tasking code to protect critical sections, but occasional tasking errors might still occur.
-* Fixed linux stargate bubbling sound problem.  All linux sounds now restored.  OSX & Windows sound still uses proven & reliable SFML libs.
-
-
-**ver 7.1.0 -- 20jan20**
-
-* Quantum improvement in linux portability by avoiding SFML libs.
-* Linux sound uses Ada tasking to implement music loops.
-
-
-
-**ver 7.0.4 -- 12jan20**
-
-* Fixed ball of rolling magma (after changeover to glfw).
-* Settings files now allow Dos-Format.
-* Updated to GLFW v3.3.1 (released 1jan2020).
-* Updated Ada binding to GLFW331, also.
-* Improved a few textures.
-
-
-**ver 7.0.3 -- 09jan20**
-
-* Improved handling of HiDpi on OSX;
-* Improved controlability of mouse slew @ HiDpi.
-* Added ~/data/settings.txt file to allow users to adjust:
-	* Forward/Backward Speed
-	* Slew Speed using:
-		* keyboard
-		* mouse
-		* gamepad
-		* joystick
-
-
-**ver 7.0.2 -- 07jan20**
-
-* Jumps were disabled, but have been fixed;
-* Fixed interior drawing order problem causing objects to disappear;
-* Improved windows build method;
-* FTTB, OSX binaries run only @ HighDpi due to issues with GLFW3.  Please read osx-setup.txt if this is an issue.
-* Now delivering this GLFW version as the mainstream version;
-
-
-**ver 7.0.1 -- 25dec19**
-
-* Finalized code for basic glfw-joystick function.
-* Finalized code for joystick/gamepad jump function (when not on beach).
-
-
-**ver 7.0.0 -- 24dec19**
-
-* Converted Ada code to use GLFW, rather than SDL2;
-* Updated libraries, DLLs, Ada binding;
-* Limited gamepad functionality;
-
-
-
+**ver 7.1.9 -- 25may20**
+* Ceiling portals now allowed in level 2 [as well as 3].
+* Floor portals allowed in any level.
+* Updated music in level 3.
 
 
