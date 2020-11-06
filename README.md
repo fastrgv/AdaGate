@@ -301,7 +301,7 @@ It is suitable for any Ada application that needs music, sound loops or transien
 
 ## what is special about this project?
 
-The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS. As mentioned earlier, the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, you might need to recompile.
+The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS. As mentioned earlier, the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, you might need to rebuild.
 
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
