@@ -151,7 +151,8 @@ The application's main directory [./agate/] contains files for deployment on 3 p
 Windows users see also:  "windows-setup.txt"
 Mac users should read "osx-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
 
 The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
