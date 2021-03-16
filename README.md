@@ -15,7 +15,7 @@ Click on the most recent large 7z file under releases to download all source & b
 
 https://github.com/fastrgv/AdaGate/releases/download/v7.3.0/ag6nov20.7z
 
-Type "7z x filename" to extract the archive.
+Type "7z x filename.7z" to extract the archive.
 
 
 
