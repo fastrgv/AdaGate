@@ -162,11 +162,19 @@ The game may be run from a command line terminal window on all 3 platforms. Navi
 	* adagate_osx (Mac)
 	* adagate_gnu (Linux)
 
+Note that the Windows executable can be run on linux using wine thusly:
+
+	* wine binw64/adagate64.exe
+
+
 ----------------------------------------------------------------------
 
 This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
 
-But the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is an older one, it may not run, and you will need to recompile.
+But the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is an older one, it may not run, and you will need to recompile; or run the Windows executable on linux using wine thusly:
+
+	* wine binw64/adagate64.exe
+
 
 ----------------------------------------------------------------------
 Mac users may also initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
