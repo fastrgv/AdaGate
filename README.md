@@ -158,9 +158,9 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The prop
 
 The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
-adagate.bat (Windows)
-adagate_osx (Mac)
-adagate_gnu (Linux)
+	* adagate.bat (Windows)
+	* adagate_osx (Mac)
+	* adagate_gnu (Linux)
 
 ----------------------------------------------------------------------
 
