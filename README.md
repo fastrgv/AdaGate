@@ -3,6 +3,10 @@
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/adagate.jpg)
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/atollNight.jpg)
 
+![screenshot](https://github.com/fastrgv/AdaGate/blob/master/ag2.jpg)
+
+
+
 Where is the source code?  Developers read this:
 
 https://github.com/fastrgv/AdaGate/blob/master/sourceCode.txt
