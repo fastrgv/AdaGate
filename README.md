@@ -48,13 +48,18 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ## Recent Changes
 
 
+
+**ver 7.3.1 -- 24oct2021**
+* Improved adaOpenAL binding code...AdaGate is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
+* Updated glext64.lib (w64).
+* Updated glfw libs.
+
 **ver 7.3.0 -- 07nov20**
 * Installed completely new cross-platform sound system using OpenAL.
 * Revised sounds for event horizon & lava pool, lava pool speedup.
+* Now deliver only a single Windows build (64-bit).
 
-#### More change-history at end of file.
-
-
+## More change-history at end of file.
 
 
 ## AdaGate Game Description
@@ -161,28 +166,26 @@ The application's main directory [./agate/] contains files for deployment on 3 p
 Windows users see also:  "windows-setup.txt"
 Mac users should read "osx-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
-
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
-	* adagate.bat (Windows)
-	* adagate_osx (Mac)
-	* adagate_gnu (Linux)
+adagate.bat (Windows)
 
-Note that the Windows executable can be run on linux using wine thusly:
+adagate_osx   (Mac-LoDpi=default)
+adagate_osx 1 (Mac-HiDpi)
 
-	* wine binw64/adagate64.exe
-
+adagate_gnu (Linux)
 
 ----------------------------------------------------------------------
 
 This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
 
-But the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is an older one, it may not run, and you will need to recompile; or run the Windows executable on linux using wine thusly:
-
+But the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is an older one, it may not run. In that case, the easiest alternative is to install WINE. The Windows executable will run on linux using wine thusly:
 	* wine binw64/adagate64.exe
 
+
+Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
 
 ----------------------------------------------------------------------
 Mac users may also initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
@@ -225,12 +228,8 @@ Please send improvements, comments, suggestions or questions to:
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
-* a recent GNAT-GPL Ada compiler from AdaLibre
+* a recent Ada compiler: GNU/GNAT or AdaCore
 * Xcode g++ compiler, if using OSX
-
-Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada.ads by this method.
-
-The audio system for the linux build, on the other hand, does not use SFML but its interface is identical.  It is portable but crude, since it needs an accurate duration value for any sound loops used.
 
 
 
@@ -241,14 +240,15 @@ Three [pre-compiled] binary executables are delivered, one for Windows, one for 
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
-Build scripts for GNAT-GPL 2015 or newer are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
+Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes.
 
 -------------------------------------------------------
 
 **msWin64** => wcmp.bat
 
-Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
+Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for the 64bit AdaCore compiler.
 
+Note also that the [hard-to-find] 64-bit library file glext64.lib was built using the AdaCore g++ compiler versus glext-src code obtained from Source Forge. You can use it as-is; you need not recreate it. 
 
 -------------------------------------------------------
 **MacOSX** => ocmp.sh
@@ -320,8 +320,7 @@ It is suitable for any Ada application that needs music, sound loops or transien
 
 ## what is special about this project?
 
-The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS. As mentioned earlier, the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, you might need to rebuild.
-
+The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS.
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
@@ -455,5 +454,3 @@ Duke goes for a swim (31oct17):
 * Ceiling portals now allowed in level 2 [as well as 3].
 * Floor portals allowed in any level.
 * Updated music in level 3.
-
-
