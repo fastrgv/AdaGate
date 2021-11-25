@@ -49,12 +49,19 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 
+**ver 7.3.2 -- 25nov2021**
+
+* Updated all GLFW libs to newer [static] version, & scripts.
+* Updated build scripts for OSX.
+
 **ver 7.3.1 -- 24oct2021**
+
 * Improved adaOpenAL binding code...AdaGate is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
 * Updated glext64.lib (w64).
 * Updated glfw libs.
 
 **ver 7.3.0 -- 07nov20**
+
 * Installed completely new cross-platform sound system using OpenAL.
 * Revised sounds for event horizon & lava pool, lava pool speedup.
 * Now deliver only a single Windows build (64-bit).
@@ -67,6 +74,15 @@ AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It i
 
 Runs on Windows, OSX, and GNU/Linux.  The linux binary now runs on many linux distros!
 
+-----------------------------------------------------------
+Featuring
+
+	* no installation
+	* no dependencies
+	* simply unzip in your Downloads directory, and run.
+-----------------------------------------------------------
+
+## AdaGate Introduction
 While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the portal system by rolling alien power cells onto their sockets.  Simple, right?  Then use your portal gun to bypass obstacles through another dimension.
 
 Escape all chambers to ascend to the lake sanctuary, where the level of difficulty is increased for your next game.
@@ -75,7 +91,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 ## AdaGate Game Features
 
-* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
+* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if Ada is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
 
 * Full source is provided.
 
@@ -170,18 +186,19 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
-adagate.bat (Windows)
+* adagate.bat (Windows)
 
-adagate_osx   (Mac-LoDpi=default)
-adagate_osx 1 (Mac-HiDpi)
+* adagate_osx   (Mac-LoDpi=default)
+* adagate_osx 1 (Mac-HiDpi)
 
-adagate_gnu (Linux)
+* adagate_gnu (Linux)
 
 ----------------------------------------------------------------------
 
-This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
+I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse, Trisquel and Mint.
 
-But the distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is an older one, it may not run. In that case, the easiest alternative is to install WINE. The Windows executable will run on linux using wine thusly:
+Another alternative is to install WINE. The Windows executable will run on linux using wine thusly:
+
 	* wine binw64/adagate64.exe
 
 
@@ -240,7 +257,7 @@ Three [pre-compiled] binary executables are delivered, one for Windows, one for 
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
-Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes.
+Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes. See aggcmp.sh.
 
 -------------------------------------------------------
 
@@ -248,7 +265,7 @@ Build scripts for AdaCore Ada [with its own g++] are provided. But should also w
 
 Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for the 64bit AdaCore compiler.
 
-Note also that the [hard-to-find] 64-bit library file glext64.lib was built using the AdaCore g++ compiler versus glext-src code obtained from Source Forge. You can use it as-is; you need not recreate it. 
+Note also that the [hard-to-find] 64-bit library file glext64.lib was built using the AdaCore g++ compiler versus glext-src code obtained from Source Forge. You can use it as-is; you need not recreate it.  See glext64.7z.
 
 -------------------------------------------------------
 **MacOSX** => ocmp.sh
@@ -454,3 +471,4 @@ Duke goes for a swim (31oct17):
 * Ceiling portals now allowed in level 2 [as well as 3].
 * Floor portals allowed in any level.
 * Updated music in level 3.
+
