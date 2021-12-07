@@ -391,7 +391,7 @@ The particular choices of sound, image, and fragment shader files [x.fs] deliver
   Read puzzle_replacement.txt
 
 ### SoundFiles
-Using "sox", most sounds have recently been converted to the WAV format.  Most sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file ccnc3_license.txt.  see also:  (http://creativecommons.org/licenses/by-nc/3.0/legalcode/)
+Using "sox", most sounds have recently been converted to the WAV format.  Most sounds are from freesound.org and are covered by the Creative Commons CC0 license. 
 
 See also: https://wiki.creativecommons.org/wiki/License%20Versions
 
