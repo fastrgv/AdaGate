@@ -48,6 +48,13 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ## Recent Changes
 
 
+**ver 7.3.4 -- 11feb22**
+
+* Updated libglfw.
+* Elliminated unused Frameworks directory
+* ZoomWheel code improvements.
+
+
 **ver 7.3.3 -- 29dec21**
 
 * Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
