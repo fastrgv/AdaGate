@@ -47,6 +47,11 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 ## Recent Changes
 
+**ver 7.3.5 -- 16apr22**
+
+* Reverted linux libraries to exclusively shared format for portability.
+* Alternate script for GNU-Ada also works, now.
+
 
 **ver 7.3.4 -- 11feb22**
 
