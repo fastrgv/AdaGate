@@ -4,12 +4,22 @@ Shaders project vertices from a cubical shell onto a spherical shell to avoid si
 
 ----------------------------------------------------------------------------------------------------------------
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/palm.gif)
+
+Triple-plane palm tree.
+
+================================================================================================================
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/adagate.jpg)
+
+
+
+-----------------------------------------------------------------------------------------------------------------
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/atollNight.jpg)
 
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/ag2.jpg)
 
+Metallic textures.
 
+================================================================================================================
 
 Where is the source code?  Developers read this:
 
