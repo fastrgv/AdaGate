@@ -7,7 +7,8 @@ Shaders project vertices from a cubical shell onto a spherical shell to avoid si
 
 Triple-plane palm tree.
 
-================================================================================================================
+-------------------------------------------------------------------------------------------------------
+
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/adagate.jpg)
 
 
@@ -19,7 +20,8 @@ Triple-plane palm tree.
 
 Metallic textures.
 
-================================================================================================================
+
+-------------------------------------------------------------------------------------------------------
 
 Where is the source code?  Developers read this:
 
