@@ -64,6 +64,13 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 ## Recent Changes
 
+**ver 7.3.6 -- 16sep22**
+
+* Now uses a generic utex, called gtex, for messages.
+* Removed Win64 build.
+* Now using GNU Ada rather than defunct AdaCore compiler.
+
+
 **ver 7.3.5 -- 16apr22**
 
 * Reverted linux libraries to exclusively shared format for portability.
