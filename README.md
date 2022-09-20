@@ -65,6 +65,10 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 ## Recent Changes
 
+**ver 7.4.0 -- 20sep2022**
+
+* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
+
 **ver 7.3.6 -- 16sep22**
 
 * Now uses a generic utex, called gtex, for messages.
