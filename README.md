@@ -33,7 +33,7 @@ AdaGate is a first-person 3D sokoban puzzle game within a Stargate / Portal fant
 
 Click on the most recent large 7z file under releases to download all source & binaries (Win/Mac/Linux), or try this link:
 
-https://github.com/fastrgv/AdaGate/releases/download/v7.3.6/ag16sep22.7z
+https://github.com/fastrgv/AdaGate/releases/download/v7.4.0/ag20sep22.7z
 
 
 Type "7z x filename.7z" to extract the archive.
@@ -127,9 +127,8 @@ Featuring
 
 	* no installation
 	* no dependencies
-	* simply unzip in your Downloads directory, and run.
-	* or unzip onto a USB flash drive formatted to match your system, and run.
-
+	* simply unzip in your Downloads directory, and run;
+	* or unzip onto a USB flash drive [w/same file format] and run.
 -----------------------------------------------------------
 
 ## AdaGate Introduction
@@ -145,7 +144,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 * Full source is provided.
 
-* Note that a 64 bit build for Windows is delivered.
+* Note that a 32 bit build for Windows is delivered.
 
 * Laptop friendly controls;  supports Mac Retina displays.
 
@@ -170,7 +169,8 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 [You might need to disconnect unused gamecontrollers to prevent spinning!]
 
 Look direction is controlled by touch pad or mouse;
-The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates the mouse wheel.  Zoom can also be controlled with keys n, f, z [Nearer,Further,default];
+The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates the mouse wheel;
+Zoom can also be controlled with keys n, f, z [Nearer,Further,default];
 
 Movement is controlled by the WASD keys or the arrow keys:
 
@@ -236,7 +236,8 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
-* adagate.bat (Windows)
+* adagate32.bat (Windows 32-bit) or type binw32\adagate32.exe
+* adagate64.bat (Windows 64-bit) or type binw64\adagate64.exe
 
 * adagate_osx   (Mac-LoDpi=default)
 * adagate_osx 1 (Mac-HiDpi)
@@ -249,7 +250,7 @@ I believe this single linux executable will run on most recent distributions of 
 
 Another alternative is to install WINE. The Windows executable will run on linux using wine thusly:
 
-	* wine binw64/adagate64.exe
+	* wine binw32/adagate32.exe
 
 
 Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
@@ -295,32 +296,34 @@ Please send improvements, comments, suggestions or questions to:
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
-* a recent Ada compiler: GNU/GNAT or AdaCore
-* Xcode g++ compiler, if using OSX
+* a recent Ada compiler: GNU Ada
 
 
 
 
 ## Build instructions for AdaGate:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 64-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The Mac binary should run on most any standard Mac with a recent version of OSX.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
-Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes. See aggcmp.sh.
+Build scripts for GNU Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes. See ./alternateBuildScripts/.
 
 -------------------------------------------------------
 
-**msWin64** => wcmp.bat
+**msWin32** => wcmp32.bat
+**msWin64** => wcmp64.bat (read ~docs\gnuAdaOnWindows.txt)
 
-Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for the 64bit AdaCore compiler.
+Note that the above windows build script might need to be adjusted to reference your actual installation directory for the MinGW Ada compiler.
 
-Note also that the [hard-to-find] 64-bit library file glext64.lib was built using the AdaCore g++ compiler versus glext-src code obtained from Source Forge. You can use it as-is; you need not recreate it.  See glext64.7z.
 
 -------------------------------------------------------
 **MacOSX** => ocmp.sh
 
 build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+
+Note: ./alternateBuildScripts/GNocmp.sh shows how to build on OSX without Xcode.
+
 
 ------------------------------------------------------
 **GNU/Linux** => lcmp.sh
@@ -329,8 +332,8 @@ utilizes the shared GLFW libraries that are delivered in this bundle under ./lib
 
 If the delivered linux binary does not run, try...
 
-* Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script lcmpd.sh.
+* Manually install GNU Ada.
+* Rerun the compile script lcmp.sh.
 
 ### Fixable Linux Link Problems:
 
@@ -374,7 +377,7 @@ This app demonstrates how to use fancy fragment shaders from glslsandbox.com to 
 ----------------------------------------------------------------------
 ## For Developers Only:  OpenAL portable sound package
 
-This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds.
+This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds, allowing unlimited concurrency.
 
 It plays WAV files, via OpenAL, on Windows, OSX, and linux platforms.
 
@@ -418,7 +421,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2020  <fastrgv@gmail.com>
+ Copyright (C) 2022  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -439,24 +442,26 @@ This app is covered by the GNU GPL v3 as indicated in the sources:
 ### General Note
 The particular choices of sound, image, and fragment shader files [x.fs] delivered are not essential to the function of the game and are easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods using GLSL.  The only requirements are that sounds be in WAV or OGG format, images be in PNG format, and shaders be updated to GLSL 330 specifications.  Skybox images must have a 90x90 degree field of view [for a correct perspective], and all 6 must have the same pixel dimensions.
 
+It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
+
+
+
 ### Defining Your Own Puzzles:
   Read puzzle_replacement.txt
 
 ### SoundFiles
-Using "sox", most sounds have recently been converted to the WAV format.  Most sounds are from freesound.org and are covered by the Creative Commons CC0 license. 
+Using "sox", most sounds have been converted to the WAV format.  Most sounds are from freesound.org and are covered by the Creative Commons CC0 license documented in the accompanying file ./licenses/creativeCommonsCC0.txt. A few others with CC-by-3.0 license have accompanying text files with attributions.
 
-See also: https://wiki.creativecommons.org/wiki/License%20Versions
+"Among the Falls" [music for level 1], and others, are from (http://www.freesfx.co.uk).  See the file licenses/freeSFX_license.txt.
 
-"Among the Falls" [music for level 1], and others, are from (http://www.freesfx.co.uk).  See the file otherLicenses/freeSFX_license.txt.
-
-OpiumLoop is from "PartnersInRhyme": see signed authorization in ~/otherLicenses/
+OpiumLoop is from "PartnersInRhyme": see signed authorization in ~/licenses/
 
 
 ### ImageFiles 
-Most images for textures were freely [no copyright indications] available on google images.  Some wall textures used are from the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  One other thatched roof texture was used from http://www.mayang.com/textures.  See mayang_license.txt.  Others from pixabay.com have a CC0 license.  More recently, some are from http://all-free-download.com/free-photos/.
+Most images for textures were freely [no copyright indications] available on google images.  Some wall textures used are from the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  One other thatched roof texture was used from http://www.mayang.com/textures.  See ./licenses/mayang_license.txt.  Others from pixabay.com have a CC0 license; see ./licenses/creativeCommonsCC0.txt.  More recently, some are from http://all-free-download.com/free-photos/.
 
 ### ShaderFiles 
-Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see mit_license.txt).  Existing comments or any identifying information was retained.  What follows are acknowledgments for some that were identifyable.
+Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see ./licenses/mit_license.txt).  Existing comments or any identifying information was retained.  What follows are acknowledgments for some that were identifyable.
 
 Volcano & "Red Planet" from Mahmud Yuldashev <mahmud9935@gmail.com>, and "waterWorldCCNSA3.fs" with a CreativeCommons license, and which seems to be credited to Alexander Alekseev with mods by Mahmud Yuldashev.
 
@@ -472,18 +477,18 @@ One source is (www.custommapmakers.org/skyboxes.php), which gathers together man
 
 Another skybox  [from  (http://www.redsorceress.com/skybox.html)]  is credited to "The Mighty Pete" at http://www.petesoasis.com (which seems defunct).
 
-At least 3 beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ccsa3_license.txt.
+At least 3 beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ./licenses/ccsa3_license.txt.
 
 
 
 
-## Best Download Sites for AdaGate and my other games:
+## Download Sites for AdaGate and my other games:
 
 https://github.com/fastrgv?tab=repositories
-
-http://www.indiedb.com/members/fastrgv/games
-
-https://fastrgv.itch.io/
+https://www.indiedb.com/members/fastrgv/games
+https://fastrgv.itch.io
+https://sourceforge.net/u/fastrgv/profile/
+https://gamejolt.com/@fastrgv/games
 
 
 ## video links [all showing older versions of AdaGate]:
@@ -515,6 +520,44 @@ Duke goes for a swim (31oct17):
 
 ## Older Change History:
 
+**ver 7.3.5 -- 16apr22**
+* Reverted linux libraries to exclusively shared format for portability.
+* Alternate script for GNU-Ada also works, now.
+
+
+**ver 7.3.4 -- 11feb22**
+
+* Updated libglfw.
+* Elliminated unused Frameworks directory
+* ZoomWheel code improvements.
+
+
+**ver 7.3.3 -- 29dec21**
+
+* Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
+* Made final, minor adjustments to new sounds.
+* Minor visual tweaks to kawhoosh.
+* Moved auxillary source code directories (from ./) into ./src/.
+
+
+**ver 7.3.2 -- 25nov2021**
+
+* Updated all GLFW libs to newer [static] version, & scripts.
+* Updated build scripts for OSX.
+
+**ver 7.3.1 -- 24oct2021**
+
+* Improved adaOpenAL binding code...AdaGate is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
+* Updated glext64.lib (w64).
+* Updated glfw libs.
+
+**ver 7.3.0 -- 07nov20**
+
+* Installed completely new cross-platform sound system using OpenAL.
+* Revised sounds for event horizon & lava pool, lava pool speedup.
+* Now deliver only a single Windows build (64-bit).
+
+
 **ver 7.2.0 -- 18sep20**
 * Updated all glfw libs to v3.3.2.
 * Added Windows launcher adagate.bat.
@@ -523,4 +566,5 @@ Duke goes for a swim (31oct17):
 * Ceiling portals now allowed in level 2 [as well as 3].
 * Floor portals allowed in any level.
 * Updated music in level 3.
+
 
