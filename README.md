@@ -65,9 +65,18 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 ## Recent Changes
 
+
+
+**ver 7.4.1 -- 30sep2022**
+
+* Now using simpler-to-setup GNU Ada for Win64.
+
+
+
 **ver 7.4.0 -- 20sep2022**
 
 * Restored Win64 build, now using MSYS2 & mingw64 on Windows.
+
 
 **ver 7.3.6 -- 16sep22**
 
@@ -75,44 +84,6 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 * Removed Win64 build.
 * Now using GNU Ada rather than defunct AdaCore compiler.
 
-
-**ver 7.3.5 -- 16apr22**
-
-* Reverted linux libraries to exclusively shared format for portability.
-* Alternate script for GNU-Ada also works, now.
-
-
-**ver 7.3.4 -- 11feb22**
-
-* Updated libglfw.
-* Elliminated unused Frameworks directory
-* ZoomWheel code improvements.
-
-
-**ver 7.3.3 -- 29dec21**
-
-* Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
-* Made final, minor adjustments to new sounds.
-* Minor visual tweaks to kawhoosh.
-* Moved auxillary source code directories (from ./) into ./src/.
-
-
-**ver 7.3.2 -- 25nov2021**
-
-* Updated all GLFW libs to newer [static] version, & scripts.
-* Updated build scripts for OSX.
-
-**ver 7.3.1 -- 24oct2021**
-
-* Improved adaOpenAL binding code...AdaGate is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
-* Updated glext64.lib (w64).
-* Updated glfw libs.
-
-**ver 7.3.0 -- 07nov20**
-
-* Installed completely new cross-platform sound system using OpenAL.
-* Revised sounds for event horizon & lava pool, lava pool speedup.
-* Now deliver only a single Windows build (64-bit).
 
 ## More change-history at end of file.
 
@@ -144,7 +115,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 * Full source is provided.
 
-* Note that a 32 bit build for Windows is delivered.
+* Note that a 32+64 bit builds for Windows are delivered.
 
 * Laptop friendly controls;  supports Mac Retina displays.
 
@@ -311,18 +282,17 @@ Build scripts for GNU Ada [with its own g++] are provided. But should also work 
 
 -------------------------------------------------------
 
-**msWin32** => wcmp32.bat
-**msWin64** => wcmp64.bat (read ~docs\gnuAdaOnWindows.txt)
+**msWin32** => setpath32.bat + wcmp32.bat
+**msWin64** => setpath64.bat + wcmp64.bat (read ~docs\gnuAdaOnWindows.txt)
 
-Note that the above windows build script might need to be adjusted to reference your actual installation directory for the MinGW Ada compiler.
+Note that the above windows build script might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
 
 
 -------------------------------------------------------
 **MacOSX** => ocmp.sh
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW installed.  This is used to build the executable named adagate_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using this script, assuming you have GNU Ada installed.
 
-Note: ./alternateBuildScripts/GNocmp.sh shows how to build on OSX without Xcode.
 
 
 ------------------------------------------------------
@@ -566,5 +536,6 @@ Duke goes for a swim (31oct17):
 * Ceiling portals now allowed in level 2 [as well as 3].
 * Floor portals allowed in any level.
 * Updated music in level 3.
+
 
 
