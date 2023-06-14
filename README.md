@@ -61,28 +61,21 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 
-# AdaGate GLFW/OpenAL version
+
+
+# AdaGate 
+## using GLFW & OpenAL
+
 
 ## Recent Changes
 
 
+**ver 7.4.2 -- 14jun2023**
 
-**ver 7.4.1 -- 30sep2022**
-
-* Now using simpler-to-setup GNU Ada for Win64.
-
-
-
-**ver 7.4.0 -- 20sep2022**
-
-* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
-
-
-**ver 7.3.6 -- 16sep22**
-
-* Now uses a generic utex, called gtex, for messages.
-* Removed Win64 build.
-* Now using GNU Ada rather than defunct AdaCore compiler.
+* Discontiued OSX support, greatly simplifying game package.
+* Added music to flyover intro screen.
+* Restored best kawoosh sound.
+* Avatar now rises & falls with ocean waves when swimming.
 
 
 ## More change-history at end of file.
@@ -91,7 +84,8 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ## AdaGate Game Description
 AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop.
 
-Runs on Windows, OSX, and GNU/Linux.  The linux binary now runs on many linux distros!
+Runs on Windows, and GNU/Linux.  The linux binary now runs on many linux distros! Includes all source code, build scripts & resources.
+ 
 
 -----------------------------------------------------------
 Featuring
@@ -111,9 +105,9 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 ## AdaGate Game Features
 
-* Works on PCs or laptops running Windows or GNU/Linux.  And if Ada is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
+* Works on PCs or laptops running Windows, or GNU/Linux.  And if Ada is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
 
-* Full source is provided.
+* Windows & Linux binaries provided, as well as full source. 
 
 * Note that a 32+64 bit builds for Windows are delivered.
 
@@ -121,7 +115,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 * A 3D Sokoban puzzle game that uses the intersection of two cylinders as a puzzle piece that rolls in two perpendicular directions.
 
-* New stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve from sun to fog to evening to night.
+* Stargate dial-home-device [DHD] allows non-linear play; see the island setting evolve from sun to fog to evening to night.
 
 * Roll the ZPM power cells to empower the portals and escape thru a wormhole
 
@@ -131,7 +125,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 * Note that Sangwine's PNG-IO library, and the Ada bindings to OpenAL, OpenGL & GLFW3 in this app constitute a complete, yet easily extendable Ada library that could be used for most any modern OpenGL project including games, animations, simulations, modeling, or engineering.
 
-* The new sound system enables a build with surprising portability across various linux distros, as well as across various platforms.
+* The sound system enables a build with surprising portability across various linux distros, as well as across various platforms.
 
 
 
@@ -140,7 +134,7 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 [You might need to disconnect unused gamecontrollers to prevent spinning!]
 
 Look direction is controlled by touch pad or mouse;
-The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates the mouse wheel;
+The mouse wheel controls camera zoom.  On laptops, a 2-finger swipe simulates the mouse wheel;
 Zoom can also be controlled with keys n, f, z [Nearer,Further,default];
 
 Movement is controlled by the WASD keys or the arrow keys:
@@ -198,10 +192,9 @@ If you ever get stuck, try to jump up + forward or back.
 
 ## Setup & Running Adagate:
 
-The application's main directory [./agate/] contains files for deployment on 2 platforms:  1)windows, 2)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.
+The application's main directory [./agate/] contains files for deployment on 2 platforms:  1)windows, 2)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  
 
 Windows users see also:  "windows-setup.txt"
-
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
@@ -210,21 +203,22 @@ The game may be run from a command line terminal window on all 3 platforms. Navi
 * adagate32.bat (Windows 32-bit) or type binw32\adagate32.exe
 * adagate64.bat (Windows 64-bit) or type binw64\adagate64.exe
 
-* adagate_gnu (Linux)
+* adagate (Linux)
+
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the command with "padsp",EG:  "padsp (ExeName)".**
+
+
 
 ----------------------------------------------------------------------
 
-I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse, Trisquel and Mint.
+I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse, Trisquel, ScientificLinux(rhel) and Mint.
 
 Another alternative is to install WINE. The Windows executable will run on linux using wine thusly:
 
 	* wine binw32/adagate32.exe
 
 
-Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
-
-----------------------------------------------------------------------
-Mac users may also initiate the game by navigating to the installation directory in Finder and clicking the "adagate.app" icon named "AdaGate".
+Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use one of the windows builds.
 
 ----------------------------------------------------------------------
 
@@ -257,21 +251,26 @@ Please send improvements, comments, suggestions or questions to:
 ## Open Source libraries included that allow rebuilding:
 * GLFW3, glext
 * the included "bindings" directory contains Ada interfaces:
-	* AdaPngLib
+	* Stephen Sanguine's AdaPngLib
+	* Dmitriy Anisimkov's Zlib for Ada
 	* gl
 	* glfwada
 	* OpenAL
 
 ## Rebuild Requirements:
-* systems:  Windows or GNU/Linux
-* a recent Ada compiler: GNU Ada
+* systems:  Windows, or GNU/Linux
+* a recent Ada compiler;  eg. GNU-Ada...try this source:
+
+https://github.com/alire-project/GNAT-FSF-builds/releases
+
+
 
 
 
 
 ## Build instructions for AdaGate:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux.  I think the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The linux binary, adagate_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
+Two [pre-compiled] binary executables are delivered, one for Windows & one for gnu/linux.  I think the Windows executable is fairly portable.  It was built on Windows 10.  The linux binary, adagate, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
@@ -283,7 +282,6 @@ Build scripts for GNU Ada [with its own g++] are provided. But should also work 
 **msWin64** => setpath64.bat + wcmp64.bat (read ~docs\gnuAdaOnWindows.txt)
 
 Note that the above windows build script might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
-
 
 
 ------------------------------------------------------
@@ -340,7 +338,7 @@ This app demonstrates how to use fancy fragment shaders from glslsandbox.com to 
 
 This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds, allowing unlimited concurrency.
 
-It plays WAV files, via OpenAL, on Windows, OSX, and linux platforms.
+It plays WAV files, via OpenAL, on Windows, and linux platforms.
 
 It is suitable for any Ada application that needs music, sound loops or transient sound effects; eg. games.
 
@@ -351,11 +349,11 @@ It is suitable for any Ada application that needs music, sound loops or transien
 
 ## what is special about this project?
 
-The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS.
+The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint, & Trisquel.
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
-It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows & GNU/Linux systems.
 
 Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and a GNAT compiler.
 
@@ -382,7 +380,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2022  <fastrgv@gmail.com>
+ Copyright (C) 2023  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -481,52 +479,31 @@ Duke goes for a swim (31oct17):
 
 ## Older Change History:
 
+**ver 7.4.1 -- 30sep2022**
+* Now using simpler-to-setup GNU Ada for Win64.
+
+**ver 7.4.0 -- 20sep2022**
+* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
+
+**ver 7.3.6 -- 16sep22**
+* Now uses a generic utex, called gtex, for messages.
+* Removed Win64 build.
+* Now using GNU Ada rather than defunct AdaCore compiler.
+
 **ver 7.3.5 -- 16apr22**
 * Reverted linux libraries to exclusively shared format for portability.
 * Alternate script for GNU-Ada also works, now.
 
-
 **ver 7.3.4 -- 11feb22**
-
 * Updated libglfw.
 * Elliminated unused Frameworks directory
 * ZoomWheel code improvements.
 
-
 **ver 7.3.3 -- 29dec21**
-
 * Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
 * Made final, minor adjustments to new sounds.
 * Minor visual tweaks to kawhoosh.
 * Moved auxillary source code directories (from ./) into ./src/.
-
-
-**ver 7.3.2 -- 25nov2021**
-
-* Updated all GLFW libs to newer [static] version, & scripts.
-* Updated build scripts for OSX.
-
-**ver 7.3.1 -- 24oct2021**
-
-* Improved adaOpenAL binding code...AdaGate is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
-* Updated glext64.lib (w64).
-* Updated glfw libs.
-
-**ver 7.3.0 -- 07nov20**
-
-* Installed completely new cross-platform sound system using OpenAL.
-* Revised sounds for event horizon & lava pool, lava pool speedup.
-* Now deliver only a single Windows build (64-bit).
-
-
-**ver 7.2.0 -- 18sep20**
-* Updated all glfw libs to v3.3.2.
-* Added Windows launcher adagate.bat.
-
-**ver 7.1.9 -- 25may20**
-* Ceiling portals now allowed in level 2 [as well as 3].
-* Floor portals allowed in any level.
-* Updated music in level 3.
 
 
 
