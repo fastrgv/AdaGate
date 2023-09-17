@@ -69,6 +69,12 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 ## Recent Changes
 
+**ver 7.4.3 -- 17sep2023**
+
+* Added an exception-handler to shutdown gracefully, in case of abort. This should also allow a normal resume after an abort.
+* More relaxed camera angles, when possible.
+* No longer build 32bit Windows executables, just 64-bit windows & linux.
+
 
 **ver 7.4.2 -- 14jun2023**
 
