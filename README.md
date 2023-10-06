@@ -63,18 +63,25 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 
+
+
 # AdaGate 
 ## using GLFW & OpenAL
 
 
 ## Recent Changes
 
+
+**ver 7.4.4 -- 06oct2023**
+
+* Restored OSX build...but without a bundle.
+
+
 **ver 7.4.3 -- 17sep2023**
 
 * Added an exception-handler to shutdown gracefully, in case of abort. This should also allow a normal resume after an abort.
 * More relaxed camera angles, when possible.
 * No longer build 32bit Windows executables, just 64-bit windows & linux.
-
 
 **ver 7.4.2 -- 14jun2023**
 
@@ -90,7 +97,7 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ## AdaGate Game Description
 AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop.
 
-Runs on Windows, and GNU/Linux.  The linux binary now runs on many linux distros! Includes all source code, build scripts & resources.
+Runs on Windows, OSX, and GNU/Linux.  The linux binary now runs on many linux distros! Includes all source code, build scripts & resources.
  
 
 -----------------------------------------------------------
@@ -111,11 +118,9 @@ Escape all chambers to ascend to the lake sanctuary, where the level of difficul
 
 ## AdaGate Game Features
 
-* Works on PCs or laptops running Windows, or GNU/Linux.  And if Ada is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
+* Works on PCs or laptops running Windows, OSX, or GNU/Linux.  And if Ada is installed you can rebuild it yourself!  But first try the binaries that are delivered for all platforms.
 
-* Windows & Linux binaries provided, as well as full source. 
-
-* Note that a 32+64 bit builds for Windows are delivered.
+* Windows, OSX & Linux binaries provided, as well as full source. 
 
 * Laptop friendly controls;  supports HiDpi displays.
 
@@ -188,7 +193,7 @@ If you ever get stuck, try to jump up + forward or back.
 ## required for running:
 
 * graphics card with ample memory & updated driver that supports OpenGL version 3.3 or later.  
-* Windows, GNU/Linux;
+* Windows, Mac OSX, GNU/Linux;
 * optional game controller or joystick.
 
 
@@ -202,14 +207,22 @@ The application's main directory [./agate/] contains files for deployment on 2 p
 
 Windows users see also:  "windows-setup.txt"
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+Unzip the archive.  
+
+* On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
+* On OSX, the command-line for Keka works thusly:
+	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
+
+
 
 The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
-* adagate32.bat (Windows 32-bit) or type binw32\adagate32.exe
+* adagate_osx (Mac OSX)
+
 * adagate64.bat (Windows 64-bit) or type binw64\adagate64.exe
 
-* adagate (Linux)
+* adagate_gnu (Linux)
 
 **If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the command with "padsp",EG:  "padsp (ExeName)".**
 
@@ -221,7 +234,7 @@ I believe this single linux executable will run on most recent distributions of 
 
 Another alternative is to install WINE. The Windows executable will run on linux using wine thusly:
 
-	* wine binw32/adagate32.exe
+	* wine binw64/adagate64.exe
 
 
 Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use one of the windows builds.
@@ -264,10 +277,9 @@ Please send improvements, comments, suggestions or questions to:
 	* OpenAL
 
 ## Rebuild Requirements:
-* systems:  Windows, or GNU/Linux
+* systems:  Windows, OSX, or GNU/Linux
 * a recent Ada compiler;  eg. GNU-Ada...try this source:
-
-https://github.com/alire-project/GNAT-FSF-builds/releases
+	* https://github.com/alire-project/GNAT-FSF-builds/releases
 
 
 
@@ -276,7 +288,7 @@ https://github.com/alire-project/GNAT-FSF-builds/releases
 
 ## Build instructions for AdaGate:
 
-Two [pre-compiled] binary executables are delivered, one for Windows & one for gnu/linux.  I think the Windows executable is fairly portable.  It was built on Windows 10.  The linux binary, adagate, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
+Three [pre-compiled] binary executables are delivered.  I think the Windows executable is fairly portable.  It was built on Windows 10.  The linux binary, adagate, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
@@ -284,11 +296,14 @@ Build scripts for GNU Ada [with its own g++] are provided. But should also work 
 
 -------------------------------------------------------
 
-**msWin32** => setpath32.bat + wcmp32.bat
 **msWin64** => setpath64.bat + wcmp64.bat (read ~docs\gnuAdaOnWindows.txt)
 
 Note that the above windows build script might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
 
+
+------------------------------------------------------
+
+**Mac/OSX** => ocmp.sh
 
 ------------------------------------------------------
 **GNU/Linux** => lcmp.sh
@@ -329,7 +344,7 @@ On a linux build machine, you might get fixable link errors, depending on its co
 
 * Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing, including time, position, attitude, motion-type.
 
-* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar. The details are beyond the scope of this brief introduction, but generally the current policy is a damped and delayed move toward some fixed ideal camera position above and behind the avatar.
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar. The details are beyond the scope of this brief introduction, but generally the current policy is a damped and delayed move toward some fixed ideal camera angle and position above and behind the avatar. Two possible ideal camera angles are: a) pointing toward the look-direction of the avatar; b) pointing toward the avatar. The ideal camera angles would depend upon the immediate game environment and goals.
 
 
 
@@ -344,7 +359,7 @@ This app demonstrates how to use fancy fragment shaders from glslsandbox.com to 
 
 This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds, allowing unlimited concurrency.
 
-It plays WAV files, via OpenAL, on Windows, and linux platforms.
+It plays WAV files, via OpenAL, on Windows, OSX, and linux platforms.
 
 It is suitable for any Ada application that needs music, sound loops or transient sound effects; eg. games.
 
@@ -359,7 +374,7 @@ The linux-build of this app is among very few modern OpenGL games with sound whe
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
-It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows & GNU/Linux systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, OSX, & GNU/Linux systems.
 
 Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and a GNAT compiler.
 
@@ -405,7 +420,7 @@ This app is covered by the GNU GPL v3 as indicated in the sources:
 ## Media Files for AdaGate:
 
 ### General Note
-The particular choices of sound, image, and fragment shader files [x.fs] delivered are not essential to the function of the game and are easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods using GLSL.  The only requirements are that sounds be in WAV or OGG format, images be in PNG format, and shaders be updated to GLSL 330 specifications.  Skybox images must have a 90x90 degree field of view [for a correct perspective], and all 6 must have the same pixel dimensions.
+The particular choices of sound, image, and fragment shader files [x.fs] delivered are not essential to the function of the game and are easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods using GLSL.  The only requirements are that sounds be in WAV format, images be in PNG format, and shaders be updated to GLSL 330 specifications.  Skybox images must have a 90x90 degree field of view [for a correct perspective], and all 6 must have the same pixel dimensions.
 
 It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
 
@@ -415,7 +430,7 @@ It is my intention to use media with copyrights or licenses that are compatible 
   Read puzzle_replacement.txt
 
 ### SoundFiles
-Using "sox", most sounds have been converted to the WAV format.  Most sounds are from freesound.org and are covered by the Creative Commons CC0 license documented in the accompanying file ./licenses/creativeCommonsCC0.txt. A few others with CC-by-3.0 license have accompanying text files with attributions.
+Using "sox", all sounds have been converted to the WAV format.  Most sounds are from freesound.org and are covered by the Creative Commons CC0 license documented in the accompanying file ./licenses/creativeCommonsCC0.txt. A few others with CC-by-3.0 license have accompanying text files with attributions.
 
 "Among the Falls" [music for level 1], and others, are from (http://www.freesfx.co.uk).  See the file licenses/freeSFX_license.txt.
 
@@ -449,11 +464,11 @@ At least 3 beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of
 
 ## Download Sites for AdaGate and my other games:
 
-https://github.com/fastrgv?tab=repositories
-https://www.indiedb.com/members/fastrgv/games
-https://fastrgv.itch.io
-https://sourceforge.net/u/fastrgv/profile/
-https://gamejolt.com/@fastrgv/games
+* https://github.com/fastrgv?tab=repositories
+* https://www.indiedb.com/members/fastrgv/games
+* https://fastrgv.itch.io
+* https://sourceforge.net/u/fastrgv/profile/
+* https://gamejolt.com/@fastrgv/games
 
 
 ## video links [all showing older versions of AdaGate]:
@@ -510,6 +525,4 @@ Duke goes for a swim (31oct17):
 * Made final, minor adjustments to new sounds.
 * Minor visual tweaks to kawhoosh.
 * Moved auxillary source code directories (from ./) into ./src/.
-
-
 
