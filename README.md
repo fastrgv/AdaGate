@@ -74,7 +74,7 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 **ver 7.4.4 -- 06oct2023**
 
-* Restored OSX build...but without a bundle.
+* Restored OSX build...but without a bundle. Built without using any Xcode.
 
 
 **ver 7.4.3 -- 17sep2023**
