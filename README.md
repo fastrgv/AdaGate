@@ -77,6 +77,15 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ## Recent Changes
 
 
+**ver 7.4.5 -- 18feb2023**
+
+* Improved & generalized OSX build scripts.
+* Effect of command line parameter: 1:allowHiDpi; 0:forceLoDpi(default).
+	Use low DPI to smooth out action graphics.
+* Added waterfall in level 5 using both particle & ribbon textures.
+* Added volume control + corrections to my OpenAL Ada binding.
+
+
 **ver 7.4.4 -- 06oct2023**
 
 * Restored OSX build...but without a bundle. Built without using any Xcode.
