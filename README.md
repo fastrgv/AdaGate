@@ -108,7 +108,7 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 ## AdaGate Game Description
-AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop.
+AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop and Amelia Earhart.
 
 Runs on Windows, OSX, and GNU/Linux.  The linux binary now runs on many linux distros! Includes all source code, build scripts & resources.
  
