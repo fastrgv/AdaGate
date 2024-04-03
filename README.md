@@ -69,6 +69,8 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 
+
+
 # AdaGate 
 ## using GLFW & OpenAL
 
@@ -76,7 +78,19 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ## Recent Changes
 
 
-**ver 7.4.5 -- 18feb2023**
+
+**ver 7.4.6 -- 04apr2024**
+
+* Corrected lava pools so that color is in sync with amplitude.
+* Added brick room torches w/lighting effects.
+* Minor revisions to level 1 scene.
+* Made essential corrections in fog, crosshairs display.
+* As an added challenge, a gravity-lock now prevents jumping out of the ZPM power grid until after activation is completed, i.e. puzzle is solved.
+* Avatar may no longer pass between adjacent ZPMs.
+* Continued games now track which power grids have been activated. Thus, resuming a game is more intuitive.
+
+
+**ver 7.4.5 -- 18feb2024**
 
 * Improved & generalized OSX build scripts.
 * Effect of command line parameter: 1:allowHiDpi; 0:forceLoDpi(default).
@@ -85,30 +99,11 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 * Added volume control + corrections to my OpenAL Ada binding.
 
 
-**ver 7.4.4 -- 06oct2023**
-
-* Restored OSX build...but without a bundle. Built without using any Xcode.
-
-
-**ver 7.4.3 -- 17sep2023**
-
-* Added an exception-handler to shutdown gracefully, in case of abort. This should also allow a normal resume after an abort.
-* More relaxed camera angles, when possible.
-* No longer build 32bit Windows executables, just 64-bit windows & linux.
-
-**ver 7.4.2 -- 14jun2023**
-
-* Discontiued OSX support, greatly simplifying game package.
-* Added music to flyover intro screen.
-* Restored best kawoosh sound.
-* Avatar now rises & falls with ocean waves when swimming.
-
-
 ## More change-history at end of file.
 
 
 ## AdaGate Game Description
-AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop and Amelia Earhart.
+AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop, and Amelia Earhart.
 
 Runs on Windows, OSX, and GNU/Linux.  The linux binary now runs on many linux distros! Includes all source code, build scripts & resources.
  
@@ -123,7 +118,7 @@ Featuring
 -----------------------------------------------------------
 
 ## AdaGate Introduction
-While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the portal system by rolling alien power cells onto their sockets.  Simple, right?  Then use your portal gun to bypass obstacles through another dimension.
+While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the gates & portal systems by rolling alien power cells onto their sockets.  Simple, right?  Then use your portal gun to bypass obstacles through another dimension.
 
 Escape all chambers to ascend to the lake sanctuary, where the level of difficulty is increased for your next game.
 
@@ -193,7 +188,7 @@ In case of control problems with the game, or if you want to easily inspect some
 
 ------------------------------------------------------------
 ### controller settings
-If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar.
+If the need arises, copy the file "docs/default_settings.txt" to "data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar. EG: Forward speed was recently increased by 25%; if you prefer the old speed, change the first value from 1.0 to 0.75.
 
 ------------------------------------------------------------
 
@@ -203,10 +198,10 @@ If you ever get stuck, try to jump up + forward or back.
 ------------------------------------------------------------
 
 
-## required for running:
+## System requirements for running delivered executables:
 
 * graphics card with ample memory & updated driver that supports OpenGL version 3.3 or later.  
-* Windows, Mac OSX, GNU/Linux;
+* Windows, Mac OSX(>=10.13), GNU/Linux;
 * optional game controller or joystick.
 
 
@@ -224,14 +219,15 @@ Unzip the archive.
 
 * On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
-* On OSX, the command-line for Keka works thusly:
+* On OSX, Keka works well for 7Z files. The command-line for Keka is:
 	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
 
 
 
 The game may be run from a command line terminal window on all 3 platforms. Navigate to the installation directory and type:
 
-* adagate_osx (Mac OSX)
+* adagate_osx (Mac OSX)  [ "adagate_osx 1" indicates using High-Dpi video mode; default=Low-Dpi ]
+	note that Low-Dpi should be used if graphic response is poor.
 
 * adagate64.bat (Windows 64-bit) or type binw64\adagate64.exe
 
@@ -256,9 +252,7 @@ Windows users note: I suggest that you DO NOT try running the linux executables 
 
 The install directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
 
-Tips:  0) type "h" for the help screen.  1) the ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island.  2) when in trouble in a dungeon, jumping may help.
-
-By the way, you are ideally supposed to solve the sokoban puzzles without jumping up onto the walls.  On the other hand, if you jump into the puzzle at the wrong place, it might be impossible to solve.
+Tips:  0) type "h" for the help screen.  1) the ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island.  2) when in trouble in a dungeon, jumping may help.  3) A "gravity-lock" now prevents jumping out of the power grid until all ZPMs are on their sockets. Theoretically, this now means that if you jump in at the wrong place, it might be impossible to solve !!!
 
 --------------------------------------------------------------------------
 Notes:
@@ -303,7 +297,7 @@ Please send improvements, comments, suggestions or questions to:
 
 Three [pre-compiled] binary executables are delivered.  I think the Windows executable is fairly portable.  It was built on Windows 10.  The linux binary, adagate, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
 
-The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
+The distributed linux executable requires glibc v2.17 or newer.  That means if your distribution is older than 2012, it may not run, and you will need to recompile.
 
 Build scripts for GNU Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes. See ./alternateBuildScripts/.
 
@@ -414,7 +408,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2023  <fastrgv@gmail.com>
+ Copyright (C) 2024  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -451,10 +445,10 @@ OpiumLoop is from "PartnersInRhyme": see signed authorization in ~/licenses/
 
 
 ### ImageFiles 
-Most images for textures were freely [no copyright indications] available on google images.  Some wall textures used are from the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  One other thatched roof texture was used from http://www.mayang.com/textures.  See ./licenses/mayang_license.txt.  Others from pixabay.com have a CC0 license; see ./licenses/creativeCommonsCC0.txt.  More recently, some are from http://all-free-download.com/free-photos/.
+Most images for textures were freely [no copyright indications] available on google images.  Some wall textures used are from the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  One other thatched roof texture was used from http://www.mayang.com/textures.  Others from pixabay.com have a CC0 or CC3 license.  More recently, some are from http://all-free-download.com/free-photos/. See ./docs/licenses/.
 
 ### ShaderFiles 
-Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see ./licenses/mit_license.txt).  Existing comments or any identifying information was retained.  What follows are acknowledgments for some that were identifyable.
+Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license.  Existing comments or any identifying information was retained.  What follows are acknowledgments for some that were identifyable. (see ./docs/licenses/)
 
 Volcano & "Red Planet" from Mahmud Yuldashev <mahmud9935@gmail.com>, and "waterWorldCCNSA3.fs" with a CreativeCommons license, and which seems to be credited to Alexander Alekseev with mods by Mahmud Yuldashev.
 
@@ -512,6 +506,21 @@ Duke goes for a swim (31oct17):
 ----------------------------------------------------------------
 
 ## Older Change History:
+
+
+**ver 7.4.4 -- 06oct2023**
+* Restored OSX build...but without a bundle.
+
+**ver 7.4.3 -- 17sep2023**
+* Added an exception-handler to shutdown gracefully, in case of abort. This should also allow a normal resume after an abort.
+* More relaxed camera angles, when possible.
+* No longer build 32bit Windows executables, just 64-bit windows & linux.
+
+**ver 7.4.2 -- 14jun2023**
+* Discontiued OSX support, greatly simplifying game package.
+* Added music to flyover intro screen.
+* Restored best kawoosh sound.
+* Avatar now rises & falls with ocean waves when swimming.
 
 **ver 7.4.1 -- 30sep2022**
 * Now using simpler-to-setup GNU Ada for Win64.
