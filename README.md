@@ -265,6 +265,9 @@ Third, note that this game runs fine on an Intel NUC with embedded Intel graphic
 
 Fourth, note that adjustable OpenGL settings should favor performance.
 
+Finally: use "freshStart.bat" [for Windows] or "freshStart.sh" or simply delete the file "resume_ag.txt" in order to begin the game for the first time. This resets the game to use the easiest of 5 versions of the puzzles to be solved.
+
+
 --------------------------------------------------------------------------
 Open source Ada developers are welcome to help improve or extend this game.
 
