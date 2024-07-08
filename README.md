@@ -78,6 +78,11 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ## Recent Changes
 
 
+**ver 7.4.7 -- 8jul2024**
+
+* Added dynamic cubemap generation to reflect environment of pool, level 2.
+
+
 
 **ver 7.4.6 -- 04apr2024**
 
