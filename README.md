@@ -2,6 +2,12 @@
 
 Shaders project vertices from a cubical shell onto a spherical shell to avoid singularities. Then a coherent 3D noise function is used to define radial perturbations whose magnitudes index into a 1D colormap with black, red, orange, yellow, and white.
 
+-----------------------------------------------------------------------------------------------------
+![screenshot](https://github.com/fastrgv/AdaGate/blob/master/AGdynCubemap.png)
+
+Dynamic Cubemapped Environment
+
+
 ----------------------------------------------------------------------------------------------------------------
 ![screenshot](https://github.com/fastrgv/AdaGate/blob/master/palm.gif)
 
