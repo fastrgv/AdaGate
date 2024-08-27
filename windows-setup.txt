@@ -28,6 +28,8 @@ downloading 7z [from www.7-zip.org].  It's free, and works nicely:
 Note that WSL [Windows Subsystem for Linux] is not supported.
 Simple use the Windows executable provided.
 
-Note also that error messages about failure to create links
-can be IGNORED.  These linked files are used only 
-on linux or Mac OSX systems.
+
+Note also that an error message like "vcruntime140.dll is missing" 
+indicates that you should install, repair, or reinstall, the MSVC 
+redistributable runtime libraries for both x86 and x64. 
+As of 10aug24 that is version 14.40.33810.0 (2022).
