@@ -1,0 +1,74 @@
+
+Microsoft Windows Setup
+========================
+
+Open a Command Line Terminal window.
+
+If you have a previous installation of the game on your computer, 
+then delete it by typing something like:
+
+	RMDIR/S <game-installation-directory>\<game-dir>
+
+from the command line terminal.
+
+This will save space on your computer's disk drive, and will 
+help to avoid confusion.
+
+
+Next, move the newest archive, a 7z file 
+[from your Downloads directory] to any directory of your choosing:
+
+	move <file-name>.extension <game-installation-directory>
+
+	cd <game-installation-directory>
+
+Next, unzip the 7z archive:
+
+A) If you have it, PeaZip seems to work fine for all archive types.
+
+B) If you do not already have an unzip utility, I recommend 
+downloading 7z [from www.7-zip.org].  It's free, and works nicely.
+From the Command Line Terminal type:
+
+	7z x <file-name>.7z [this unzips contents to a new game-dir]
+
+	cd <game-dir>
+
+Then issue the proper commandline syntax to start the app.
+
+Note that WSL [Windows Subsystem for Linux] is NOT supported.
+Simply use the Windows executable provided. Runs on Windows 10 & 11.
+
+Note also that an error message like "vcruntime140.dll is missing" 
+indicates that you should install, repair, or reinstall, the MSVC 
+redistributable runtime libraries for both x86 and x64. 
+As of 10aug24 that is version 14.40.33810.0 (2022).
+
+--------------------------------------------------------------------
+December 2025 addendum:
+--------------------------------------------------------------------
+According to GPT it seems that vcruntime140.dll is not included in 
+Windows 11 by default. It is part of the Microsoft Visual C++ 
+Redistributables package [msvcr], which is used to run applications 
+developed with Visual C++.
+
+There are many apps that might install msvcr, possibly without
+your knowledge. If your system does not already have it installed 
+you will encounter an error when trying to run my games.
+
+If so, you should download & install 2 files from Microsoft,
+one for "x86" and one for "x64". These packages will ensure that the 
+necessary runtime components are available for any applications 
+that depend on them, including my games.
+
+Here are the 2 permalinks I found for the latest supported versions:
+
+https://aka.ms/vc14/vc_redist.x86.exe
+https://aka.ms/vc14/vc_redist.x64.exe
+
+They were free, quick, & easy downloads of 2 self-installing files:
+
+VC_redist.x86.exe
+VC_redist.x64.exe
+
+
