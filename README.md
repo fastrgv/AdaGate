@@ -77,11 +77,23 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 
+Alternate Permalink:
+https://sourceforge.net/projects/adagate/files/latest/download
+
+
 # AdaGate 
-## using GLFW & OpenAL
+## a 3D OpenGL Portal game using GLFW & OpenAL
 
 
 ## Recent Changes
+
+
+**ver 7.4.8 -- 30dec2025**
+
+* Improved, clarified Windows-Setup document.
+* Important coding improvement in the tree-drawing package.
+* Now draw "@" to indicate proper starting location for sokoban puzzles.
+* User defined sokoban puzzles can now be 10x10.
 
 
 **ver 7.4.7 -- 8jul2024**
@@ -89,32 +101,13 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 * Added dynamic cubemap generation to reflect environment of pool, level 2.
 
 
-
-**ver 7.4.6 -- 04apr2024**
-
-* Corrected lava pools so that color is in sync with amplitude.
-* Added brick room torches w/lighting effects.
-* Minor revisions to level 1 scene.
-* Made essential corrections in fog, crosshairs display.
-* As an added challenge, a gravity-lock now prevents jumping out of the ZPM power grid until after activation is completed, i.e. puzzle is solved.
-* Avatar may no longer pass between adjacent ZPMs.
-* Continued games now track which power grids have been activated. Thus, resuming a game is more intuitive.
-
-
-**ver 7.4.5 -- 18feb2024**
-
-* Improved & generalized OSX build scripts.
-* Effect of command line parameter: 1:allowHiDpi; 0:forceLoDpi(default).
-	Use low DPI to smooth out action graphics.
-* Added waterfall in level 5 using both particle & ribbon textures.
-* Added volume control + corrections to my OpenAL Ada binding.
-
-
 ## More change-history at end of file.
 
 
-## AdaGate Game Description
+## AdaGate Brief Game Description
 AdaGate is a strategy game with escape rooms in a Stargate fantasy setting. It is an elaborate example of modern OpenGL programming using the Ada language; and a tribute to Narbacular Drop, and Amelia Earhart.
+
+Each room has a barrier that must be circumvented using portals. The barriers include water with piranha, molten magma, and walls.
 
 Runs on Windows, OSX, and GNU/Linux.  The linux binary now runs on many linux distros! Includes all source code, build scripts & resources.
  
@@ -128,10 +121,12 @@ Featuring
 	* or unzip onto a USB flash drive [w/same file format] and run.
 -----------------------------------------------------------
 
-## AdaGate Introduction
-While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the gates & portal systems by rolling alien power cells onto their sockets.  Simple, right?  Then use your portal gun to bypass obstacles through another dimension.
+## AdaGate Detailed Introduction
+While searching a remote south-seas atoll for remnants of a lost American heroine, you find a nearly operational stargate.  If you can get it working, you will be transported into an off-world temple with multiple chambers.  You'll need to power up the exit gates & portal systems in those chambers by rolling ZPM power cells onto their sockets. Simple, right? In order to do that you must solve a sokoban puzzle, which means there is a correct sequence and a correct pairing of ZPMs to sockets (and many wrong ones). When all the ZPMs are all engaged they will light up and a portal gun will appear. Use it to create portals that bypass the obstacles so you can reach the exit stargate.
 
-Escape all chambers to ascend to the lake sanctuary, where the level of difficulty is increased for your next game.
+Caution: solvability of the powercell puzzles is guaranteed only when jumping in on the "@" symbol. Moreover, cheating by jumping out is impossible because of a gravity lock.
+
+Escape all four chambers to ascend...and catch a glimpse of Amelia; whence the level of difficulty is increased for your next game.
 
 
 
@@ -278,7 +273,6 @@ Fourth, note that adjustable OpenGL settings should favor performance.
 
 Finally: use "freshStart.bat" [for Windows] or "freshStart.sh" or simply delete the file "resume_ag.txt" in order to begin the game for the first time. This resets the game to use the easiest of 5 versions of the puzzles to be solved.
 
-
 --------------------------------------------------------------------------
 Open source Ada developers are welcome to help improve or extend this game.
 
@@ -422,7 +416,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2024  <fastrgv@gmail.com>
+ Copyright (C) 2025  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -521,6 +515,21 @@ Duke goes for a swim (31oct17):
 
 ## Older Change History:
 
+**ver 7.4.6 -- 04apr2024**
+* Corrected lava pools so that color is in sync with amplitude.
+* Added brick room torches w/lighting effects.
+* Minor revisions to level 1 scene.
+* Made essential corrections in fog, crosshairs display.
+* As an added challenge, a gravity-lock now prevents jumping out of the ZPM power grid until after activation is completed, i.e. puzzle is solved.
+* Avatar may no longer pass between adjacent ZPMs.
+* Continued games now track which power grids have been activated. Thus, resuming a game is more intuitive.
+
+**ver 7.4.5 -- 18feb2024**
+* Improved & generalized OSX build scripts.
+* Effect of command line parameter: 1:allowHiDpi; 0:forceLoDpi(default).
+	Use low DPI to smooth out action graphics.
+* Added waterfall in level 5 using both particle & ribbon textures.
+* Added volume control + corrections to my OpenAL Ada binding.
 
 **ver 7.4.4 -- 06oct2023**
 * Restored OSX build...but without a bundle.
