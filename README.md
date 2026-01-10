@@ -88,20 +88,16 @@ https://sourceforge.net/projects/adagate/files/latest/download
 ## Recent Changes
 
 
-**ver 7.4.8 -- 30dec2025**
+**ver 7.4.9 -- 10jan2026**
 
-* Improved, clarified Windows-Setup document.
-* Important coding improvement in the tree-drawing package.
-* Now draw "@" to indicate proper starting location for sokoban puzzles.
-* User defined sokoban puzzles can now be 10x10.
-
-
-**ver 7.4.7 -- 8jul2024**
-
-* Added dynamic cubemap generation to reflect environment of pool, level 2.
+* Improved sokoban puzzle set used.
+* Created awesome moving-cloud skyboxes on the atoll using shaders only.
+* Eliminated need for MSVC-redistributables installation on M.S. Windows 10, 11.
+* Added a way to restart ZPM puzzles when stuck.
+* q-key now quiets music, if needed, while solving ZPM puzzles.
 
 
-## More change-history at end of file.
+More change-history at end of file.
 
 
 ## AdaGate Brief Game Description
@@ -167,13 +163,30 @@ Movement is controlled by the WASD keys or the arrow keys:
 			(Up)
 	(Lt)	(Dn)	(Rt)
 
-Shoot the two portal guns using:  (L)-key (R)-key, or (if you have two) the two mouse buttons.
+Shoot the two portal guns using:  l-key r-key, 
+or (if you have two) the two mouse buttons.
 
-(space)-key => jump up/over short walls
+* (space)-key => jump up/over short walls
 
-(esc)-key => exit;
+* (esc)-key => exit;
 
-* (m)-key or (F1)-key	=> toggle between mouse-view (1st-person) or avatar(3rd-person)
+* m-key or (F1)-key	=> toggle between mouse-view (1st-person) or avatar(3rd-person)
+
+* q-key  => Quiet...stop the music
+
+* h-key  => show Help screen
+
+----------------------------------------------------------------------------------------------
+If a tricky ZPM puzzle has trapped you, it is now possible to reset it. Typically you
+need to jump up and out of the sokoban grid, then reset, then jump in @ proper place.
+These 2 new [experimental] key combos help to reset a ZPM puzzle that has trapped you:
+
+* (ctrl)-l => release the gravity Lock
+* (ctrl)-r => Reset ZPM puzzle
+
+...otherwise simply restart the game and go back to the dungeon where you will encounter a re-initialized puzzle.
+
+----------------------------------------------------------------------------------------------
 
 In case of control problems with the game, or if you want to easily inspect something, use 1st-person mode.
 
@@ -368,6 +381,14 @@ On a linux build machine, you might get fixable link errors, depending on its co
 
 This app demonstrates how to use fancy fragment shaders from glslsandbox.com to make wormhole effects, starry skies, and moving-scene wall hangings. See below (Media Files).  It also demonstrates metallic texture overlays, and the use of coherent noise to create the stargate event horizon, and rolling fireball in the brick dungeon.
 
+----------------------------------------------------------------------
+## For Developers Only:  CubeMapped Skybox Shaders
+
+This app demonstrates how to slowly rotate a skybox about the vertical axis by simple shader modifications, with negligible changes to source code. This opens many further possibilities for handling skyboxes IF true 6 sided skyboxes are avaiable. For example if one has a 6 sided starry-sky skybox, then it is easily possible to enable arbitrary rotations within the shader. Or you might use a 6-sided skybox with day & night hemispheres.
+
+A tiny change is required to the source code to pass time as a uniform to the shader that will allow perturbing some pointing vectors in a time dependent way.
+
+
 
 ----------------------------------------------------------------------
 ## For Developers Only:  OpenAL portable sound package
@@ -416,7 +437,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2025  <fastrgv@gmail.com>
+ Copyright (C) 2026  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -514,6 +535,16 @@ Duke goes for a swim (31oct17):
 ----------------------------------------------------------------
 
 ## Older Change History:
+
+
+**ver 7.4.8 -- 30dec2025**
+* Improved, clarified Windows-Setup document.
+* Important coding improvement in the tree-drawing package.
+* Now draw "@" to indicate proper starting location for sokoban puzzles.
+* User defined sokoban puzzles can now be 10x10.
+
+**ver 7.4.7 -- 8jul2024**
+* Added dynamic cubemap generation to reflect environment of pool, level 2.
 
 **ver 7.4.6 -- 04apr2024**
 * Corrected lava pools so that color is in sync with amplitude.
