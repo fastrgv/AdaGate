@@ -498,6 +498,18 @@ At least 3 beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of
 
 
 
+### Boxoban Puzzle Set Citation:
+
+@misc{boxobanlevels,
+author = {Arthur Guez and Mehdi Mirza and Karol Gregor and Rishabh Kabra and Sebastien Racaniere and Theophane Weber and David Raposo and Adam Santoro and Laurent Orseau and Tom Eccles and Greg Wayne and David Silver and Timothy Lillicrap and Victor Valdes},
+title = {An investigation of Model-free planning: boxoban levels},
+howpublished= {https://github.com/deepmind/boxoban-levels/},
+year = "2018"
+}
+
+
+
+
 ## Download Sites for AdaGate and my other games:
 
 * https://github.com/fastrgv?tab=repositories
