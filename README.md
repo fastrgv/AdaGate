@@ -87,6 +87,11 @@ https://sourceforge.net/projects/adagate/files/latest/download
 
 ## Recent Changes
 
+**ver 7.5.0 -- 11feb2026**
+
+* Improved island fog effects including skybox fog.
+* Minor change to level 5 sokoban puzzle set.
+
 
 **ver 7.4.9 -- 10jan2026**
 
