@@ -77,15 +77,26 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ---------------------------------------------------------------------
 
 
-Alternate Permalink:
+Alternate Permalink to latest version:
 https://sourceforge.net/projects/adagate/files/latest/download
 
 
-# AdaGate 
-## a 3D OpenGL Portal game using GLFW & OpenAL
+# AdaGate
+
+		Narbacular Drop Style
+		Dungeon-Escape Game
+		with Portals & Stargates
+		using OpenGL, GLFW3 & OpenAL audio
 
 
 ## Recent Changes
+
+
+**ver 7.5.1 -- 5may2026**
+
+* Added two essential new parms to the settings file that can greatly improve 3rd person movement & camera angles. See "controller settings" section below.
+
+
 
 **ver 7.5.0 -- 11feb2026**
 
@@ -97,12 +108,12 @@ https://sourceforge.net/projects/adagate/files/latest/download
 
 * Improved sokoban puzzle set used.
 * Created awesome moving-cloud skyboxes on the atoll using shaders only.
-* Eliminated need for MSVC-redistributables installation on M.S. Windows 10, 11.
+* Eliminated need to install MSVC-redistributables on Windows 10, 11.
 * Added a way to restart ZPM puzzles when stuck.
 * q-key now quiets music, if needed, while solving ZPM puzzles.
 
 
-More change-history at end of file.
+#### More change-history at end of file.
 
 
 ## AdaGate Brief Game Description
@@ -127,7 +138,7 @@ While searching a remote south-seas atoll for remnants of a lost American heroin
 
 Caution: solvability of the powercell puzzles is guaranteed only when jumping in on the "@" symbol. Moreover, cheating by jumping out is impossible because of a gravity lock.
 
-Escape all four chambers to ascend...and catch a glimpse of Amelia; whence the level of difficulty is increased for your next game.
+Escape all four chambers to ascend...and catch a glimpse of Amelia; whence the level of difficulty is incremented for your next game.
 
 
 
@@ -181,19 +192,24 @@ or (if you have two) the two mouse buttons.
 
 * h-key  => show Help screen
 
-----------------------------------------------------------------------------------------------
-If a tricky ZPM puzzle has trapped you, it is now possible to reset it. Typically you
-need to jump up and out of the sokoban grid, then reset, then jump in @ proper place.
-These 2 new [experimental] key combos help to reset a ZPM puzzle that has trapped you:
+----------------------------------------------------------------------------------------
+If a tricky ZPM puzzle has **trapped** you, it is now possible to reset it. Typically you
+need to jump up and out of the sokoban grid, then reset the puzzle, then jump in @ proper place. These 2 new key combos help:
 
 * (ctrl)-l => release the gravity Lock
 * (ctrl)-r => Reset ZPM puzzle
 
-...otherwise simply restart the game and go back to the dungeon where you will encounter a re-initialized puzzle.
+If you do not jump out of the grid before resetting the puzzle, the results are unpredictable.
 
-----------------------------------------------------------------------------------------------
+Another option is that you can restart the game and go back to the dungeon where you will encounter a re-initialized puzzle. 
 
-In case of control problems with the game, or if you want to easily inspect something, use 1st-person mode.
+**(Sorry, it is not currently possible to UNDO a push. You must reset the puzzle.)**
+
+Interesting side note: these "boxoban" sokoban puzzles were created by A.I. Please see references below.
+
+----------------------------------------------------------------------------------------
+
+In case of control issues, or if you want to easily inspect something, use 1st-person mode.
 
 
 ### joystick
@@ -213,6 +229,33 @@ In case of control problems with the game, or if you want to easily inspect some
 ------------------------------------------------------------
 ### controller settings
 If the need arises, copy the file "docs/default_settings.txt" to "data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar. EG: Forward speed was recently increased by 25%; if you prefer the old speed, change the first value from 1.0 to 0.75.
+
+The file contains 7 numbers
+
+* ForwardSpeed
+* CameraSlewSpeed
+* MouseSlewSpeed
+* KeyboardSlewSpeed
+* GamepadSlewSpeed
+* JoystickSlewSpeed
+* PreferredZoomDistance (between camera & avatar)
+
+whose values are normally defaulted to 1.0 
+but might need to be adjusted between 0.1 and 10.0.
+
+I found that my new Windows 11 machine required the following 
+settings in order to get acceptable performance
+(due to differences in graphics drivers, operating system, or hardware):
+
+1.0 0.1 8.0 2.0 1.0 1.0 0.1 
+
+
+------------------------------------------------------------
+Note: in third person it is sometimes useful to move the camera directly behind the avatar.
+You can accomplish this by first pointing the avatar in the desired look-direction, 
+then switch to first-person, then switch back to third-person.
+This is especially useful when solving a sokoban puzzle in third-person,
+and in this case it might also help to zoom-out a little.
 
 ------------------------------------------------------------
 
@@ -253,7 +296,8 @@ The game may be run from a command line terminal window on all 3 platforms. Navi
 * adagate_osx (Mac OSX)  [ "adagate_osx 1" indicates using High-Dpi video mode; default=Low-Dpi ]
 	note that Low-Dpi should be used if graphic response is poor.
 
-* adagate64.bat (Windows 64-bit) or type binw64\adagate64.exe
+* adagate64.bat (Windows)
+* binw64\adagate64.exe (Windows)
 
 * adagate_gnu (Linux)
 
@@ -389,7 +433,7 @@ This app demonstrates how to use fancy fragment shaders from glslsandbox.com to 
 ----------------------------------------------------------------------
 ## For Developers Only:  CubeMapped Skybox Shaders
 
-This app demonstrates how to slowly rotate a skybox about the vertical axis by simple shader modifications, with negligible changes to source code. This opens many further possibilities for handling skyboxes IF true 6 sided skyboxes are avaiable. For example if one has a 6 sided starry-sky skybox, then it is easily possible to enable arbitrary rotations within the shader. Or you might use a 6-sided skybox with day & night hemispheres.
+This app demonstrates how to slowly rotate a skybox about the vertical axis by simple shader modifications, with negligible changes to source code. This insight opens many further possibilities for handling skyboxes IF true 6 sided skyboxes are avaiable. For example if one has a 6 sided starry-sky skybox, then it is easily possible to enable arbitrary rotations within the shader. Or you might use a 6-sided skybox with day & night hemispheres.
 
 A tiny change is required to the source code to pass time as a uniform to the shader that will allow perturbing some pointing vectors in a time dependent way.
 
@@ -501,9 +545,12 @@ Another skybox  [from  (http://www.redsorceress.com/skybox.html)]  is credited t
 At least 3 beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ./licenses/ccsa3_license.txt.
 
 
+### Boxoban Puzzle Set
 
+Boxoban is an A.I. generated puzzle set from DeepMind, now used for the dungeon puzzles.
+Using only 4 boxes, this set is trivial for even a simple BFS solver, yet can be very tricky for a human gamer in 3D-first-person, or even third-person when manipulating an avatar-pusher!
 
-### Boxoban Puzzle Set Citation:
+#### Requested Boxoban Citation:
 
 @misc{boxobanlevels,
 author = {Arthur Guez and Mehdi Mirza and Karol Gregor and Rishabh Kabra and Sebastien Racaniere and Theophane Weber and David Raposo and Adam Santoro and Laurent Orseau and Tom Eccles and Greg Wayne and David Silver and Timothy Lillicrap and Victor Valdes},
@@ -512,7 +559,7 @@ howpublished= {https://github.com/deepmind/boxoban-levels/},
 year = "2018"
 }
 
-
+See also ~/docs/boxoban_license_apache.txt
 
 
 ## Download Sites for AdaGate and my other games:
