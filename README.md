@@ -77,9 +77,6 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 ---------------------------------------------------------------------
 
 
-Alternate Permalink to latest version:
-https://sourceforge.net/projects/adagate/files/latest/download
-
 
 # AdaGate
 
