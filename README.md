@@ -362,6 +362,22 @@ Please send improvements, comments, suggestions or questions to:
 
 ## Build instructions for AdaGate:
 
+------------------------------------------------------
+#### linux users note
+
+Before attempting to build these apps on linux 
+you might need to update your libraries to include
+	xorg-dev, libx11-dev, & libopenal-dev
+so that the link-step succeeds.
+
+Use the following commands:
+
+* sudo apt-get update
+* sudo apt-get install xorg-dev
+* sudo apt-get install libx11-dev
+* sudo apt-get install libopenal-dev
+------------------------------------------------------
+
 Three [pre-compiled] binary executables are delivered.  I think the Windows executable is fairly portable.  It was built on Windows 10.  The linux binary, adagate, is intended to run in the presence of the directory "./libs/gnu", which contains GLFW3 libraries that can be, but need not be present on a target system.
 
 The distributed linux executable requires glibc v2.17 or newer.  That means if your distribution is older than 2012, it may not run, and you will need to recompile.
