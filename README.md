@@ -78,6 +78,12 @@ Shark/Snake/Kawhoosh:  https://youtu.be/88Y4yvdixY4
 
 
 
+
+Permalink:
+
+https://sourceforge.net/projects/adagate/files/latest/download
+
+
 # AdaGate
 
 		Narbacular Drop Style
@@ -252,11 +258,7 @@ Note: in third person it is sometimes useful to move the camera directly behind 
 You can accomplish this by first pointing the avatar in the desired look-direction, 
 then switch to first-person, then switch back to third-person.
 This is especially useful when solving a sokoban puzzle in third-person,
-and in this case it might also help to zoom-out a little.
-
-------------------------------------------------------------
-
-If you ever get stuck, try to jump up + forward or back.
+and in this case it might also help to zoom-out a little (using the f-key or the mouse wheel).
 
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -275,8 +277,9 @@ If you ever get stuck, try to jump up + forward or back.
 
 ## Setup & Running Adagate:
 
-The application's main directory [./agate/] contains files for deployment on 2 platforms:  1)windows, 2)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  
+The application's main directory [./agate/] contains files for deployment on 3 platforms:  1)windows, 2)linux, 3) OSX, in addition to source code [./agate/src/].  If you are NOT running windows, you do not need .dll files.  
 
+Mac users see also:  "osx-setup.txt"
 Windows users see also:  "windows-setup.txt"
 
 Unzip the archive.  
@@ -311,13 +314,26 @@ Another alternative is to install WINE. The Windows executable will run on linux
 	* wine binw64/adagate64.exe
 
 
-Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use one of the windows builds.
+Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows build.
 
 ----------------------------------------------------------------------
 
 The install directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
 
-Tips:  0) type "h" for the help screen.  1) the ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island.  2) when in trouble in a dungeon, jumping may help.  3) A "gravity-lock" now prevents jumping out of the power grid until all ZPMs are on their sockets. Theoretically, this now means that if you jump in at the wrong place, it might be impossible to solve !!!
+Tips:  
+
+* Type "h" for the help screen.  
+
+* The ZPM is heavy!  If you kick it out of reach under water then you will be stranded on the island. This would require a reset, described below.
+
+* When in trouble in a dungeon, jumping+moving [(space)+(arrow)] may help.  
+
+* A "gravity-lock" now prevents jumping out of the power grid until all ZPMs are on their sockets. This means that if you do not jump in at the "@" symbol, it might be impossible to solve! If you get stuck for any reason, you have 2 options:
+
+	* Type (ctrl-l) to unLock the gravity lock, then jump up and out of the power grid, then type (ctrl-r) to Reset the ZPMs.
+	* Quit & restart the game. You will appear back on the island so you can reenter the dungeon.
+
+* If for any reason you must reset Adagate to its original state, then exit the game, and from the root directory type "freshStart.bat" on Windows or "freshStart.sh" on OSX or linux.
 
 --------------------------------------------------------------------------
 Notes:
@@ -365,10 +381,7 @@ Please send improvements, comments, suggestions or questions to:
 ------------------------------------------------------
 #### linux users note
 
-Before attempting to build these apps on linux 
-you might need to update your libraries to include
-	xorg-dev, libx11-dev, & libopenal-dev
-so that the link-step succeeds.
+Before attempting to build these apps on linux you might need to update 3 libraries so that the link-step succeeds.
 
 Use the following commands:
 
@@ -482,7 +495,7 @@ The Ada bindings are thin, so the relationship to C++ methodology is transparent
 
 For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many improvements to be made to better utilize the advanced protections and features of the Ada language.  
 
-This is a work in progress, so please excuse any scaffolding and debugging code has not been removed.
+This is a work in progress, so please excuse any scaffolding and debugging code that has not been removed.
 
 Open source Ada developers are welcome to help improve or extend this app.
 Developer or not, send comments, suggestions or questions to:
